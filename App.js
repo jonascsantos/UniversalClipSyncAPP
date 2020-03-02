@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { StatusBar } from 'react-native';
+import { LinearGradient } from 'expo';
 
 export default function App() {
   const [outputText, setOutputText] = useState('Open up App.js to startaa working on your app!')
