@@ -14,13 +14,15 @@ export default function App() {
     ]);
   }
 
+
+
   return (
     <View style={{ padding: 30 }}>
       <GoalInput onAddGoal={addGoalHandler} />
       <FlatList
         showsVerticalScrollIndicator={false}
         data={courseGoals}
-        renderItem={itemData => <GoalItem title={itemData.item.value} />}
+        renderItem={itemData => <GoalItem onDelete={() => console.log("AAAAAA")} title={itemData.item.value} />}
       />
     </View>
   );
