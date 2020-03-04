@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <View style={{ padding: 30 }}>
-      <Button title="Add New Goal" onPress={() => setIsAddMode(true)} />
+      <Button title="Add New Goal agr" onPress={() => setIsAddMode(true)} />
       <GoalInput visible={isAddMode} onAddGoal={addGoalHandler} onCancel={cancelGoalHandler} />
       <FlatList
         showsVerticalScrollIndicator={false}
