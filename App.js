@@ -39,6 +39,8 @@ export default function App() {
             id={itemData.item.id}
             onDelete={removeGoalHandler}
             title={itemData.item.value}
+
+            
           />
         )}
       />
