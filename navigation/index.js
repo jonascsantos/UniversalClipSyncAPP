@@ -1,4 +1,6 @@
-import React from 'react'   
+import React from 'react';
+import {Image} from 'react-native'   
+
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 
 import Welcome from '../screens/Welcome';
@@ -9,3 +11,26 @@ import Recents from '../screens/Recents';
 import Favourites from '../screens/Favourites';
 import Devices from '../screens/Devices';
 import Settings from '../screens/Settings';
+
+import { theme } from '../constants'
+
+const screens = createStackNavigator({
+    Welcome,
+    Login,
+    Forgot,
+    Clipboard,
+    Recents,
+    Favourites,
+    Devices,
+    Settings
+},{
+    defaultNavigationOptions: {
+        headerStyle: {},
+        headerBackImage: <Image />,
+        headerBackTitle: null,
+        headerLeftContainerStyle: {},
+        headerRightContainerStyle: {},
+    }
+});
+
+export default createAppContainer(screens);
