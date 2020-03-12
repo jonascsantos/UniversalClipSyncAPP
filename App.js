@@ -33,7 +33,7 @@ export default class App extends React.Component {
   handleResourcesAsync = async () => {
 
     //caching images for better performance
-    const cacheImages = images.map(img => {
+    const cacheImages = images.map(image => {
       return Asset.fromModule(image).downloadAsync();
     });
 
