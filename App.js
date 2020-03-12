@@ -9,13 +9,20 @@ import { Block } from './components'
 
 //import used images
 const images = [
-  require('./assets/images/logo.png'),
-  require('./assets/images/onboarding1.png'),
+  require('./assets/icons/logo.png'),
+  require('./assets/icons/phone.png'),
+  require('./assets/icons/desktop.png'),
+  require('./assets/icons/google.png'),
+  require('./assets/icons/facebook.png'),
+  require('./assets/icons/apple.png'),
+  require('./assets/icons/email.png'),
+  require('./assets/icons/anonymous.png'),
+  require('./assets/images/avatar.jpeg'),
+  require('./assets/images/onboarding1-notebook.png'),
+  require('./assets/images/onboarding1-tablet.png'),
+  require('./assets/images/onboarding1-phone.png'),
   require('./assets/images/onboarding2.png'),
   require('./assets/images/onboarding3.png'),
-  require('./assets/images/phone.png'),
-  require('./assets/images/desktop.png'),
-  require('./assets/images/avatar.png'),
 ];
 
 export default class App extends React.Component {

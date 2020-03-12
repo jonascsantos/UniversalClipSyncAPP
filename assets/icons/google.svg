@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.957" height="12.201" viewBox="0 0 11.957 12.201">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4285f4;
+      }
+
+      .cls-2 {
+        fill: #34a853;
+      }
+
+      .cls-3 {
+        fill: #fbbc05;
+      }
+
+      .cls-4 {
+        fill: #ea4335;
+      }
+    </style>
+  </defs>
+  <g id="Adobe_ID-1" data-name="Adobe ID-1" transform="translate(-100.8 -96)">
+    <path id="Caminho_1001" data-name="Caminho 1001" class="cls-1" d="M594,495.984a7.012,7.012,0,0,0-.111-1.248H588.14v2.36h3.283a2.806,2.806,0,0,1-1.217,1.841v1.531h1.972A5.95,5.95,0,0,0,594,495.984Z" transform="translate(-481.239 -393.745)"/>
+    <path id="Caminho_1002" data-name="Caminho 1002" class="cls-2" d="M158.088,680.882a5.824,5.824,0,0,0,4.037-1.478l-1.972-1.531a3.68,3.68,0,0,1-5.479-1.933h-2.038v1.581A6.1,6.1,0,0,0,158.088,680.882Z" transform="translate(-51.187 -572.681)"/>
+    <path id="Caminho_1003" data-name="Caminho 1003" class="cls-3" d="M103.487,368.381a3.606,3.606,0,0,1,0-2.318v-1.581h-2.038a6.108,6.108,0,0,0,0,5.479Z" transform="translate(0 -265.121)"/>
+    <path id="Caminho_1004" data-name="Caminho 1004" class="cls-4" d="M158.087,98.426a3.3,3.3,0,0,1,2.332.912l1.75-1.75A5.863,5.863,0,0,0,158.087,96a6.1,6.1,0,0,0-5.452,3.361l2.038,1.581a3.636,3.636,0,0,1,3.413-2.515Z" transform="translate(-51.186)"/>
+  </g>
+</svg>

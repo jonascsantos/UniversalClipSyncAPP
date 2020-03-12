@@ -1,0 +1,11 @@
+<svg id="Grupo_487" data-name="Grupo 487" xmlns="http://www.w3.org/2000/svg" width="10.623" height="22.38" viewBox="0 0 10.623 22.38">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #505050;
+      }
+    </style>
+  </defs>
+  <path id="Subtração_4" data-name="Subtração 4" class="cls-1" d="M9.31,22.38h-8A1.311,1.311,0,0,1,0,21.073V1.307A1.311,1.311,0,0,1,1.312,0h8a1.311,1.311,0,0,1,1.312,1.307V21.073A1.311,1.311,0,0,1,9.31,22.38ZM5.339,19.758a.968.968,0,1,0,.971.968A.971.971,0,0,0,5.339,19.758ZM.783,2.911V19.179H9.929V2.911Z" transform="translate(0 0)"/>
+  <path id="lock" class="cls-1" d="M.788,0A.785.785,0,1,1,0,.785.787.787,0,0,1,.788,0Z" transform="translate(4.562 19.929)"/>
+</svg>

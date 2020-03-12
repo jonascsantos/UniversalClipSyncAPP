@@ -46,7 +46,7 @@ const devices = [
         name: 'My Iphone',
         device: 'iPhone 11',
         system: 'IOS',
-        image: require('../assets/images/phone.png'),
+        image: require('../assets/icons/phone.png'),
         ready: true,
     },
     {
@@ -54,7 +54,7 @@ const devices = [
         name: 'My Android',
         device: 'Xiaomi Mi 9T',
         system: 'Android 10',
-        image: require('../assets/images/phone.png'),
+        image: require('../assets/icons/phone.png'),
         ready: true,
     },
     {
@@ -62,7 +62,7 @@ const devices = [
         name: 'Android 2',
         device: 'Samsung Galaxy S9',
         system: 'Android 10',
-        image: require('../assets/images/phone.png'),
+        image: require('../assets/icons/phone.png'),
         ready: false,
     },
     {
@@ -70,7 +70,7 @@ const devices = [
         name: 'Desktop',
         device: 'Desktop',
         system: 'Windows 10',
-        image: require('../assets/images/desktop.png'),
+        image: require('../assets/icons/desktop.png'),
         ready: true,
     },
 ];
@@ -80,7 +80,7 @@ const profile = {
     username: 'Jonas dos Santos',
     location: 'Europe',
     email: 'jonas.cassiano@hotmail.com',
-    avatar: require('../assets/images/avatar.png'),
+    avatar: require('../assets/images/avatar.jpeg'),
     connected: 4,
 };
 

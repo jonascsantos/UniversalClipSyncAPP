@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12.648" height="12.648" viewBox="0 0 12.648 12.648">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fefeff;
+      }
+    </style>
+  </defs>
+  <path id="Facebook_logo" data-name="Facebook logo" class="cls-1" d="M2,2.4V14.253a.4.4,0,0,0,.4.4h6.36V9.75H7.108V7.841H8.756V6.436a2.33,2.33,0,0,1,2.059-2.518,13.626,13.626,0,0,1,1.872.07V5.7H11.673c-.4,0-.943.168-.943.605,0,.351,0,1.514,0,1.541h1.89l-.246,1.909H10.727v4.9h3.526a.4.4,0,0,0,.4-.4V2.4a.4.4,0,0,0-.4-.4H2.4A.4.4,0,0,0,2,2.4Z" transform="translate(-2 -2)"/>
+</svg>

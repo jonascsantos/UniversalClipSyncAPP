@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="173.091" height="181.613" viewBox="0 0 173.091 181.613">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #f09926;
+      }
+
+      .cls-4 {
+        fill: #e1e1e1;
+      }
+
+      .cls-5 {
+        fill: rgba(0,0,0,0);
+        stroke: rgba(28,172,176,0.38);
+        stroke-linecap: round;
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-8 {
+        filter: url(#União_8);
+      }
+
+      .cls-9 {
+        filter: url(#Caminho_240);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#e9fffc"/>
+    </linearGradient>
+    <filter id="Caminho_240" x="0" y="0" width="173.091" height="181.613" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="União_8" x="44.534" y="30.76" width="109.828" height="110.205" filterUnits="userSpaceOnUse">
+      <feOffset dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00acea"/>
+      <stop offset="1" stop-color="#00efd1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00ffdf"/>
+      <stop offset="1" stop-color="#008fc3"/>
+    </linearGradient>
+  </defs>
+  <g id="Componente_21_2" data-name="Componente 21 – 2" transform="translate(9 6)">
+    <g id="Grupo_184" data-name="Grupo 184" transform="translate(0 0)">
+      <g class="cls-9" transform="matrix(1, 0, 0, 1, -9, -6)">
+        <path id="Caminho_240-2" data-name="Caminho 240" class="cls-1" d="M77.546,0c42.827,0,77.546,36.625,77.546,81.806s-34.718,81.806-77.546,81.806S0,126.987,0,81.806,34.718,0,77.546,0Z" transform="translate(9 6)"/>
+      </g>
+      <rect id="Retângulo_1474" data-name="Retângulo 1474" class="cls-2" width="65.255" height="76.396" transform="translate(42.973 44.244)"/>
+      <g class="cls-8" transform="matrix(1, 0, 0, 1, -9, -6)">
+        <path id="União_8-2" data-name="União 8" class="cls-2" d="M-1040.9-1255.367a8.017,8.017,0,0,1-8-8.03v-67.253a8.018,8.018,0,0,1,8-8.03h16.9a.293.293,0,0,0,.007-.065c0-6.532,4.262-11.828,9.518-11.828s9.518,5.3,9.518,11.828a.611.611,0,0,0,0,.065h17.079a8.018,8.018,0,0,1,8,8.03v4.048a17.967,17.967,0,0,1,13.691,16.643c.357-.027.708-.027,1.049-.027a10.9,10.9,0,0,1,7.785,3.238h.007a11.014,11.014,0,0,1,3.223,7.6.8.8,0,0,1,.032.227,12.7,12.7,0,0,1-12.7,12.7h-13.089v22.826a8.018,8.018,0,0,1-8,8.03Z" transform="translate(1100.94 1384.83)"/>
+      </g>
+      <g id="Caminho_241" data-name="Caminho 241" transform="translate(43.034 40.153)">
+        <path id="Caminho_251" data-name="Caminho 251" class="cls-2" d="M59.979,79.7H6.948A5.467,5.467,0,0,1,1.5,74.225V6.974A5.467,5.467,0,0,1,6.948,1.5H59.979a5.467,5.467,0,0,1,5.448,5.474V74.225A5.467,5.467,0,0,1,59.979,79.7Z" transform="translate(1.056 1.056)"/>
+        <path id="Caminho_252" data-name="Caminho 252" class="cls-3" d="M8,5.113A2.908,2.908,0,0,0,5.113,8.03V75.282A2.908,2.908,0,0,0,8,78.2H61.036a2.908,2.908,0,0,0,2.892-2.917V8.03a2.908,2.908,0,0,0-2.892-2.917H8M8,0H61.036a8.017,8.017,0,0,1,8,8.03V75.282a8.017,8.017,0,0,1-8,8.03H8a8.017,8.017,0,0,1-8-8.03V8.03A8.017,8.017,0,0,1,8,0Z" transform="translate(0 0)"/>
+      </g>
+      <path id="Caminho_242" data-name="Caminho 242" class="cls-4" d="M6.968,0c5.256,0,9.518,5.3,9.518,11.828,0,1.346,4.244,1.178,5.624,8.288a2.057,2.057,0,0,1-1.962,2.652h-25.9c-2.657,0-2.822-1.583-2.686-2.556.965-7.01,5.882-7.4,5.882-8.383C-2.551,5.3,1.712,0,6.968,0Z" transform="translate(70.501 28.261)"/>
+      <path id="Caminho_243" data-name="Caminho 243" class="cls-5" d="M124.66,207.656s12.182-1.875,20.753,0a44.389,44.389,0,0,0,9.617.83,70.309,70.309,0,0,0,10.055-.83" transform="translate(-67.056 -150.867)"/>
+      <path id="Caminho_244" data-name="Caminho 244" class="cls-5" d="M124.66,207.656s12.182-1.875,20.753,0a44.389,44.389,0,0,0,9.617.83,70.309,70.309,0,0,0,10.055-.83" transform="translate(-67.056 -143.841)"/>
+      <path id="Caminho_245" data-name="Caminho 245" class="cls-5" d="M124.66,207.656s12.182-1.875,20.753,0a44.389,44.389,0,0,0,9.617.83,70.309,70.309,0,0,0,10.055-.83" transform="translate(-67.056 -136.814)"/>
+      <path id="Caminho_246" data-name="Caminho 246" class="cls-5" d="M124.66,207.656s12.182-1.875,20.753,0a44.389,44.389,0,0,0,9.617.83,70.309,70.309,0,0,0,10.055-.83" transform="translate(-67.056 -129.789)"/>
+      <path id="Caminho_247" data-name="Caminho 247" class="cls-5" d="M124.66,207.656s12.182-1.875,20.753,0a44.389,44.389,0,0,0,9.617.83,70.309,70.309,0,0,0,10.055-.83" transform="translate(-67.056 -122.762)"/>
+      <path id="Caminho_248" data-name="Caminho 248" class="cls-5" d="M124.66,207.656s12.182-1.875,20.753,0a44.389,44.389,0,0,0,9.617.83,70.309,70.309,0,0,0,10.055-.83" transform="translate(-67.056 -115.735)"/>
+      <path id="Caminho_249" data-name="Caminho 249" class="cls-5" d="M124.66,207.656s12.182-1.875,20.753,0a44.389,44.389,0,0,0,9.617.83,70.309,70.309,0,0,0,10.055-.83" transform="translate(-67.056 -108.71)"/>
+      <path id="Caminho_250" data-name="Caminho 250" class="cls-5" d="M124.66,207.656s12.182-1.875,20.753,0a44.389,44.389,0,0,0,9.617.83,70.309,70.309,0,0,0,10.055-.83" transform="translate(-67.056 -101.683)"/>
+      <g id="Grupo_173" data-name="Grupo 173" transform="translate(77.53 51.724)">
+        <g id="cloud-computing_1_" data-name="cloud-computing (1)" transform="translate(0.568 0.866)">
+          <path id="Caminho_233" data-name="Caminho 233" class="cls-2" d="M58.48,27.523h.031A11.806,11.806,0,0,1,46.723,39.348H11.785A11.806,11.806,0,0,1,0,27.523H0V27.4H0A14.858,14.858,0,0,1,13.065,12.626a17,17,0,0,1,33.37,4.648c0,.073,0,.145,0,.218a9.817,9.817,0,0,1,1.939-.147,10.118,10.118,0,0,1,10.1,10.178Zm0,0" transform="translate(0 -0.222)"/>
+          <g id="Grupo_164" data-name="Grupo 164" transform="translate(19.342 15.187)">
+            <path id="Caminho_234" data-name="Caminho 234" class="cls-6" d="M212.047,148.238h0l-.047.051-.012.014a.905.905,0,0,0-.191.4v.017a.706.706,0,0,0-.01.072c0,.019-.026.036-.027.055s-.025.024-.025.036h0c0,.02.025.041.027.061a.92.92,0,0,0,.171.448h0c.015.024.036.046.053.068l.021.021.041.044h0l2.909,2.86a.9.9,0,0,0,1.283-.012.895.895,0,0,0-.012-1.273l-1.322-1.287h3.037a5.522,5.522,0,1,0,0-11.043.909.909,0,1,0,0,1.818,3.7,3.7,0,0,1,0,7.405h-3.049l1.336-1.338a.912.912,0,1,0-1.275-1.305Zm0,0" transform="translate(-203.632 -135.96)"/>
+            <path id="Caminho_235" data-name="Caminho 235" class="cls-6" d="M154.892,130.606a.91.91,0,1,0,0-1.82,3.692,3.692,0,0,1,0-7.383h3.044l-1.336,1.326a.91.91,0,1,0,1.275,1.3l2.909-2.88h0l.048-.053.012-.012a.905.905,0,0,0,.191-.4v-.015a.184.184,0,0,1,.01-.073c.01-.024.026-.036.027-.055s.026-.024.026-.036h0c0-.02-.026-.041-.027-.06a.922.922,0,0,0-.17-.448h0c-.015-.024-.036-.046-.053-.068l-.02-.021-.041-.044h0L157.876,117a.908.908,0,0,0-1.27,1.3l1.322,1.3h-3.037a5.512,5.512,0,1,0,0,11.023Zm0,0" transform="translate(-149.38 -116.77)"/>
+          </g>
+        </g>
+        <g id="cloud-computing" transform="translate(0 0)">
+          <path id="Caminho_232" data-name="Caminho 232" class="cls-7" d="M57.07,20.594a10.907,10.907,0,0,0-7.785-3.238c-.341,0-.692,0-1.05.027A17.96,17.96,0,0,0,30.337.233,17.7,17.7,0,0,0,19.443,3.942a18.137,18.137,0,0,0-6.17,8.786A15.753,15.753,0,0,0,0,28.322v.094a12.7,12.7,0,0,0,12.7,12.7H47.633a12.7,12.7,0,0,0,12.7-12.7.8.8,0,0,0-.032-.227,11.01,11.01,0,0,0-3.223-7.6ZM47.63,39.3H12.694A10.882,10.882,0,0,1,1.815,28.468c0-.022-.015-.027-.015-.048s-.02-.036-.02-.06v.015h.034a13.91,13.91,0,0,1,12.271-13.9.924.924,0,0,0,.767-.67A16.094,16.094,0,0,1,46.44,18.2v.193a.908.908,0,0,0,1.084.914,9.256,9.256,0,0,1,10.959,9.14.682.682,0,0,0,.027.193A10.882,10.882,0,0,1,47.633,39.3Zm0,0" transform="translate(0 -0.233)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
