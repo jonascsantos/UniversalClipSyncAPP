@@ -1,7 +1,8 @@
 import React from 'react';
-import {Image} from 'react-native'   
+import { Image } from 'react-native'   
 
-import { createAppContainer, createStackNavigator } from 'react-navigation'
+import { createAppContainer } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
 
 import Welcome from '../screens/Welcome';
 // import Login from '../screens/Login';
@@ -26,7 +27,7 @@ const screens = createStackNavigator({
 },{
     defaultNavigationOptions: {
         headerStyle: {},
-        headerBackImage: <Image />,
+        headerBackImage:() => <Image />,
         headerBackTitle: null,
         headerLeftContainerStyle: {},
         headerRightContainerStyle: {},

@@ -70,7 +70,7 @@ const devices = [
         name: 'Desktop',
         device: 'Desktop',
         system: 'Windows 10',
-        image: require('../assets/images/computer.png'),
+        image: require('../assets/images/desktop.png'),
         ready: true,
     },
 ];

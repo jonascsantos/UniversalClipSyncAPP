@@ -1,20 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { AppLoading, Asset } from 'expo';
+import { AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
 
 import Navigation from './navigation'
 import { Block } from './components'
 
 //import used images
 const images = [
-  require('../assets/images/logo.png'),
-  require('../assets/images/onboarding1.png'),
-  require('../assets/images/onboarding2.png'),
-  require('../assets/images/onboarding3.png'),
-  require('../assets/images/phone.png'),
-  require('../assets/images/desktop.png'),
-  require('../assets/images/avatar.png'),
+  require('./assets/images/logo.png'),
+  require('./assets/images/onboarding1.png'),
+  require('./assets/images/onboarding2.png'),
+  require('./assets/images/onboarding3.png'),
+  require('./assets/images/phone.png'),
+  require('./assets/images/desktop.png'),
+  require('./assets/images/avatar.png'),
 ];
 
 export default class App extends React.Component {
@@ -33,7 +34,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen){
+    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
         <AppLoading
           startAsync={this.handleResourcesAsync}
@@ -43,17 +44,15 @@ export default class App extends React.Component {
       );
     }
 
-    <View style={styles.container}>
-      <Navigation />
-    </View>
+    return (
+      <Block white>
+        <Navigation />
+      </Block>
+    )
+
   };
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
 });
