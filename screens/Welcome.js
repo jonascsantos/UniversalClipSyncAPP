@@ -1,13 +1,24 @@
 import React from 'react'
-import { Image, Dimensions, StyleSheet, FlatList } from 'react-native'
+import { StatusBar, Animated, Image, Dimensions, StyleSheet, FlatList } from 'react-native'
 
 import { Text, Block, Button } from '../components'
 import { theme } from '../constants'
+import navigation from '../navigation';
 
 const { width, height } = Dimensions.get('window');
 
 class Welcome extends React.Component {
     static navigationOptions = { headerShown: false };
+
+    scrollX = new Animated.Value(0);
+
+    state = {
+        showTerms: false,
+    }
+
+    renderTermsService(){
+        
+    }
 
     renderIllustrations() {
         const { illustrations } = this.props;
@@ -22,28 +33,59 @@ class Welcome extends React.Component {
                 snapToAlignment="center"
                 data={illustrations}
                 extraData={this.state}
-                keyExtractor={(item, index) => '${item.id}'}
+                keyExtractor={(item, index) => `${item.id}`}
                 renderItem={({ item }) => (
                     <Image
                         source={item.source}
                         resizeMode="contain"
-                        style={{width, height: height / 2, overflow: 'visible'}}
+                        style={{ width, height: height / 2, overflow: 'visible' }}
                     />
                 )}
+                onScroll={
+                    Animated.event([{
+                        nativeEvent: {
+                            contentOffset: { x: this.scrollX }
+                        }
+                    }])
+                }
             />
         );
     }
+
     renderSteps() {
+        const { illustrations } = this.props;
+        const stepPosition = Animated.divide(this.scrollX, width);
+
         return (
-            <Block>
-                <Text>* * *</Text>
+            <Block row center middle style={styles.stepsContainer}>
+                {illustrations.map((item, index) => {
+                    const opacity = stepPosition.interpolate({
+                        inputRange: [index - 1, index, index + 1],
+                        outputRange: [0.4, 1, 0.4],
+                        extrapolate: 'clamp',
+                    });
+
+                    return (
+                        <Block
+                            animated
+                            flex={false}
+                            color="gray"
+                            key={`step-${index}`}
+                            style={[styles.steps, { opacity }]}
+                        />
+                    )
+                })}
+
             </Block>
         );
     }
 
     render() {
+        const { navigation } = this.props;
+
         return (
             <Block>
+                <StatusBar barStyle="dark-content" />
                 <Block center middle flex={0.5}>
                     <Text h1 center bold>
                         Your home.
@@ -58,16 +100,17 @@ class Welcome extends React.Component {
                     {this.renderSteps()}
                 </Block>
                 <Block middle flex={0.5} margin={[0, theme.sizes.padding * 2]}>
-                    <Button gradient onPress={() => { }}>
-                        <Text center semibold>Login</Text>
+                    <Button gradient onPress={() => navigation.navigate('Login')}>
+                        <Text center semibold white>Login</Text>
                     </Button>
-                    <Button shadow onPress={() => { }}>
+                    <Button shadow onPress={() => navigation.navigate('Signup')}>
                         <Text center semibold>Signup</Text>
                     </Button>
-                    <Button onPress={() => { }}>
+                    <Button onPress={() => this.setState({ showTerms: true})}>
                         <Text center caption gray>Terms of Service</Text>
                     </Button>
                 </Block>
+                {this.renderTermsService()}
             </Block>
         )
     }
@@ -84,6 +127,20 @@ Welcome.defaultProps = {
 export default Welcome;
 
 const styles = StyleSheet.create({
+    stepsContainer: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        left: 0,
+    },
+
+    steps: {
+
+        width: 5,
+        height: 5,
+        borderRadius: 5,
+        marginHorizontal: 2.5,
+    },
 
 })
 
