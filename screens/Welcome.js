@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusBar, Animated, Image, Dimensions, StyleSheet, FlatList } from 'react-native'
+import { StatusBar, Animated, Image, Dimensions, Modal, StyleSheet, FlatList } from 'react-native'
 
 import { Text, Block, Button } from '../components'
 import { theme } from '../constants'
@@ -17,7 +17,11 @@ class Welcome extends React.Component {
     }
 
     renderTermsService(){
-        
+        return(
+            <Modal animationType="slide" visible={this.state.showTerms}>
+                <Text>modal</Text>
+            </Modal>
+        )
     }
 
     renderIllustrations() {
