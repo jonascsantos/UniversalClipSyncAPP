@@ -1,9 +1,8 @@
 import React from 'react'
-import { StatusBar, Animated, Image, Dimensions, Modal, StyleSheet, FlatList } from 'react-native'
+import { StatusBar, Animated, Image, Dimensions, Modal, StyleSheet, ScrollView, FlatList } from 'react-native'
 
 import { Text, Block, Button } from '../components'
 import { theme } from '../constants'
-import navigation from '../navigation';
 
 const { width, height } = Dimensions.get('window');
 
@@ -16,10 +15,53 @@ class Welcome extends React.Component {
         showTerms: false,
     }
 
-    renderTermsService(){
-        return(
+    renderTermsService() {
+        return (
             <Modal animationType="slide" visible={this.state.showTerms}>
-                <Text>modal</Text>
+                <Block padding={[theme.sizes.padding * 2, theme.sizes.padding]} space="between">
+                    <Text h2 light>Terms of Service</Text>
+                    <ScrollView style={{ paddingVertical: theme.sizes.padding }}>
+                        <Text caption gray height={18}>
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                        </Text>
+                        <Text caption gray height={18}>
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                        </Text>
+                        <Text caption gray height={18}>
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                        </Text>
+                        <Text caption gray height={18}>
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                        </Text>
+                        <Text caption gray height={18}>
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                        </Text>
+                        <Text caption gray height={18}>
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                        </Text>
+                        <Text caption gray height={18}>
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                        </Text>
+                        
+                    </ScrollView>
+                    <Button gradient onPress={() => this.setState({ showTerms: false })} >
+                        <Text center white>I understand</Text>
+                    </Button>
+                </Block>
             </Modal>
         )
     }
@@ -110,7 +152,7 @@ class Welcome extends React.Component {
                     <Button shadow onPress={() => navigation.navigate('Signup')}>
                         <Text center semibold>Signup</Text>
                     </Button>
-                    <Button onPress={() => this.setState({ showTerms: true})}>
+                    <Button onPress={() => this.setState({ showTerms: true })}>
                         <Text center caption gray>Terms of Service</Text>
                     </Button>
                 </Block>
@@ -122,7 +164,7 @@ class Welcome extends React.Component {
 
 Welcome.defaultProps = {
     illustrations: [
-        { id: 1, source: require('../assets/images/onboarding1-tablet.png') },
+        { id: 1, source: require('../assets/images/onboarding1.png') },
         { id: 2, source: require('../assets/images/onboarding2.png') },
         { id: 3, source: require('../assets/images/onboarding3.png') },
     ]
