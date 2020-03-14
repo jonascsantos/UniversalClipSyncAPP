@@ -56,7 +56,7 @@ class Welcome extends React.Component {
                             Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
                             Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
                         </Text>
-                        
+
                     </ScrollView>
                     <Button gradient onPress={() => this.setState({ showTerms: false })} >
                         <Text center white>I understand</Text>
@@ -68,7 +68,6 @@ class Welcome extends React.Component {
 
     renderIllustrations() {
         const { illustrations } = this.props;
-
         return (
             <FlatList
                 horizontal
@@ -79,12 +78,12 @@ class Welcome extends React.Component {
                 snapToAlignment="center"
                 data={illustrations}
                 extraData={this.state}
-                keyExtractor={(item, index) => `${item.id}`}
+                keyExtractor={(item) => `${item.id}`}
                 renderItem={({ item }) => (
                     <Image
                         source={item.source}
                         resizeMode="contain"
-                        style={{ width, height: height / 2, overflow: 'visible' }}
+                        style={{ width: width, height: height / 2, overflow: 'visible' }}
                     />
                 )}
                 onScroll={
@@ -121,43 +120,56 @@ class Welcome extends React.Component {
                         />
                     )
                 })}
-
             </Block>
         );
     }
+
+    bgchangeColor() {
+        const stepPosition = Animated.divide(this.scrollX, width);
+        const bgColor = stepPosition.interpolate({
+            inputRange: [0, 1, 2],
+            outputRange: ['rgba(14 ,134, 227, 1)', 'rgba(3, 188, 132, 1)', 'rgba(253, 200, 76, 1)'],
+        });
+        return (bgColor);
+    }
+
+   
 
     render() {
         const { navigation } = this.props;
 
         return (
-            <Block>
+            <>
                 <StatusBar barStyle="dark-content" />
-                <Block center middle flex={0.5}>
-                    <Text h1 center bold>
-                        Your home.
+                <Block animated color={this.bgchangeColor()}>
+
+                    <Block center middle flex={0.5}>
+                        <Text h1 center bold>
+                            Your Home.
                         <Text h1 primary> Greener </Text>
+                        </Text>
+                        <Text h3 gray2 center style={{ marginTop: theme.sizes.padding / 2 }}>
+                            Enjoy the experience.
                     </Text>
-                    <Text h3 gray2 center style={{ marginTop: theme.sizes.padding / 2 }}>
-                        Enjoy the experience.
-                    </Text>
+                    </Block>
+                    <Block center middle>
+                        {this.renderIllustrations()}
+                        {this.renderSteps()}
+                    </Block>
+                    <Block middle flex={0.5} margin={[0, theme.sizes.padding * 2]}>
+                        <Button gradient onPress={() => navigation.navigate('Login')}>
+                            <Text center semibold white>Login</Text>
+                        </Button>
+                        <Button shadow onPress={() => navigation.navigate('Signup')}>
+                            <Text center semibold>Signup</Text>
+                        </Button>
+                        <Button onPress={() => this.setState({ showTerms: true })}>
+                            <Text center caption gray>Terms of Service</Text>
+                        </Button>
+                    </Block>
+                    {this.renderTermsService()}
                 </Block>
-                <Block center middle>
-                    {this.renderIllustrations()}
-                    {this.renderSteps()}
-                </Block>
-                <Block middle flex={0.5} margin={[0, theme.sizes.padding * 2]}>
-                    <Button gradient onPress={() => navigation.navigate('Login')}>
-                        <Text center semibold white>Login</Text>
-                    </Button>
-                    <Button shadow onPress={() => navigation.navigate('Signup')}>
-                        <Text center semibold>Signup</Text>
-                    </Button>
-                    <Button onPress={() => this.setState({ showTerms: true })}>
-                        <Text center caption gray>Terms of Service</Text>
-                    </Button>
-                </Block>
-                {this.renderTermsService()}
-            </Block>
+            </>
         )
     }
 }
@@ -178,6 +190,11 @@ const styles = StyleSheet.create({
         bottom: 0,
         right: 0,
         left: 0,
+    },
+    test: {
+        position: 'absolute',
+        height: 30,
+        width: 30,
     },
 
     steps: {
