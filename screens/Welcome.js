@@ -13,6 +13,7 @@ class Welcome extends React.Component {
 
     state = {
         showTerms: false,
+        currentText: "TESTEEE"
     }
 
     renderTermsService() {
@@ -80,11 +81,16 @@ class Welcome extends React.Component {
                 extraData={this.state}
                 keyExtractor={(item) => `${item.id}`}
                 renderItem={({ item }) => (
-                    <Image
-                        source={item.source}
-                        resizeMode="contain"
-                        style={{ width: width, height: height / 2, overflow: 'visible' }}
-                    />
+                    <Block center top>
+                        <Text color="white">{item.title}</Text>
+                        <Text color="white">{item.desc}</Text>
+                        <Image
+                            source={item.source}
+                            resizeMode="contain"
+                            style={{ width: width, height: height / 2, overflow: 'visible' }}
+                            />
+                        
+                    </Block>
                 )}
                 onScroll={
                     Animated.event([{
@@ -111,10 +117,11 @@ class Welcome extends React.Component {
                     });
 
                     return (
+
                         <Block
                             animated
                             flex={false}
-                            color="gray"
+                            color="white"
                             key={`step-${index}`}
                             style={[styles.steps, { opacity }]}
                         />
@@ -130,10 +137,11 @@ class Welcome extends React.Component {
             inputRange: [0, 1, 2],
             outputRange: ['rgba(14 ,134, 227, 1)', 'rgba(3, 188, 132, 1)', 'rgba(253, 200, 76, 1)'],
         });
+
         return (bgColor);
     }
 
-   
+
 
     render() {
         const { navigation } = this.props;
@@ -149,8 +157,8 @@ class Welcome extends React.Component {
                         <Text h1 primary> Greener </Text>
                         </Text>
                         <Text h3 gray2 center style={{ marginTop: theme.sizes.padding / 2 }}>
-                            Enjoy the experience.
-                    </Text>
+                            {this.state.currentText}
+                        </Text>
                     </Block>
                     <Block center middle>
                         {this.renderIllustrations()}
@@ -176,9 +184,9 @@ class Welcome extends React.Component {
 
 Welcome.defaultProps = {
     illustrations: [
-        { id: 1, source: require('../assets/images/onboarding1.png') },
-        { id: 2, source: require('../assets/images/onboarding2.png') },
-        { id: 3, source: require('../assets/images/onboarding3.png') },
+        { id: 1, source: require('../assets/images/onboarding1.png'), title: "Titulo 1", desc: "descricao 1" },
+        { id: 2, source: require('../assets/images/onboarding2.png'), title: "Titulo 2", desc: "descricao 2" },
+        { id: 3, source: require('../assets/images/onboarding3.png'), title: "Titulo 3", desc: "descricao 3" },
     ]
 }
 
