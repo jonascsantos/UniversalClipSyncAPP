@@ -88,10 +88,9 @@ class Welcome extends React.Component {
                             resizeMode="contain"
                             style={{ width: width, height: height / 2, overflow: 'visible' }}
                         />
-                        <Block middle center>
-                            <Text h1 bold center color="white">{item.title}</Text>
-                            <Text h2 light color="white">{item.desc}</Text>
-
+                        <Block middle center style={styles.container}>
+                            <Text center h1 bold color="white" >{item.title}</Text>
+                            <Text center h2 light color="white" >{item.desc}</Text>
                         </Block>
                     </Block>
                 )}
@@ -175,8 +174,8 @@ class Welcome extends React.Component {
 Welcome.defaultProps = {
     illustrations: [
         { id: 1, source: require('../assets/images/onboarding1.png'), title: "Shared Clipboard", desc: "Easily sync your clipboard with any connected device!" },
-        { id: 2, source: require('../assets/images/onboarding2.png'), title: "Titulo 2", desc: "descricao 2" },
-        { id: 3, source: require('../assets/images/onboarding3.png'), title: "Titulo 3", desc: "descricao 3" },
+        { id: 2, source: require('../assets/images/onboarding2.png'), title: "New Feature: Tap to Sync", desc: "Tap the icon for an instant sync." },
+        { id: 3, source: require('../assets/images/onboarding3.png'), title: "Multiplatform Environment", desc: "Available for Android, IOS, Windows, Linux and Mac OS" },
     ]
 }
 
@@ -195,6 +194,10 @@ const styles = StyleSheet.create({
         marginTop: 20,
         padding: theme.sizes.padding,
     },
+    container: {
+        flex: 1,
+        width: width
+    },  
 
     steps: {
         width: 5,
