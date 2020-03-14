@@ -3,6 +3,8 @@ import { StatusBar, Animated, Image, Dimensions, Modal, StyleSheet, ScrollView, 
 
 import { Text, Block, Button } from '../components'
 import { theme } from '../constants'
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { ThemeColors } from 'react-navigation';
 
 const { width, height } = Dimensions.get('window');
 
@@ -13,7 +15,6 @@ class Welcome extends React.Component {
 
     state = {
         showTerms: false,
-        currentText: "TESTEEE"
     }
 
     renderTermsService() {
@@ -82,14 +83,16 @@ class Welcome extends React.Component {
                 keyExtractor={(item) => `${item.id}`}
                 renderItem={({ item }) => (
                     <Block center top>
-                        <Text color="white">{item.title}</Text>
-                        <Text color="white">{item.desc}</Text>
                         <Image
                             source={item.source}
                             resizeMode="contain"
                             style={{ width: width, height: height / 2, overflow: 'visible' }}
-                            />
-                        
+                        />
+                        <Block middle center>
+                            <Text h1 bold center color="white">{item.title}</Text>
+                            <Text h2 light color="white">{item.desc}</Text>
+
+                        </Block>
                     </Block>
                 )}
                 onScroll={
@@ -142,7 +145,6 @@ class Welcome extends React.Component {
     }
 
 
-
     render() {
         const { navigation } = this.props;
 
@@ -150,27 +152,15 @@ class Welcome extends React.Component {
             <>
                 <StatusBar barStyle="dark-content" />
                 <Block animated color={this.bgchangeColor()}>
-
-                    <Block center middle flex={0.5}>
-                        <Text h1 center bold>
-                            Your Home.
-                        <Text h1 primary> Greener </Text>
-                        </Text>
-                        <Text h3 gray2 center style={{ marginTop: theme.sizes.padding / 2 }}>
-                            {this.state.currentText}
-                        </Text>
-                    </Block>
+                    <TouchableWithoutFeedback style={styles.skipButton} onPress={() => console.log("pressed")}>
+                        <Text color="white" h2 light>Skip</Text>
+                    </TouchableWithoutFeedback>
                     <Block center middle>
                         {this.renderIllustrations()}
                         {this.renderSteps()}
                     </Block>
-                    <Block middle flex={0.5} margin={[0, theme.sizes.padding * 2]}>
-                        <Button gradient onPress={() => navigation.navigate('Login')}>
-                            <Text center semibold white>Login</Text>
-                        </Button>
-                        <Button shadow onPress={() => navigation.navigate('Signup')}>
-                            <Text center semibold>Signup</Text>
-                        </Button>
+                    
+                    <Block middle flex={0.2} margin={[0, theme.sizes.padding * 2]}>
                         <Button onPress={() => this.setState({ showTerms: true })}>
                             <Text center caption gray>Terms of Service</Text>
                         </Button>
@@ -184,7 +174,7 @@ class Welcome extends React.Component {
 
 Welcome.defaultProps = {
     illustrations: [
-        { id: 1, source: require('../assets/images/onboarding1.png'), title: "Titulo 1", desc: "descricao 1" },
+        { id: 1, source: require('../assets/images/onboarding1.png'), title: "Shared Clipboard", desc: "Easily sync your clipboard with any connected device!" },
         { id: 2, source: require('../assets/images/onboarding2.png'), title: "Titulo 2", desc: "descricao 2" },
         { id: 3, source: require('../assets/images/onboarding3.png'), title: "Titulo 3", desc: "descricao 3" },
     ]
@@ -199,14 +189,14 @@ const styles = StyleSheet.create({
         right: 0,
         left: 0,
     },
-    test: {
-        position: 'absolute',
-        height: 30,
-        width: 30,
+
+    skipButton: {
+        alignItems: "flex-end",
+        marginTop: 20,
+        padding: theme.sizes.padding,
     },
 
     steps: {
-
         width: 5,
         height: 5,
         borderRadius: 5,
