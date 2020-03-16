@@ -66,11 +66,12 @@ class Welcome extends React.Component {
                 }
             >
                 {onboarding.map((item, index) => (
-                    <Block style={styles.containerImageText} center top>
+                
+                <Block style={styles.containerImageText} key={`img-${index}`} center top>
                         <Image
                             source={item.source}
                             resizeMode="contain"
-                            style={{ width: width, height: height / 2, overflow: 'visible' }}
+                            style={{ width: width / 1.2, height: height / 2, overflow: 'visible' }}
                         />
                         <Block middle center style={styles.container} flex={0.1}>
                             <Text center h1 bold color="white" style={styles.text} >{item.title}</Text>
@@ -123,14 +124,12 @@ class Welcome extends React.Component {
         const { navigation } = this.props;
 
         return (
-            <>
-                <StatusBar barStyle="dark-content" />
                 <Block animated color={this.bgchangeColor()}>
+                    <StatusBar barStyle="dark-content" />
                     <Block margin={[0, 0]} flex={1} center middle>
                         {this.renderIllustrations()}
                         {this.renderSteps()}
                     </Block>
-
                     <Block middle flex={0.25} margin={[0, theme.sizes.padding * 2]}>
                         <Button outline color="transparent" onPress={() => navigation.navigate('Login')}>
                             <Text center semibold white>Login</Text>
@@ -141,7 +140,6 @@ class Welcome extends React.Component {
                     </Block>
                     {this.renderTermsService()}
                 </Block>
-            </>
         )
     }
 }
@@ -171,7 +169,8 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        width: width
+        width: width,
+        paddingHorizontal: theme.sizes.padding
     },
 
     containerImageText: {
@@ -183,10 +182,10 @@ const styles = StyleSheet.create({
     },
 
     steps: {
-        width: 8,
-        height: 8,
-        borderRadius: 8,
-        marginHorizontal: 5,
+        width: 6,
+        height: 6,
+        borderRadius: 6,
+        marginHorizontal: 3,
     },
 
 })
