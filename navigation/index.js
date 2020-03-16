@@ -36,9 +36,14 @@ const screens = createStackNavigator({
         headerBackImage:() => <Icon name="left" size={30} color="black" />,
         headerBackTitle: null,
         headerLeftContainerStyle: {
-            
+            alignItems: 'center',
+            marginLeft: theme.sizes.base * 2,
+            paddingRight: theme.sizes.base,
         },
-        headerRightContainerStyle: {},
+        headerRightContainerStyle: {
+            alignItems: 'center',
+            paddingRight: theme.sizes.base,
+        },
     }
 });
 
