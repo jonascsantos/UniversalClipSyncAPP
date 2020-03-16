@@ -82,14 +82,14 @@ class Welcome extends React.Component {
                 extraData={this.state}
                 keyExtractor={(item) => `${item.id}`}
                 renderItem={({ item }) => (
-                    <Block center top>
+                    <Block style={styles.containerImageText} center top>
                         <Image
                             source={item.source}
                             resizeMode="contain"
                             style={{ width: width, height: height / 2, overflow: 'visible' }}
                         />
-                        <Block middle center style={styles.container}>
-                            <Text center h1 bold color="white" >{item.title}</Text>
+                        <Block middle center style={styles.container} flex={0.1}>
+                            <Text center h1 bold color="white" style={styles.text} >{item.title}</Text>
                             <Text center h2 light color="white" >{item.desc}</Text>
                         </Block>
                     </Block>
@@ -117,9 +117,7 @@ class Welcome extends React.Component {
                         outputRange: [0.4, 1, 0.4],
                         extrapolate: 'clamp',
                     });
-
                     return (
-
                         <Block
                             animated
                             flex={false}
@@ -137,7 +135,7 @@ class Welcome extends React.Component {
         const stepPosition = Animated.divide(this.scrollX, width);
         const bgColor = stepPosition.interpolate({
             inputRange: [0, 1, 2],
-            outputRange: ['rgba(14 ,134, 227, 1)', 'rgba(3, 188, 132, 1)', 'rgba(253, 200, 76, 1)'],
+            outputRange: ['rgba(14 ,134, 227, 1)', 'rgba(0,174,211, 1)', 'rgba(3, 188, 132, 1)'],
         });
 
         return (bgColor);
@@ -151,15 +149,15 @@ class Welcome extends React.Component {
             <>
                 <StatusBar barStyle="dark-content" />
                 <Block animated color={this.bgchangeColor()}>
-                    <TouchableWithoutFeedback style={styles.skipButton} onPress={() => console.log("pressed")}>
-                        <Text color="white" h2 light>Skip</Text>
-                    </TouchableWithoutFeedback>
-                    <Block center middle>
+                    <Block margin={[0, 0]} flex={1} center middle>
                         {this.renderIllustrations()}
                         {this.renderSteps()}
                     </Block>
-                    
-                    <Block middle flex={0.2} margin={[0, theme.sizes.padding * 2]}>
+
+                    <Block middle flex={0.25} margin={[0, theme.sizes.padding * 2]}>
+                        <Button outline color="transparent" onPress={() => navigation.navigate('Login')}>
+                            <Text center semibold white>Login</Text>
+                        </Button>
                         <Button onPress={() => this.setState({ showTerms: true })}>
                             <Text center caption gray>Terms of Service</Text>
                         </Button>
@@ -197,7 +195,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: width
-    },  
+    },
+
+    containerImageText: {
+        marginTop: 100
+    },
+
+    text: {
+        paddingVertical: theme.sizes.padding / 2
+    },
 
     steps: {
         width: 5,

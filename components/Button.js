@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { theme } from "../constants";
+import { NavigationEvents } from "react-navigation";
 
 class Button extends Component {
   render() {
@@ -16,6 +17,7 @@ class Button extends Component {
       start,
       locations,
       shadow,
+      outline,
       children,
       ...props
     } = this.props;
@@ -23,6 +25,7 @@ class Button extends Component {
     const buttonStyles = [
       styles.button,
       shadow && styles.shadow,
+      outline && styles.outline,
       color && styles[color], // predefined styles colors for backgroundColor
       color && !styles[color] && { backgroundColor: color }, // custom backgroundColor
       style
@@ -44,6 +47,18 @@ class Button extends Component {
           >
             {children}
           </LinearGradient>
+        </TouchableOpacity>
+      );
+    }
+
+    if (outline) {
+      return (
+        <TouchableOpacity
+          style={buttonStyles}
+          activeOpacity={opacity || 0.8}
+          {...props}
+        >
+          {children}
         </TouchableOpacity>
       );
     }
@@ -84,6 +99,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 10
+  },
+
+  outline: {
+    borderColor: "white",
+    borderWidth: 1
   },
   accent: { backgroundColor: theme.colors.accent },
   primary: { backgroundColor: theme.colors.primary },
