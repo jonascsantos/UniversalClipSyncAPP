@@ -65,7 +65,6 @@ class Welcome extends React.Component {
                     }])
                 }
             >
-                {console.log(onboarding)}
                 {onboarding.map((item, index) => (
                     <Block style={styles.containerImageText} center top>
                         <Image
@@ -85,12 +84,11 @@ class Welcome extends React.Component {
     }
 
     renderSteps() {
-        const { illustrations } = this.props;
         const stepPosition = Animated.divide(this.scrollX, width);
 
         return (
             <Block row center middle style={styles.stepsContainer}>
-                {illustrations.map((item, index) => {
+                {onboarding.map((item, index) => {
                     const opacity = stepPosition.interpolate({
                         inputRange: [index - 1, index, index + 1],
                         outputRange: [0.4, 1, 0.4],
@@ -185,10 +183,10 @@ const styles = StyleSheet.create({
     },
 
     steps: {
-        width: 5,
-        height: 5,
-        borderRadius: 5,
-        marginHorizontal: 2.5,
+        width: 8,
+        height: 8,
+        borderRadius: 8,
+        marginHorizontal: 5,
     },
 
 })
