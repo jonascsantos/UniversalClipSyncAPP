@@ -1,10 +1,9 @@
 import React from 'react'
-import { StatusBar, Animated, Image, Dimensions, Modal, StyleSheet, ScrollView, FlatList } from 'react-native'
+import { StatusBar, Animated, Image, Dimensions, Modal, StyleSheet, ScrollView } from 'react-native'
 
-import { Text, Block, Button } from '../components'
-import { theme } from '../constants'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import { ThemeColors } from 'react-navigation';
+import { Text, Block, Button } from '../components';
+import { theme } from '../constants';
+import { onboarding } from '../constants/images';
 
 const { width, height } = Dimensions.get('window');
 
@@ -49,19 +48,25 @@ class Welcome extends React.Component {
     }
 
     renderIllustrations() {
-        const { illustrations } = this.props;
         return (
-            <FlatList
+            <ScrollView
                 horizontal
                 pagingEnabled
                 scrollEnabled
-                showsHorizontalScrollIndicator={false}
+                decelerationRate={0}
                 scrollEventThrottle={16}
                 snapToAlignment="center"
-                data={illustrations}
-                extraData={this.state}
-                keyExtractor={(item) => `${item.id}`}
-                renderItem={({ item }) => (
+                showsHorizontalScrollIndicator={false}
+                onScroll={
+                    Animated.event([{
+                        nativeEvent: {
+                            contentOffset: { x: this.scrollX }
+                        }
+                    }])
+                }
+            >
+                {console.log(onboarding)}
+                {onboarding.map((item, index) => (
                     <Block style={styles.containerImageText} center top>
                         <Image
                             source={item.source}
@@ -73,15 +78,9 @@ class Welcome extends React.Component {
                             <Text center h2 light color="white" >{item.desc}</Text>
                         </Block>
                     </Block>
-                )}
-                onScroll={
-                    Animated.event([{
-                        nativeEvent: {
-                            contentOffset: { x: this.scrollX }
-                        }
-                    }])
-                }
-            />
+                ))}
+
+            </ScrollView>
         );
     }
 
