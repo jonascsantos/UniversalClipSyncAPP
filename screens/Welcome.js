@@ -17,48 +17,28 @@ class Welcome extends React.Component {
         showTerms: false,
     }
 
+    loremIpsumText() {
+        return (
+            <Text caption gray height={18}>
+                Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+                Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
+            </Text>
+        )
+    }
+
     renderTermsService() {
         return (
             <Modal animationType="slide" visible={this.state.showTerms}>
                 <Block padding={[theme.sizes.padding * 2, theme.sizes.padding]} space="between">
                     <Text h2 light>Terms of Service</Text>
                     <ScrollView style={{ paddingVertical: theme.sizes.padding }}>
-                        <Text caption gray height={18}>
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                        </Text>
-                        <Text caption gray height={18}>
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                        </Text>
-                        <Text caption gray height={18}>
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                        </Text>
-                        <Text caption gray height={18}>
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                        </Text>
-                        <Text caption gray height={18}>
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                        </Text>
-                        <Text caption gray height={18}>
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                        </Text>
-                        <Text caption gray height={18}>
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                            Lorem ipsum dolor lorem ipsom dolor met consetur adipsiun elit loren ipsum dolor
-                        </Text>
-
+                        {this.loremIpsumText()}
+                        {this.loremIpsumText()}
+                        {this.loremIpsumText()}
+                        {this.loremIpsumText()}
+                        {this.loremIpsumText()}
+                        {this.loremIpsumText()}
                     </ScrollView>
                     <Button gradient onPress={() => this.setState({ showTerms: false })} >
                         <Text center white>I understand</Text>
