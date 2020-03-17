@@ -35,7 +35,7 @@ const screens = createStackNavigator({
             borderBottomColor: "transparent",
             elevation: 0,
         },
-        headerBackImage:() => <Icon name="arrowleft" size={30} color={theme.colors.gray2} />,
+        headerBackImage:() => <Icon name="arrowleft" size={30} color={theme.colors.gray3} />,
         headerBackTitle: null,
         headerLeftContainerStyle: {
             alignItems: 'center',

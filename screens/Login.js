@@ -64,8 +64,8 @@ export default class Login extends Component {
                             />
                             <Block bottom row center margin={[15, 0, 40, 0]}>
                                 <Text color={theme.colors.primary} h1 bold style={{ marginRight: 2 }}>Universal</Text>
-                                <Text color={theme.colors.gray} h1 >Clip</Text>
-                                <Text color={theme.colors.gray} italic bottom h1 >Sync</Text>
+                                <Text color={theme.colors.gray4} h1 >Clip</Text>
+                                <Text color={theme.colors.gray4} italic bottom h1 >Sync</Text>
                             </Block>
                         </Block>
                         <Input
@@ -104,7 +104,7 @@ export default class Login extends Component {
 
                         <Block center row middle margin={[20, 0]}>
                             <View style={styles.hairline} />
-                            <Text bold caption gray>  OR  </Text>
+                            <Text bold caption gray4>  OR  </Text>
                             <View style={styles.hairline} />
                         </Block>
 
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     },
 
     hairline: {
-        backgroundColor: theme.colors.gray,
+        backgroundColor: theme.colors.gray4,
         height: 2,
         width: 100
     },
