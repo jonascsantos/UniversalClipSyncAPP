@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { StyleSheet } from 'react-native'
+
+import { Text, Block, Button } from '../components';
+
 
 export default class Signup extends Component {
+    static navigationOptions = { title: '' };
+
     render() {
         return (
-            <View>
+            <Block>
                 <Text> Signup </Text>
-            </View>
+                <Text> Signup </Text>
+                <Text> Signup </Text>
+            </Block>
         )
     }
 }

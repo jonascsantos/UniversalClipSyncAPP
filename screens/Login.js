@@ -14,8 +14,8 @@ const VALID_PASSWORD = 'subscribe';
 
 export default class Login extends Component {
     state = {
-        email: '',
-        password: '',
+        email: VALID_EMAIL,
+        password: VALID_PASSWORD,
         errors: [],
         loading: false,
     }
@@ -54,7 +54,7 @@ export default class Login extends Component {
 
         return (
             <KeyboardAvoidingView behavior="height" style={styles.login}>
-                <Block color={theme.colors.white} bottom padding={[100, theme.sizes.padding * 2]}>
+                <Block color={theme.colors.white} bottom padding={[100, theme.sizes.base * 2]}>
                     <Block middle >
                         <Block flex={false} center>
                             <Image
@@ -113,7 +113,7 @@ export default class Login extends Component {
                                 <Image
                                     source={images.logos.google}
                                     resizeMode="contain"
-                                    style={{ width: theme.sizes.base * 3, marginHorizontal: 10, overflow: 'visible' }}
+                                    style={{ width: theme.sizes.base, marginHorizontal: 10, overflow: 'visible' }}
                                 />
                                 <Text caption center>
                                     Continue with Google
@@ -126,7 +126,7 @@ export default class Login extends Component {
                                 <Image
                                     source={images.logos.facebook}
                                     resizeMode="contain"
-                                    style={{ width: theme.sizes.base * 3, marginHorizontal: 10, overflow: 'visible' }}
+                                    style={{ width: theme.sizes.base , marginHorizontal: 10, overflow: 'visible' }}
                                 />
                                 <Text caption center white>
                                     Continue with Facebook
@@ -139,7 +139,7 @@ export default class Login extends Component {
                                 <Image
                                     source={images.logos.apple}
                                     resizeMode="contain"
-                                    style={{ width: theme.sizes.base * 3, marginHorizontal: 10, overflow: 'visible' }}
+                                    style={{ width: theme.sizes.base , marginHorizontal: 10, overflow: 'visible' }}
                                 />
                                 <Text caption white>
                                     Continue with Apple
