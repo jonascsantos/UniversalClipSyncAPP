@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Animated } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 import { theme } from "../constants";
 
@@ -96,6 +97,7 @@ export default class Block extends Component {
     }
   }
 
+
   render() {
     const {
       flex,
@@ -112,6 +114,7 @@ export default class Block extends Component {
       color,
       space,
       padding,
+      gradient,
       margin,
       animated,
       wrap,
@@ -151,6 +154,21 @@ export default class Block extends Component {
       );
     }
 
+    if (gradient) {
+      return (
+          <LinearGradient
+            start={{x:0, y:0}}
+            end={{x: 1, y: 1 }}
+            locations={[0.1, 0.9]}
+            style={blockStyles} {...props}
+            colors={["#009BD3", "#00D0B5"]}
+          >
+            {children}
+          </LinearGradient>
+      );
+    }
+
+
     return (
       <View style={blockStyles} {...props}>
         {children}
@@ -158,6 +176,7 @@ export default class Block extends Component {
     );
   }
 }
+
 
 export const styles = StyleSheet.create({
   block: {
