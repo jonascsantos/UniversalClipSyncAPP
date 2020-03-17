@@ -95,15 +95,15 @@ export default class Login extends Component {
                             </Text>
                         </Button>
 
-                        <Button color="#3b5998">
-                            <Block style={styles.socialButton} middle center>
+                        <Button style={styles.socialButton} color="#FFFFFF">
+                            <Block middle center>
                                 <Text center>
                                     Continue with Google
                                 </Text>
                             </Block>
                         </Button>
 
-                        <Button color="#3b5998">
+                        <Button style={styles.socialButton} color="#3b5998">
                             <Block middle center>
                                 <Text center white>
                                     Continue with Facebook
@@ -111,7 +111,7 @@ export default class Login extends Component {
                             </Block>
                         </Button>
 
-                        <Button color="#000000">
+                        <Button style={styles.socialButton} color="#000000">
                             <Block middle center>
                                 <Text white>
                                     Continue with Apple
@@ -135,6 +135,11 @@ const styles = StyleSheet.create({
         borderBottomColor: theme.colors.gray2,
         borderBottomWidth: StyleSheet.hairlineWidth,
     },
+
+    socialButton: {
+        borderWidth: 0.3,
+        borderRadius: 30,
+    },  
 
     login: {
         flex: 1,
