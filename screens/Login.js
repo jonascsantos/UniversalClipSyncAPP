@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const { width, height } = Dimensions.get('window');
 
-const VALID_EMAIL = 'contact@teste.com';
+const VALID_EMAIL = 'contact@forgote.com';
 const VALID_PASSWORD = 'subscribe';
 
 
@@ -53,16 +53,16 @@ export default class Login extends Component {
         const hasErrors = key => errors.includes(key) ? styles.hasErrors : null;
 
         return (
-            <KeyboardAvoidingView behavior="padding" style={styles.login}>
+            <KeyboardAvoidingView behavior="height" style={styles.login}>
                 <Block color={theme.colors.white} bottom padding={[100, theme.sizes.padding * 2]}>
-                    <Block middle>
+                    <Block middle >
                         <Block flex={false} center>
                             <Image
                                 source={images.logos.app}
                                 resizeMode="contain"
                                 style={{ width: width, height: height / 5, overflow: 'visible' }}
                             />
-                            <Block bottom row center margin={[40, 0]}>
+                            <Block bottom row center margin={[15, 0, 40, 0]}>
                                 <Text color={theme.colors.primary} h1 bold style={{ marginRight: 2 }}>Universal</Text>
                                 <Text color={theme.colors.gray} h1 >Clip</Text>
                                 <Text color={theme.colors.gray} italic bottom h1 >Sync</Text>
@@ -83,28 +83,28 @@ export default class Login extends Component {
                             defaultValue={this.state.password}
                             onChangeText={text => this.setState({ password: text })}
                         />
-                        
-                        <Button flex={false} onPress={() => navigation.navigate('Forgot')}>
+
+                        <Button style={styles.forgot} onPress={() => navigation.navigate('Forgot')}>
                             <Text caption gray center style={{ textDecorationLine: 'underline' }}>
                                 Forgot your password?
                             </Text>
                         </Button>
-                        
+
                         <Button gradient onPress={() => { this.handleLogin() }}>
                             {loading ? <ActivityIndicator size="small" color="white" /> :
                                 <Text bold white center>Continue</Text>
                             }
                         </Button>
 
-                        <Button onPress={() => navigation.navigate('Forgot')}>
+                        <Button onPress={() => navigation.navigate('Signup')}>
                             <Text caption gray center style={{ textDecorationLine: 'underline' }}>
-                                Forgot your password?
+                                Don't have an Account ? SIGN UP
                             </Text>
                         </Button>
 
-                        <Block center row middle margin={[20,0]}>
+                        <Block center row middle margin={[20, 0]}>
                             <View style={styles.hairline} />
-                            <Text bold caption>  OR  </Text>
+                            <Text bold caption gray>  OR  </Text>
                             <View style={styles.hairline} />
                         </Block>
 
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     },
 
     hairline: {
-        backgroundColor: '#A2A2A2',
+        backgroundColor: theme.colors.gray,
         height: 2,
         width: 100
     },
@@ -175,6 +175,11 @@ const styles = StyleSheet.create({
         elevation: 1
     },
 
+    forgot :{
+        marginVertical: 0,
+        paddingVertical: 0,
+    },
+    
     login: {
         flex: 1,
         justifyContent: "center"
