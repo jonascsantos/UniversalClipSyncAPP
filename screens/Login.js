@@ -175,11 +175,11 @@ const styles = StyleSheet.create({
         elevation: 1
     },
 
-    forgot :{
+    forgot: {
         marginVertical: 0,
         paddingVertical: 0,
     },
-    
+
     login: {
         flex: 1,
         justifyContent: "center"
