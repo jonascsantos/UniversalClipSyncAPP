@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Dimensions, ActivityIndicator, Image, Keyboard, StyleSheet, KeyboardAvoidingView } from 'react-native'
+import { Dimensions, View, ActivityIndicator, Image, Keyboard, StyleSheet, KeyboardAvoidingView } from 'react-native'
 
 import { Text, Block, Button, Input } from '../components'
 import { theme, images } from '../constants'
@@ -55,11 +55,10 @@ export default class Login extends Component {
         return (
             <KeyboardAvoidingView behavior="padding" style={styles.login}>
                 <Block color={theme.colors.white} bottom padding={[100, theme.sizes.padding * 2]}>
-                    <Block bottom>
+                    <Block middle>
                         <Block flex={false} center>
-
                             <Image
-                                source={images.logo.source}
+                                source={images.logos.app}
                                 resizeMode="contain"
                                 style={{ width: width, height: height / 5, overflow: 'visible' }}
                             />
@@ -84,40 +83,68 @@ export default class Login extends Component {
                             defaultValue={this.state.password}
                             onChangeText={text => this.setState({ password: text })}
                         />
+                        
+                        <Button flex={false} onPress={() => navigation.navigate('Forgot')}>
+                            <Text caption gray center style={{ textDecorationLine: 'underline' }}>
+                                Forgot your password?
+                            </Text>
+                        </Button>
+                        
                         <Button gradient onPress={() => { this.handleLogin() }}>
                             {loading ? <ActivityIndicator size="small" color="white" /> :
-                                <Text bold white center>Login</Text>
+                                <Text bold white center>Continue</Text>
                             }
                         </Button>
+
                         <Button onPress={() => navigation.navigate('Forgot')}>
                             <Text caption gray center style={{ textDecorationLine: 'underline' }}>
                                 Forgot your password?
                             </Text>
                         </Button>
 
+                        <Block center row middle margin={[20,0]}>
+                            <View style={styles.hairline} />
+                            <Text bold caption>  OR  </Text>
+                            <View style={styles.hairline} />
+                        </Block>
+
                         <Button style={styles.socialButton} color="#FFFFFF">
-                            <Block middle center>
-                                <Text center>
+                            <Block middle center row>
+                                <Image
+                                    source={images.logos.google}
+                                    resizeMode="contain"
+                                    style={{ width: theme.sizes.base * 3, marginHorizontal: 10, overflow: 'visible' }}
+                                />
+                                <Text caption center>
                                     Continue with Google
                                 </Text>
                             </Block>
                         </Button>
 
                         <Button style={styles.socialButton} color="#3b5998">
-                            <Block middle center>
-                                <Text center white>
+                            <Block middle center row>
+                                <Image
+                                    source={images.logos.facebook}
+                                    resizeMode="contain"
+                                    style={{ width: theme.sizes.base * 3, marginHorizontal: 10, overflow: 'visible' }}
+                                />
+                                <Text caption center white>
                                     Continue with Facebook
                                 </Text>
                             </Block>
                         </Button>
 
                         <Button style={styles.socialButton} color="#000000">
-                            <Block middle center>
-                                <Text white>
+                            <Block middle row center>
+                                <Image
+                                    source={images.logos.apple}
+                                    resizeMode="contain"
+                                    style={{ width: theme.sizes.base * 3, marginHorizontal: 10, overflow: 'visible' }}
+                                />
+                                <Text caption white>
                                     Continue with Apple
                                 </Text>
                             </Block>
-
                         </Button>
 
                         <Block flex={1} />
@@ -136,10 +163,17 @@ const styles = StyleSheet.create({
         borderBottomWidth: StyleSheet.hairlineWidth,
     },
 
+    hairline: {
+        backgroundColor: '#A2A2A2',
+        height: 2,
+        width: 100
+    },
+
     socialButton: {
-        borderWidth: 0.3,
+        borderWidth: 0.1,
         borderRadius: 30,
-    },  
+        elevation: 1
+    },
 
     login: {
         flex: 1,
