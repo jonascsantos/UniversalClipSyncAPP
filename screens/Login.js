@@ -3,7 +3,6 @@ import { Dimensions, View, ActivityIndicator, Image, Keyboard, StyleSheet, Keybo
 
 import { Text, Block, Button, Input } from '../components'
 import { theme, images } from '../constants'
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 const { width, height } = Dimensions.get('window');
 
@@ -55,19 +54,20 @@ export default class Login extends Component {
         return (
             <KeyboardAvoidingView behavior="height" style={styles.login}>
                 <Block color={theme.colors.white} bottom padding={[100, theme.sizes.base * 2]}>
-                    <Block middle >
+                    <Block middle>
                         <Block flex={false} center>
                             <Image
                                 source={images.logos.app}
                                 resizeMode="contain"
                                 style={{ width: width, height: height / 5, overflow: 'visible' }}
                             />
-                            <Block bottom row center margin={[15, 0, 40, 0]}>
+                            <Block bottom row center margin={[15, 0, 20, 0]}>
                                 <Text color={theme.colors.primary} h1 bold style={{ marginRight: 2 }}>Universal</Text>
                                 <Text color={theme.colors.gray4} h1 >Clip</Text>
                                 <Text color={theme.colors.gray4} italic bottom h1 >Sync</Text>
                             </Block>
                         </Block>
+
                         <Input
                             label="Email"
                             error={hasErrors('email')}
@@ -83,7 +83,6 @@ export default class Login extends Component {
                             defaultValue={this.state.password}
                             onChangeText={text => this.setState({ password: text })}
                         />
-
                         <Button style={styles.forgot} onPress={() => navigation.navigate('Forgot')}>
                             <Text caption gray center style={{ textDecorationLine: 'underline' }}>
                                 Forgot your password?
@@ -96,13 +95,13 @@ export default class Login extends Component {
                             }
                         </Button>
 
-                        <Button onPress={() => navigation.navigate('SignUp')}>
+                        <Button style={styles.forgot} onPress={() => navigation.navigate('SignUp')}>
                             <Text caption gray center style={{ textDecorationLine: 'underline' }}>
                                 Don't have an Account ? SIGN UP
                             </Text>
                         </Button>
 
-                        <Block center row middle margin={[20, 0]}>
+                        <Block center row middle margin={[10, 0]}>
                             <View style={styles.hairline} />
                             <Text bold caption gray4>  OR  </Text>
                             <View style={styles.hairline} />
@@ -165,7 +164,7 @@ const styles = StyleSheet.create({
 
     hairline: {
         backgroundColor: theme.colors.gray4,
-        height: 2,
+        height: 1,
         width: 100
     },
 
