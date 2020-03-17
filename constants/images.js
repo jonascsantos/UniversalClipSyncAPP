@@ -16,4 +16,9 @@ export const onboarding = [
     }
 ]
 
-export default onboarding;
+export const logo = {source: require('../assets/icons/logo.png')}
+
+export default {
+    onboarding,
+    logo
+};

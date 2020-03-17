@@ -21,6 +21,7 @@ export default class Typography extends Component {
       regular,
       bold,
       semibold,
+      italic,
       medium,
       weight,
       light,
@@ -60,6 +61,7 @@ export default class Typography extends Component {
       weight && { fontWeight: weight },
       regular && styles.regular,
       bold && styles.bold,
+      italic && styles.italic,
       semibold && styles.semibold,
       medium && styles.medium,
       light && styles.light,
@@ -108,6 +110,9 @@ const styles = StyleSheet.create({
   },
   light: {
     fontWeight: "200"
+  },
+  italic: {
+    fontStyle: 'italic'
   },
   // position
   center: { textAlign: "center" },

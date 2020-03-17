@@ -1,3 +1,5 @@
+
+
 const colors = {
   accent: "#F3534A",
   primary: "#0AC4BA",
@@ -9,13 +11,13 @@ const colors = {
   gray2: "#C5CCD6"
 };
 
+
 const sizes = {
   // global sizes
   base: 16,
   font: 14,
   radius: 6,
   padding: 25,
-
   // font sizes
   h1: 26,
   h2: 20,

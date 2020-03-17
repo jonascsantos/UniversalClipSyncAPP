@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
-import { ActivityIndicator, Keyboard, StyleSheet, KeyboardAvoidingView } from 'react-native'
+import { Dimensions, ActivityIndicator, Image, Keyboard, StyleSheet, KeyboardAvoidingView } from 'react-native'
 
 import { Text, Block, Button, Input } from '../components'
-import { theme } from '../constants'
+import { theme, images } from '../constants'
+
+const { width, height } = Dimensions.get('window');
 
 const VALID_EMAIL = 'contact@teste.com';
 const VALID_PASSWORD = 'subscribe';
+
+
 
 export default class Login extends Component {
     state = {
@@ -32,7 +36,6 @@ export default class Login extends Component {
                 errors.push('password')
             }
 
-
             this.setState({ errors, loading: false });
 
             if (!errors.length) {
@@ -50,9 +53,21 @@ export default class Login extends Component {
 
         return (
             <KeyboardAvoidingView behavior="padding" style={styles.login}>
-                <Block color={theme.colors.white} padding={[100, theme.sizes.padding * 2]}>
-                    <Text h1 bold> Login </Text>
-                    <Block middle>
+                <Block color={theme.colors.white} bottom padding={[100, theme.sizes.padding * 2]}>
+                    <Block bottom>
+                        <Block flex={false} center>
+
+                            <Image
+                                source={images.logo.source}
+                                resizeMode="contain"
+                                style={{ width: width, height: height / 5, overflow: 'visible' }}
+                            />
+                            <Block bottom row center margin={[30, 0]}>
+                                <Text color={theme.colors.primary} h1 bold style={{ marginRight: 2 }}>Universal</Text>
+                                <Text color={theme.colors.gray} h1 >Clip</Text>
+                                <Text color={theme.colors.gray} italic bottom h1 >Sync</Text>
+                            </Block>
+                        </Block>
                         <Input
                             label="Email"
                             error={hasErrors('email')}
@@ -78,6 +93,7 @@ export default class Login extends Component {
                                 Forgot your password?
                             </Text>
                         </Button>
+                        <Block flex={1} />
                     </Block>
                 </Block>
             </KeyboardAvoidingView>
