@@ -2,8 +2,7 @@ import React from 'react'
 import { StatusBar, Animated, Image, Dimensions, Modal, StyleSheet, ScrollView } from 'react-native'
 
 import { Text, Block, Button } from '../components';
-import { theme } from '../constants';
-import { onboarding } from '../constants/images';
+import { theme, images } from '../constants';
 
 const { width, height } = Dimensions.get('window');
 
@@ -65,7 +64,7 @@ class Welcome extends React.Component {
                     }])
                 }
             >
-                {onboarding.map((item, index) => (
+                {images.onboarding.map((item, index) => (
                 
                 <Block style={styles.containerImageText} key={`img-${index}`} center top>
                         <Image
@@ -89,7 +88,7 @@ class Welcome extends React.Component {
 
         return (
             <Block row center middle style={styles.stepsContainer}>
-                {onboarding.map((item, index) => {
+                {images.onboarding.map((item, index) => {
                     const opacity = stepPosition.interpolate({
                         inputRange: [index - 1, index, index + 1],
                         outputRange: [0.4, 1, 0.4],

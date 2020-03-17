@@ -7,7 +7,8 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import Welcome from '../screens/Welcome';
 import Login from '../screens/Login';
-// import Forgot from '../screens/Forgot';
+import Forgot from '../screens/Forgot';
+import Signup from '../screens/Signup';
 // import Clipboard from '../screens/Clipboard';
 // import Recents from '../screens/Recents';
 // import Favourites from '../screens/Favourites';
@@ -19,7 +20,8 @@ import { theme } from '../constants'
 const screens = createStackNavigator({
     Welcome,
     Login,
-    // Forgot,
+    Signup,
+    Forgot,
     // Clipboard,
     // Recents,
     // Favourites,
