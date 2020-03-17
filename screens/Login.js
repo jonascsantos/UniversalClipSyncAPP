@@ -3,6 +3,7 @@ import { Dimensions, ActivityIndicator, Image, Keyboard, StyleSheet, KeyboardAvo
 
 import { Text, Block, Button, Input } from '../components'
 import { theme, images } from '../constants'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const { width, height } = Dimensions.get('window');
 
@@ -62,7 +63,7 @@ export default class Login extends Component {
                                 resizeMode="contain"
                                 style={{ width: width, height: height / 5, overflow: 'visible' }}
                             />
-                            <Block bottom row center margin={[30, 0]}>
+                            <Block bottom row center margin={[40, 0]}>
                                 <Text color={theme.colors.primary} h1 bold style={{ marginRight: 2 }}>Universal</Text>
                                 <Text color={theme.colors.gray} h1 >Clip</Text>
                                 <Text color={theme.colors.gray} italic bottom h1 >Sync</Text>
@@ -93,6 +94,32 @@ export default class Login extends Component {
                                 Forgot your password?
                             </Text>
                         </Button>
+
+                        <Button color="#3b5998">
+                            <Block style={styles.socialButton} middle center>
+                                <Text center>
+                                    Continue with Google
+                                </Text>
+                            </Block>
+                        </Button>
+
+                        <Button color="#3b5998">
+                            <Block middle center>
+                                <Text center white>
+                                    Continue with Facebook
+                                </Text>
+                            </Block>
+                        </Button>
+
+                        <Button color="#000000">
+                            <Block middle center>
+                                <Text white>
+                                    Continue with Apple
+                                </Text>
+                            </Block>
+
+                        </Button>
+
                         <Block flex={1} />
                     </Block>
                 </Block>
