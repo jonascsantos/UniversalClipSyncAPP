@@ -4,40 +4,39 @@ import { Alert, StyleSheet, KeyboardAvoidingView, ActivityIndicator, Keyboard } 
 import { Text, Block, Button, Input } from '../components';
 import { theme } from '../constants'
 
-const VALID_EMAIL = 'contact@forgote.com';
-
-
-export default class Forgot extends Component {
+export default class SignUp extends Component {
     static navigationOptions = { title: '' };
 
     state = {
-        email: VALID_EMAIL,
+        email: null,
+        username: null,
+        password: null,
         errors: [],
         loading: false,
     }
 
-    handleForgot() {
+    handleSignUp() {
         const { navigation } = this.props;
-        const { email } = this.state;
+        const { email, username, password } = this.state;
         const errors = [];
 
         Keyboard.dismiss();
         this.setState({ loading: true });
 
-        if (email !== VALID_EMAIL) {
-            errors.push('email');
-        }
+        if (!email) errors.push('email');
+        if (!username) errors.push('username');
+        if (!password) errors.push('password');
 
         this.setState({ errors, loading: false });
 
         if (!errors.length) {
             Alert.alert(
-                'Password sent!',
-                'Please check your email.',
+                'Success!',
+                'Your account has been created',
                 [
                     {
-                        text: 'OK', onPress: () => {
-                            navigation.navigate("Login")
+                        text: 'Continue', onPress: () => {
+                            navigation.navigate("Clipboard")
 
                         }
 
@@ -45,17 +44,7 @@ export default class Forgot extends Component {
                 ],
                 { cancelable: false }
             )
-        } else {
-            Alert.alert(
-                'Error!',
-                'Please check your email address.',
-                [
-                    { text: 'Try again', }
-                ],
-                { cancelable: false }
-            )
         }
-
     }
 
     render() {
@@ -64,20 +53,37 @@ export default class Forgot extends Component {
         const hasErrors = key => errors.includes(key) ? styles.hasErrors : null;
 
         return (
-            <KeyboardAvoidingView behavior="padding" style={styles.forgot}>
+            <KeyboardAvoidingView behavior="padding" style={styles.signup}>
                 <Block color="white" padding={[0, theme.sizes.base * 2]}>
-                    <Text h1 bold>Forgot</Text>
+                    <Text h1 bold>Sign Up</Text>
                     <Block middle >
                         <Input
+                            email
                             label="Email"
                             error={hasErrors('email')}
                             style={[styles.input, hasErrors('email')]}
                             defaultValue={this.state.email}
                             onChangeText={text => this.setState({ email: text })}
                         />
-                        <Button gradient onPress={() => { this.handleForgot() }}>
+                        <Input
+                            label="Username"
+                            error={hasErrors('username')}
+                            style={[styles.input, hasErrors('username')]}
+                            defaultValue={this.state.username}
+                            onChangeText={text => this.setState({ username: text })}
+                        />
+                        <Input
+                            secure
+                            label="Password"
+                            error={hasErrors('password')}
+                            style={[styles.input, hasErrors('password')]}
+                            defaultValue={this.state.password}
+                            onChangeText={text => this.setState({ password: text })}
+                        />
+
+                        <Button gradient onPress={() => { this.handleSignUp() }}>
                             {loading ? <ActivityIndicator size="small" color="white" /> :
-                                <Text bold white center>Forgot</Text>
+                                <Text bold white center>Sign Up</Text>
                             }
                         </Button>
                         <Button onPress={() => navigation.navigate('Login')}>
@@ -93,7 +99,7 @@ export default class Forgot extends Component {
 }
 
 const styles = StyleSheet.create({
-    forgot: {
+    signup: {
         flex: 1,
         justifyContent: 'center',
     },

@@ -96,7 +96,7 @@ export default class Login extends Component {
                             }
                         </Button>
 
-                        <Button onPress={() => navigation.navigate('Signup')}>
+                        <Button onPress={() => navigation.navigate('SignUp')}>
                             <Text caption gray center style={{ textDecorationLine: 'underline' }}>
                                 Don't have an Account ? SIGN UP
                             </Text>
