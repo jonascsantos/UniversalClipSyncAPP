@@ -4,10 +4,11 @@ import { StyleSheet, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon2 from 'react-native-vector-icons/Entypo'
 
 import { Block, Text, Button } from '../components'
 import { theme } from '../constants'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import { Forgot } from '../screens/Forgot'
 
@@ -69,17 +70,17 @@ function MyTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Clipboard"
-      activeColor={theme.colors.white}
-      labelStyle={{ fontSize: 12 }}
-      style={{ backgroundColor: "red" }}
+      activeColor="#f0edf6"
+      inactiveColor="#026356"
+      barStyle={{ backgroundColor: theme.colors.primary }}
     >
       <Tab.Screen
         name="Clipboard"
         component={Clipboard}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Clipboard',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="clipboard" color={color} size={26} />
+            <MaterialCommunityIcons name="clipboard" color={color} size={25} />
           ),
         }}
       />
@@ -87,9 +88,9 @@ function MyTabs() {
         name="Recents"
         component={Recents}
         options={{
-          tabBarLabel: 'Updates',
+          tabBarLabel: 'Recents',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="undo" color={color} size={26} />
+            <Icon2 name="back-in-time" color={color} size={25} />
           ),
         }}
       />
@@ -97,9 +98,9 @@ function MyTabs() {
         name="Favourites"
         component={Favourites}
         options={{
-          tabBarLabel: 'Updates',
+          tabBarLabel: 'Favourites',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="heart" color={color} size={26} />
+            <MaterialCommunityIcons name="heart" color={color} size={25} />
           ),
         }}
       />
@@ -109,7 +110,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Devices',
           tabBarIcon: ({ color }) => (
-            <Icon name="devices" color={color} size={26} />
+            <Icon name="devices" color={color} size={25} />
           ),
         }}
       />
