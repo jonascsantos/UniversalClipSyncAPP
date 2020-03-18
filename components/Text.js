@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   },
   // variations
   regular: {
-    fontWeight: "normal"
+    fontFamily: "sans-serif",
   },
   bold: {
     fontWeight: "bold"
@@ -110,10 +110,11 @@ const styles = StyleSheet.create({
     fontWeight: "500"
   },
   medium: {
-    fontWeight: "500"
+    fontFamily: "sans-serif-medium",
   },
   light: {
-    fontWeight: "200"
+    fontFamily: "sans-serif-light",
+    
   },
   italic: {
     fontStyle: 'italic'
