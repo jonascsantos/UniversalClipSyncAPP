@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Block, Text, Button } from '../components'
 import { theme } from '../constants'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import { ThemeColors } from 'react-navigation'
+
 
 function LogoTitle() {
     return (
@@ -16,6 +18,19 @@ function LogoTitle() {
     );
 }
 
+function MenuButton() {
+    return (
+        <Button color={theme.colors.primary} style={{ width: 50, borderRadius: 50 }}>
+            <Block middle center row>
+                <Icon name="menu" size={30} color={theme.colors.gray3} />
+            </Block>
+        </Button>
+    );
+
+}
+
+
+
 
 export default class Clipboard extends Component {
     static navigationOptions = {
@@ -24,14 +39,12 @@ export default class Clipboard extends Component {
             backgroundColor: theme.colors.primary,
         },
         headerLeft: () => (
-
-            <Button color={theme.colors.primary} style={{ width: 50, borderRadius: 50 }}>
-                <Block middle center row>
-                    <Icon name="menu" size={30} color={theme.colors.gray3} />
-                </Block>
-            </Button>
+            <MenuButton />
         ),
     };
+
+
+
 
     render() {
         return (
