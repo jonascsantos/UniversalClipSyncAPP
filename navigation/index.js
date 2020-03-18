@@ -9,7 +9,7 @@ import Welcome from '../screens/Welcome';
 import Login from '../screens/Login';
 import Forgot from '../screens/Forgot';
 import SignUp from '../screens/SignUp';
-// import Clipboard from '../screens/Clipboard';
+import Clipboard from '../screens/Clipboard';
 // import Recents from '../screens/Recents';
 // import Favourites from '../screens/Favourites';
 // import Devices from '../screens/Devices';
@@ -22,7 +22,7 @@ const screens = createStackNavigator({
     Login,
     SignUp,
     Forgot,
-    // Clipboard,
+    Clipboard,
     // Recents,
     // Favourites,
     // Devices,

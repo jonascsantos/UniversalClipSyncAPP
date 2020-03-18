@@ -21,6 +21,7 @@ export default class SignUp extends Component {
         const errors = [];
 
         Keyboard.dismiss();
+        
         this.setState({ loading: true });
 
         if (!email) errors.push('email');

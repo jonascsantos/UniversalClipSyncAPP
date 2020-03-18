@@ -27,6 +27,7 @@ export default class Typography extends Component {
       light,
       center,
       right,
+      bottom,
       spacing, // letter-spacing
       height, // line-height
       // colors
@@ -69,6 +70,7 @@ export default class Typography extends Component {
       light && styles.light,
       center && styles.center,
       right && styles.right,
+      bottom && styles.bottom,
       color && styles[color],
       color && !styles[color] && { color },
       // color shortcuts
@@ -122,6 +124,7 @@ const styles = StyleSheet.create({
   // position
   center: { textAlign: "center" },
   right: { textAlign: "right" },
+  bottom: { textAlignVertical: 'bottom'},
   // colors
   accent: { color: theme.colors.accent },
   primary: { color: theme.colors.primary },

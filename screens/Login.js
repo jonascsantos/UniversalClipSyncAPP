@@ -6,7 +6,7 @@ import { theme, images } from '../constants'
 
 const { width, height } = Dimensions.get('window');
 
-const VALID_EMAIL = 'contact@forgote.com';
+const VALID_EMAIL = 'contact@ehoq.com';
 const VALID_PASSWORD = 'subscribe';
 
 
@@ -62,9 +62,9 @@ export default class Login extends Component {
                                 style={{ width: width, height: height / 5, overflow: 'visible' }}
                             />
                             <Block bottom row center margin={[15, 0, 20, 0]}>
-                                <Text color={theme.colors.primary} h1 bold style={{ marginRight: 2 }}>Universal</Text>
-                                <Text color={theme.colors.gray4} h1 >Clip</Text>
-                                <Text color={theme.colors.gray4} italic bottom h1 >Sync</Text>
+                                <Text color={theme.colors.primary} h1 bold style={{paddingBottom: 5, marginRight: 2}}>Universal</Text>
+                                <Text color={theme.colors.gray4} h2 medium >Clip</Text>
+                                <Text color={theme.colors.gray4} italic medium bottom h2 >Sync</Text>
                             </Block>
                         </Block>
 
