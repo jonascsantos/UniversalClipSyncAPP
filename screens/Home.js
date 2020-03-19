@@ -10,29 +10,6 @@ import Icon2 from 'react-native-vector-icons/Entypo'
 import { Block, Text, Button } from '../components'
 import { theme } from '../constants'
 
-import { Forgot } from '../screens/Forgot'
-
-function LogoTitle() {
-  return (
-    <Block bottom row left>
-      <Text color={theme.colors.gray3} h1 bold style={{ marginRight: 2 }}>Universal</Text>
-      <Text color={theme.colors.gray3} h2 medium bottom style={{ paddingBottom: 1.5 }}>Clip</Text>
-      <Text color={theme.colors.gray3} bottom medium italic h2 style={{ paddingBottom: 1.5 }} >Sync</Text>
-    </Block>
-  );
-}
-
-function MenuButton() {
-  return (
-    <Button color={theme.colors.primary} style={{ width: 50, borderRadius: 50 }}>
-      <Block middle center row>
-        <Icon name="menu" size={30} color={theme.colors.gray3} />
-      </Block>
-    </Button>
-  );
-}
-
-
 function Clipboard() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -129,8 +106,25 @@ export default class Home extends Component {
     ),
   };
 
-
-
+  LogoTitle() {
+    return (
+      <Block bottom row left>
+        <Text color={theme.colors.gray3} h1 bold style={{ marginRight: 2 }}>Universal</Text>
+        <Text color={theme.colors.gray3} h2 medium bottom style={{ paddingBottom: 1.5 }}>Clip</Text>
+        <Text color={theme.colors.gray3} bottom medium italic h2 style={{ paddingBottom: 1.5 }} >Sync</Text>
+      </Block>
+    );
+  }
+  
+  MenuButton() {
+    return (
+      <Button color={theme.colors.primary} style={{ width: 50, borderRadius: 50 }}>
+        <Block middle center row>
+          <Icon name="menu" size={30} color={theme.colors.gray3} />
+        </Block>
+      </Button>
+    );
+  }
 
   render() {
     return (
