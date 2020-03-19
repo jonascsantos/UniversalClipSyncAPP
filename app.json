@@ -4,11 +4,15 @@
     "slug": "UniversalClipSyncAPP",
     "privacy": "public",
     "sdkVersion": "36.0.0",
+    "androidStatusBar": {
+      "backgroundColor": "#308FA4"
+   },
     "platforms": [
       "ios",
       "android",
       "web"
     ],
+
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

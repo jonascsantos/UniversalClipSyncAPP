@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Dimensions, View, ActivityIndicator, Image, Keyboard, StyleSheet, KeyboardAvoidingView } from 'react-native'
+import { StatusBar, Dimensions, View, ActivityIndicator, Image, Keyboard, StyleSheet, KeyboardAvoidingView } from 'react-native'
 
 import { Text, Block, Button, Input } from '../components'
 import { theme, images } from '../constants'
@@ -18,6 +18,7 @@ export default class Login extends Component {
         errors: [],
         loading: false,
     }
+
 
     handleLogin() {
         const { navigation } = this.props;
@@ -50,6 +51,9 @@ export default class Login extends Component {
         const { navigation } = this.props;
         const { loading, errors } = this.state;
         const hasErrors = key => errors.includes(key) ? styles.hasErrors : null;
+
+        StatusBar.setBarStyle('dark-content', true);
+        StatusBar.setBackgroundColor("rgba(0,0,0,0)",true)
 
         return (
             <KeyboardAvoidingView behavior="height" style={styles.login}>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, StatusBar } from 'react-native'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
@@ -9,35 +9,28 @@ import Icon2 from 'react-native-vector-icons/Entypo'
 
 import { Block, Text, Button } from '../components'
 import { theme } from '../constants'
+import Clipboard from '../screens/Clipboard'
+import Recents from '../screens/Recents'
+import Favourites from '../screens/Favourites'
+import Devices from '../screens/Devices'
 
-function Clipboard() {
+function LogoTitle() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Clipboard!</Text>
-    </View>
+    <Block bottom row left>
+      <Text color={theme.colors.gray3} h1 bold style={{ marginRight: 2 }}>Universal</Text>
+      <Text color={theme.colors.gray3} h2 medium bottom style={{ paddingBottom: 1.5 }}>Clip</Text>
+      <Text color={theme.colors.gray3} bottom medium italic h2 style={{ paddingBottom: 1.5 }} >Sync</Text>
+    </Block>
   );
 }
 
-function Recents() {
+function MenuButton() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Recents!</Text>
-    </View>
-  );
-}
-
-function Favourites() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Favourites!</Text>
-    </View>
-  );
-}
-function Devices() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Devices!</Text>
-    </View>
+    <Button color={theme.colors.primary} style={{ width: 50, borderRadius: 50 }}>
+      <Block middle center row>
+        <Icon name="menu" size={30} color={theme.colors.gray3} />
+      </Block>
+    </Button>
   );
 }
 
@@ -106,27 +99,9 @@ export default class Home extends Component {
     ),
   };
 
-  LogoTitle() {
-    return (
-      <Block bottom row left>
-        <Text color={theme.colors.gray3} h1 bold style={{ marginRight: 2 }}>Universal</Text>
-        <Text color={theme.colors.gray3} h2 medium bottom style={{ paddingBottom: 1.5 }}>Clip</Text>
-        <Text color={theme.colors.gray3} bottom medium italic h2 style={{ paddingBottom: 1.5 }} >Sync</Text>
-      </Block>
-    );
-  }
-  
-  MenuButton() {
-    return (
-      <Button color={theme.colors.primary} style={{ width: 50, borderRadius: 50 }}>
-        <Block middle center row>
-          <Icon name="menu" size={30} color={theme.colors.gray3} />
-        </Block>
-      </Button>
-    );
-  }
-
   render() {
+    StatusBar.setBackgroundColor("rgba(0,0,0,0.1)",true)
+
     return (
       <NavigationContainer>
         <MyTabs />

@@ -121,10 +121,9 @@ class Welcome extends React.Component {
 
     render() {
         const { navigation } = this.props;
-
         return (
                 <Block animated color={this.bgchangeColor()}>
-                    <StatusBar barStyle="dark-content" />
+                    <StatusBar translucent barStyle="light-content" backgroundColor="rgba(0,0,0,0.2)"/>
                     <Block margin={[0, 0]} flex={1} center middle>
                         {this.renderIllustrations()}
                         {this.renderSteps()}
