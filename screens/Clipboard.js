@@ -37,34 +37,40 @@ export default class Clipboard extends Component {
                     <Divider center style={{ width: "100%" }} />
 
                     <Block style={styles.devicesContainer}>
-                        <Card row style={styles.deviceItem} color={theme.colors.primary}>
-                            <Block flex={false} style={styles.wrapIcon}>
-                                <Icon2 name="ios-desktop" size={30} color={theme.colors.gray3} />
+                        <Card row center style={styles.deviceItem} color={theme.colors.primary}>
+                            <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
+                                <Icon name="windows-store" size={20} color={theme.colors.gray3} />
                             </Block>
-                            
-                            <Text style={styles.textCard} color="white">My Android</Text>
+                            <Text caption style={styles.textCard} color={theme.colors.gray3}>Desktop Windows</Text>
                         </Card>
-                        <Card style={styles.deviceItem} color={theme.colors.primary}>
-                            <Text style={styles.textCard} color="white">My Android 2</Text>
-                        </Card>
-                        <Card style={styles.deviceItem} color={theme.colors.primary}>
-                            <Text style={styles.textCard} color="white">Desktop</Text>
-                        </Card>
-                        <Card style={styles.deviceItem} color={theme.colors.primary}>
-                            <Text style={styles.textCard} color="white">My Iphone</Text>
-                        </Card>
-                        <Card style={styles.deviceItem} color={theme.colors.primary}>
-                            <Text style={styles.textCard} color="white">Linux</Text>
-                        </Card>
-                        <Block>
-                                <Icon2 name="ios-phone-portrait" size={30} color={theme.colors.gray3} />
+
+                        <Card row center style={styles.deviceItem} color={theme.colors.primary}>
+                            <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
+                                <Icon2 name="ios-phone-portrait" size={20} color={theme.colors.gray3} />
                             </Block>
-                            <Block>
-                                <Icon name="windows-store" size={30} color={theme.colors.gray3} />
+                            <Text caption style={styles.textCard} color={theme.colors.gray3}>My Android</Text>
+                        </Card>
+
+                        <Card row center style={styles.deviceItem} color={theme.colors.primary}>
+                            <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
+                                <Icon2 name="ios-phone-portrait" size={20} color={theme.colors.gray3} />
                             </Block>
-                            <Block>
-                                <Icon3 name="linux" size={30} color={theme.colors.gray3} />
+                            <Text caption style={styles.textCard} color={theme.colors.gray3}>IPhone 11</Text>
+                        </Card>
+
+                        <Card row center style={styles.deviceItem} color={theme.colors.primary}>
+                            <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
+                                <Icon2 name="ios-desktop" size={20} color={theme.colors.gray3} />
                             </Block>
+                            <Text caption style={styles.textCard} color={theme.colors.gray3}>My Macbook</Text>
+                        </Card>
+
+                        <Card row center style={styles.deviceItem} color={theme.colors.primary}>
+                            <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
+                                <Icon3 name="linux" size={20} color={theme.colors.gray3} />
+                            </Block>
+                            <Text caption style={styles.textCard} color={theme.colors.gray3}>Linux Device</Text>
+                        </Card>
                     </Block>
 
                     <Divider center style={{ width: "100%" }} />
@@ -86,15 +92,24 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         alignItems: "center",
-        justifyContent: "space-evenly",
+        justifyContent: "flex-start",
         alignContent: "space-around",
     },
     deviceItem: {
+        marginHorizontal: 4,
+
         flex: 0,
-        borderRadius: 100,
+        borderRadius: 40,
+        padding: 4,
     },
     textCard: {
+        paddingHorizontal: 10,
 
+    },
+    wrapIcon: {
+        width: 30,
+        borderRadius: 30,
+        height: 30,
     }
 })
 
