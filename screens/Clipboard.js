@@ -92,8 +92,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         alignItems: "center",
-        justifyContent: "flex-start",
-        alignContent: "space-around",
+        justifyContent: "center",
     },
     deviceItem: {
         marginHorizontal: 4,
