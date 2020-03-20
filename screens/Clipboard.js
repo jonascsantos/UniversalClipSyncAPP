@@ -44,18 +44,18 @@ export default class Clipboard extends Component {
                             <Text caption style={styles.textCard} color={theme.colors.gray3}>Desktop Windows</Text>
                         </Card>
 
-                        <Card row center style={styles.deviceItem} color={theme.colors.primary}>
+                        <Card row center style={styles.deviceItem} color="#E74C3C">
                             <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
-                                <Icon2 name="ios-phone-portrait" size={20} color={theme.colors.gray3} />
+                                <Icon2 name="ios-phone-portrait" size={20} color="white" />
                             </Block>
-                            <Text caption style={styles.textCard} color={theme.colors.gray3}>My Android</Text>
+                            <Text caption style={styles.textCard} color="white">My Android</Text>
                         </Card>
 
-                        <Card row center style={styles.deviceItem} color={theme.colors.primary}>
-                            <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
+                        <Card row center style={styles.deviceItem} color="rgba(0,0,0,0.07)">
+                            <Block color="#F9F9F9" middle center flex={false} style={styles.wrapIcon}>
                                 <Icon2 name="ios-phone-portrait" size={20} color={theme.colors.gray3} />
                             </Block>
-                            <Text caption style={styles.textCard} color={theme.colors.gray3}>IPhone 11</Text>
+                            <Text caption style={styles.textCard} color="rgba(0,0,0,0.4)">IPhone 11</Text>
                         </Card>
 
                         <Card row center style={styles.deviceItem} color={theme.colors.primary}>
@@ -65,9 +65,9 @@ export default class Clipboard extends Component {
                             <Text caption style={styles.textCard} color={theme.colors.gray3}>My Macbook</Text>
                         </Card>
 
-                        <Card row center style={styles.deviceItem} color={theme.colors.primary}>
-                            <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
-                                <Icon3 name="linux" size={20} color={theme.colors.gray3} />
+                        <Card row center style={styles.deviceItem} color="rgba(0,0,0,0.07)">
+                            <Block color="#F9F9F9" middle center flex={false} style={styles.wrapIcon}>
+                                <Icon3 name="linux" size={20} color="rgba(0,0,0,0.4)"/>
                             </Block>
                             <Text caption style={styles.textCard} color={theme.colors.gray3}>Linux Device</Text>
                         </Card>
