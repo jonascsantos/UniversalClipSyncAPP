@@ -5,17 +5,32 @@ import { Text, Block, Button, Input, Divider, Card, CardDevice } from '../compon
 import { theme, mocks } from '../constants'
 
 import Icon from '../components/Icons';
+import {  TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 export default class Clipboard extends Component {
     state = {
         text: "",
+        anonymous: false,
+        sendEmail: false,
+    }
+
+    handleAnonymous() {
+        const { anonymous } = this.state;
+        this.setState({ anonymous: !anonymous })
+    }
+
+    handleSendEmail() {
+        const { sendEmail } = this.state;
+        this.setState({ sendEmail: !sendEmail })
     }
 
     render() {
+        const { anonymous, sendEmail } = this.state;
+
         return (
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Block color={theme.colors.white}>
-                    <Block style={styles.input} padding={[theme.sizes.base,18]}>
+                    <Block style={styles.input} padding={[theme.sizes.base, 18]}>
                         <Block row space="between">
                             <TextInput
                                 style={{ fontSize: 16 }}
@@ -30,8 +45,8 @@ export default class Clipboard extends Component {
                         </Block>
                     </Block>
 
-                    <Divider/>
-                    
+                    <Divider />
+
                     <Block style={styles.devicesContainer}>
                         {mocks.devices.map((item, index) => {
                             return (
@@ -47,23 +62,46 @@ export default class Clipboard extends Component {
                         })}
                     </Block>
 
-                    <Divider/>
+                    <Divider />
 
                     <Block row style={styles.iconContainer}>
-                        <Block flex={false} center middle>
-                            <Block middle center style={styles.iconWrapper}>
-                                <Icon.Entypo name="mask" size={30} color={theme.colors.disabledIconTextGray} />
+                        <TouchableWithoutFeedback onPress={() => {this.handleAnonymous()}}>
+                            <Block flex={false} center middle>
+                                <Block
+                                    middle
+                                    center
+                                    color={anonymous ? theme.colors.primary : theme.colors.disabledCard}
+                                    style={styles.iconWrapper}
+                                >
+                                    <Icon.Entypo
+                                        name="mask"
+                                        size={30}
+                                        color={anonymous ? theme.colors.gray3 : theme.colors.disabledIconTextGray}
+                                    />
+                                </Block>
+                                <Text caption color={anonymous ? theme.colors.gray3 : theme.colors.disabledIconTextGray}>Anonymous Mode</Text>
                             </Block>
-                            <Text caption color={theme.colors.disabledIconTextGray}>Anonymous Mode</Text>
-                        </Block>
-                        <Block flex={false} center middle>
-                            <Block middle center style={styles.iconWrapper}>
-                                <Icon.Zocial name="email" size={30} color={theme.colors.disabledIconTextGray} />
-                            </Block>
-                            <Text caption color={theme.colors.disabledIconTextGray}>Send to Email</Text>
-                        </Block>
-                    </Block>
+                        </TouchableWithoutFeedback>
 
+                        <TouchableWithoutFeedback onPress={() => {this.handleSendEmail()}}>
+                            <Block flex={false} center middle>
+                                <Block
+                                    middle
+                                    center
+                                    color={sendEmail ? theme.colors.primary : theme.colors.disabledCard}
+                                    style={styles.iconWrapper}
+                                >
+                                    <Icon.Zocial
+                                        name="email"
+                                        size={30}
+                                        color={sendEmail ? theme.colors.gray3 : theme.colors.disabledIconTextGray}
+                                    />
+                                </Block>
+                                <Text caption color={sendEmail ? theme.colors.gray3 : theme.colors.disabledIconTextGray}>Send to Email</Text>
+                            </Block>
+                        </TouchableWithoutFeedback>
+
+                    </Block>
                 </Block>
             </ScrollView>
         )
@@ -85,7 +123,6 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     iconWrapper: {
-        backgroundColor: theme.colors.disabledCard,
         height: 50,
         width: 50,
         borderRadius: 100,
