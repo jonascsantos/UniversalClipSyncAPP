@@ -33,18 +33,9 @@ export default class Clipboard extends Component {
                     <Divider center style={{ width: "100%" }} />
 
                     <Block style={styles.devicesContainer}>
-                        <Card row center style={styles.deviceItem} color={theme.colors.primary}>
-                            <Block
-                                color="rgba(0,0,0,0.10)"
-                                middle
-                                center
-                                flex={false}
-                                style={styles.wrapIcon}
-                            >
-                                <Icon.Entypo name="windows-store" size={20} color={theme.colors.gray3} />
-                            </Block>
-                            <Text caption style={styles.textCard} color={theme.colors.gray3}>Desktop Windows</Text>
-                        </Card>
+                        <CardDevice iconSet="Entypo" iconName="windows-store"  warning>
+                            Windows
+                        </CardDevice>
 
                         <Card row center style={styles.deviceItem} color="#E74C3C">
                             <Block

@@ -1,111 +1,124 @@
+
+
 import React, { Component } from "react";
 import { StyleSheet } from "react-native";
 
-import Block from "./Block";
 import { theme } from "../constants";
+import Block from "./Block";
+import Text from "./Text";
+import Icon from '../components/Icons';
 
-export default class CardDevices extends Component {
+export default class CardDevice extends Component {
+
+  handleColors() {
+    const { warning, ready, disabled } = this.props;
+
+    if (warning) {
+      return {
+        colorText: "white",
+        colorCard: theme.colors.warningCard,
+        colorIconWrapper: theme.colors.grayIconWrapper,
+        colorIcon: "white",
+      }
+    }
+
+    if (ready) {
+      return {
+        colorText: theme.colors.gray3,
+        colorCard: theme.colors.primary,
+        colorIconWrapper: theme.colors.grayIconWrapper,
+        colorIcon: theme.colors.gray3,
+      }
+    }
+
+    if (disabled) {
+      return {
+        colorText: theme.colors.disabledIconTextGray,
+        colorCard: theme.colors.warningCard,
+        colorIconWrapper: theme.colors.disaledIconWrapper,
+        colorIcon: theme.colors.disabledIconTextGray,
+      }
+    }
+  }
+
+
+
   render() {
     const {
       color,
       style,
       children,
-      // warning,
-      // ready,
-      // disabled,
+      warning,
+      ready,
+      disabled,
+      iconSet,
+      iconName,
       ...props
     } = this.props;
 
     const cardDeviceStyles = [
       styles.cardDevice,
-      //warning && { color:  },
       style
     ];
 
+    var IconSets = {
+      Entypo: Icon.Entypo,
+      MaterialCommunityIcons: Icon.MaterialCommunityIcons,
+      SimpleLineIcons: Icon.SimpleLineIcons,
+      MaterialIcons: Icon.MaterialIcons,
+      FontAwesome: Icon.FontAwesome,
+      Foundation: Icon.Foundation,
+      EvilIcons: Icon.EvilIcons,
+      Ionicons: Icon.Ionicons,
+      Octicons: Icon.Octicons,
+      Feather: Icon.Feather,
+      Entypo: Icon.Entypo,
+      Zocial: Icon.Zocial
+    }
+
+    var IconSet = IconSets[this.props.iconSet];
+
     return (
-      <Block color={theme.colors.primary} row center style={cardDeviceStyles} {...props}>
+      <Block color={this.handleColors().colorCard} row center style={cardDeviceStyles} {...props}>
         <Block
-          color="rgba(0,0,0,0.10)"
+          color={this.handleColors().colorIconWrapper}
           middle
           center
           flex={false}
           style={styles.wrapIcon}
         >
-          <Icon.Entypo name="windows-store" size={20} color={theme.colors.gray3} />
+          <IconSet name={this.props.iconName} size={20} color={this.handleColors().colorIcon} />
         </Block>
-        {children}
-        <Text caption style={styles.textCard} color={theme.colors.gray3}>Desktop Windows</Text>
+        <Text caption style={styles.textCard} color={this.handleColors().colorText}>
+          {children}
+        </Text>
       </Block>
     );
   }
 }
 
-
-
-
-
-// <Card row center style={styles.deviceItem} color={theme.colors.primary}>
-//   <Block
-//     color="rgba(0,0,0,0.10)"
-//     middle
-//     center
-//     flex={false}
-//     style={styles.wrapIcon}
-//   >
-//     <Icon.Entypo name="windows-store" size={20} color={theme.colors.gray3} />
-//   </Block>
-//   <Text caption style={styles.textCard} color={theme.colors.gray3}>Desktop Windows</Text>
-// </Card>
-
-//   <Card row center style={styles.deviceItem} color="#E74C3C">
-//     <Block
-//       color="rgba(0,0,0,0.10)"
-//       middle
-//       center
-//       flex={false}
-//       style={styles.wrapIcon}
-//     >
-//       <Icon.Ionicons name="ios-phone-portrait" size={20} color="white" />
-//     </Block>
-//     <Text caption style={styles.textCard} color="white">My Android</Text>
-//   </Card>
-
-//   <Card row center style={styles.deviceItem} color="rgba(0,0,0,0.07)">
-//     <Block
-//       color="#F9F9F9"
-//       middle center
-//       flex={false}
-//       style={styles.wrapIcon}
-//     >
-//       <Icon.Ionicons name="ios-phone-portrait" size={20} color="rgba(0,0,0,0.4)" />
-//     </Block>
-//     <Text caption style={styles.textCard} color="rgba(0,0,0,0.4)">IPhone 11</Text>
-//   </Card>
-
 export const styles = StyleSheet.create({
-    cardDevice: {
-      // borderRadius: theme.sizes.radius,
-      // padding: theme.sizes.base + 4,
-      marginBottom: theme.sizes.base,
-      marginHorizontal: 4,
-      flex: 0,
-      borderRadius: 40,
-      padding: 4,
-    },
+  cardDevice: {
+    marginBottom: theme.sizes.base,
+    marginHorizontal: 4,
+    flex: 0,
+    borderRadius: 40,
+    padding: 4,
+  },
 
-    deviceItem: {
-      marginHorizontal: 4,
-      flex: 0,
-      borderRadius: 40,
-      padding: 4,
-    },
-    textCard: {
-      paddingHorizontal: 10,
+  deviceItem: {
+    marginHorizontal: 4,
+    flex: 0,
+    borderRadius: 40,
+    padding: 4,
+  },
+  textCard: {
+    paddingHorizontal: 10,
 
-    },
-    wrapIcon: {
-      width: 30,
-      borderRadius: 30,
-      height: 30,
-    }
-  });
+  },
+  wrapIcon: {
+    width: 30,
+    borderRadius: 30,
+    height: 30,
+  }
+});
