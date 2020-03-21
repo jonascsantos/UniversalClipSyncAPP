@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Keyboard, TextInput, ScrollView, StyleSheet } from 'react-native'
 
 import { Text, Block, Button, Input, Divider, Card, CardDevice } from '../components'
-import { theme, images } from '../constants'
+import { theme, mocks } from '../constants'
 
 import Icon from '../components/Icons';
 
@@ -33,21 +33,18 @@ export default class Clipboard extends Component {
                     <Divider center style={{ width: "100%" }} />
 
                     <Block style={styles.devicesContainer}>
-                        <CardDevice iconSet="Entypo" iconName="windows-store" ready>
-                            Desktop Windows
-                        </CardDevice>
-                        <CardDevice iconSet="Ionicons" iconName="ios-phone-portrait" warning>
-                            My Android
-                        </CardDevice>
-                        <CardDevice iconSet="Ionicons" iconName="ios-phone-portrait" disabled>
-                            IPhone 11
-                        </CardDevice>
-                        <CardDevice iconSet="Ionicons" iconName="ios-desktop" ready>
-                            My Macbook
-                        </CardDevice>
-                        <CardDevice iconSet="FontAwesome" iconName="linux" disabled>
-                            Linux Device
-                        </CardDevice>
+                        {mocks.devices.map((item, index) => {
+                            return (
+                                <CardDevice
+                                    key={`step-${index}`}
+                                    iconSet={item.icon[0]}
+                                    iconName={item.icon[1]}
+                                    status={item.status}
+                                >
+                                    {item.name}
+                                </CardDevice>
+                            );
+                        })}
                     </Block>
 
                     <Divider center style={{ width: "100%" }} />
@@ -71,6 +68,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    
+
 })
 

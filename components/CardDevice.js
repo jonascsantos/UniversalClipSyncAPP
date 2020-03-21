@@ -11,33 +11,37 @@ import Icon from '../components/Icons';
 export default class CardDevice extends Component {
 
   handleColors() {
-    const { warning, ready, disabled } = this.props;
+    const { status } = this.props;
 
-    if (warning) {
-      return {
-        colorText: "white",
-        colorCard: theme.colors.warningCard,
-        colorIconWrapper: theme.colors.grayIconWrapper,
-        colorIcon: "white",
-      }
-    }
-
-    if (ready) {
-      return {
-        colorText: theme.colors.gray3,
-        colorCard: theme.colors.primary,
-        colorIconWrapper: theme.colors.grayIconWrapper,
-        colorIcon: theme.colors.gray3,
-      }
-    }
-
-    if (disabled) {
-      return {
-        colorText: theme.colors.disabledIconTextGray,
-        colorCard: theme.colors.disabledCard,
-        colorIconWrapper: theme.colors.disaledIconWrapper,
-        colorIcon: theme.colors.disabledIconTextGray,
-      }
+    switch ( status ) {
+      case 'warning': 
+        return {
+          colorText: "white",
+          colorCard: theme.colors.warningCard,
+          colorIconWrapper: theme.colors.grayIconWrapper,
+          colorIcon: "white",
+        }
+      case 'ready':
+        return {
+          colorText: theme.colors.gray3,
+          colorCard: theme.colors.primary,
+          colorIconWrapper: theme.colors.grayIconWrapper,
+          colorIcon: theme.colors.gray3,
+        }
+      case 'disabled':
+        return {
+          colorText: theme.colors.disabledIconTextGray,
+          colorCard: theme.colors.disabledCard,
+          colorIconWrapper: theme.colors.disaledIconWrapper,
+          colorIcon: theme.colors.disabledIconTextGray,
+        }
+      default:
+        return {
+          colorText: theme.colors.disabledIconTextGray,
+          colorCard: theme.colors.disabledCard,
+          colorIconWrapper: theme.colors.disaledIconWrapper,
+          colorIcon: theme.colors.disabledIconTextGray,
+        };
     }
   }
 
@@ -46,9 +50,7 @@ export default class CardDevice extends Component {
       color,
       style,
       children,
-      warning,
-      ready,
-      disabled,
+      status,
       iconSet,
       iconName,
       ...props
