@@ -49,9 +49,21 @@ export default class Clipboard extends Component {
 
                     <Divider center style={{ width: "100%" }} />
 
-                    <Block row center middle>
-                        <Text>Anonymous & send Email icons</Text>
+                    <Block row style={styles.iconContainer}>
+                        <Block flex={false} center middle>
+                            <Block middle center style={styles.iconWrapper}>
+                                <Icon.Entypo name="mask" size={30} color={theme.colors.disabledIconTextGray} />
+                            </Block>
+                            <Text caption color={theme.colors.disabledIconTextGray}>Anonymous Mode</Text>
+                        </Block>
+                        <Block flex={false} center middle>
+                            <Block middle center style={styles.iconWrapper}>
+                                <Icon.Zocial name="email" size={30} color={theme.colors.disabledIconTextGray} />
+                            </Block>
+                            <Text caption color={theme.colors.disabledIconTextGray}>Send to Email</Text>
+                        </Block>
                     </Block>
+
                 </Block>
             </ScrollView>
         )
@@ -67,6 +79,16 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         alignItems: "center",
         justifyContent: "center",
+    },
+    iconContainer: {
+        justifyContent: "space-evenly",
+        marginBottom: 15,
+    },
+    iconWrapper: {
+        backgroundColor: theme.colors.disabledCard,
+        height: 50,
+        width: 50,
+        borderRadius: 100,
     },
 
 })
