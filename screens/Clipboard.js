@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
 import { Keyboard, TextInput, ScrollView, StyleSheet } from 'react-native'
 
-import { Text, Block, Button, Input, Divider, Card } from '../components'
+import { Text, Block, Button, Input, Divider, Card, CardDevice } from '../components'
 import { theme, images } from '../constants'
 
-import Icon from 'react-native-vector-icons/Entypo'
-import Icon2 from 'react-native-vector-icons/Ionicons'
-import Icon3 from 'react-native-vector-icons/FontAwesome'
-
+import Icon  from '../components/Icons'; 
 
 export default class Clipboard extends Component {
     state = {
         text: "",
     }
-
 
     render() {
         return (
@@ -30,7 +26,7 @@ export default class Clipboard extends Component {
                                 placeholderTextColor={theme.colors.gray}
                                 value={this.state.text}
                             />
-                            <Icon name="cross" size={30} color={theme.colors.gray3} />
+                            <Icon.Entypo name="cross" size={30} color={theme.colors.gray3} />
                         </Block>
                     </Block>
 
@@ -38,38 +34,67 @@ export default class Clipboard extends Component {
 
                     <Block style={styles.devicesContainer}>
                         <Card row center style={styles.deviceItem} color={theme.colors.primary}>
-                            <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
-                                <Icon name="windows-store" size={20} color={theme.colors.gray3} />
+                            <Block
+                                color="rgba(0,0,0,0.10)"
+                                middle
+                                center
+                                flex={false}
+                                style={styles.wrapIcon}
+                            >
+                                <Icon.Entypo name="windows-store" size={20} color={theme.colors.gray3} />
                             </Block>
                             <Text caption style={styles.textCard} color={theme.colors.gray3}>Desktop Windows</Text>
                         </Card>
 
                         <Card row center style={styles.deviceItem} color="#E74C3C">
-                            <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
-                                <Icon2 name="ios-phone-portrait" size={20} color="white" />
+                            <Block
+                                color="rgba(0,0,0,0.10)"
+                                middle
+                                center
+                                flex={false}
+                                style={styles.wrapIcon}
+                            >
+                                <Icon.Ionicons name="ios-phone-portrait" size={20} color="white" />
                             </Block>
                             <Text caption style={styles.textCard} color="white">My Android</Text>
                         </Card>
 
                         <Card row center style={styles.deviceItem} color="rgba(0,0,0,0.07)">
-                            <Block color="#F9F9F9" middle center flex={false} style={styles.wrapIcon}>
-                                <Icon2 name="ios-phone-portrait" size={20} color={theme.colors.gray3} />
+                            <Block
+                                color="#F9F9F9"
+                                middle center
+                                flex={false}
+                                style={styles.wrapIcon}
+                            >
+                                <Icon.Ionicons name="ios-phone-portrait" size={20} color="rgba(0,0,0,0.4)" />
                             </Block>
                             <Text caption style={styles.textCard} color="rgba(0,0,0,0.4)">IPhone 11</Text>
                         </Card>
 
                         <Card row center style={styles.deviceItem} color={theme.colors.primary}>
-                            <Block color="rgba(0,0,0,0.10)" middle center flex={false} style={styles.wrapIcon}>
-                                <Icon2 name="ios-desktop" size={20} color={theme.colors.gray3} />
+                            <Block
+                                color="rgba(0,0,0,0.10)"
+                                middle
+                                center
+                                flex={false}
+                                style={styles.wrapIcon}
+                            >
+                                <Icon.Ionicons name="ios-desktop" size={20} color={theme.colors.gray3} />
                             </Block>
                             <Text caption style={styles.textCard} color={theme.colors.gray3}>My Macbook</Text>
                         </Card>
 
                         <Card row center style={styles.deviceItem} color="rgba(0,0,0,0.07)">
-                            <Block color="#F9F9F9" middle center flex={false} style={styles.wrapIcon}>
-                                <Icon3 name="linux" size={20} color="rgba(0,0,0,0.4)"/>
+                            <Block
+                                color="#F9F9F9"
+                                middle
+                                center
+                                flex={false}
+                                style={styles.wrapIcon}
+                            >
+                                <Icon.FontAwesome name="linux" size={20} color="rgba(0,0,0,0.4)" />
                             </Block>
-                            <Text caption style={styles.textCard} color={theme.colors.gray3}>Linux Device</Text>
+                            <Text caption style={styles.textCard} color="rgba(0,0,0,0.4)">Linux Device</Text>
                         </Card>
                     </Block>
 
@@ -96,7 +121,6 @@ const styles = StyleSheet.create({
     },
     deviceItem: {
         marginHorizontal: 4,
-
         flex: 0,
         borderRadius: 40,
         padding: 4,

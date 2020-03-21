@@ -11,6 +11,9 @@ const colors = {
   gray2: "#C5CCD6",
   gray3: "#2c3e50",
   gray4: "#34495e",
+  warningCard: "#E74C3C",
+  grayIconWrapper: "rgba(0,0,0,0.10)",
+  
 };
 
 
