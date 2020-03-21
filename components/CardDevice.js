@@ -41,8 +41,6 @@ export default class CardDevice extends Component {
     }
   }
 
-
-
   render() {
     const {
       color,

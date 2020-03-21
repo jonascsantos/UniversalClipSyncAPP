@@ -71,20 +71,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    deviceItem: {
-        marginHorizontal: 4,
-        flex: 0,
-        borderRadius: 40,
-        padding: 4,
-    },
-    textCard: {
-        paddingHorizontal: 10,
-
-    },
-    wrapIcon: {
-        width: 30,
-        borderRadius: 30,
-        height: 30,
-    }
+    
 })
 
