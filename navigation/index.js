@@ -39,7 +39,7 @@ const screens = createStackNavigator({
         headerBackTitle: null,
         headerLeftContainerStyle: {
             alignItems: 'center',
-            marginLeft: theme.sizes.base,
+            marginLeft: 5,
             paddingRight: theme.sizes.base,
         },
         headerRightContainerStyle: {

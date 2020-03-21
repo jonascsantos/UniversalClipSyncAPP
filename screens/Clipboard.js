@@ -15,7 +15,7 @@ export default class Clipboard extends Component {
         return (
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Block color={theme.colors.white}>
-                    <Block style={styles.input} padding={[theme.sizes.base, theme.sizes.base]}>
+                    <Block style={styles.input} padding={[theme.sizes.base,18]}>
                         <Block row space="between">
                             <TextInput
                                 style={{ fontSize: 16 }}
@@ -30,8 +30,8 @@ export default class Clipboard extends Component {
                         </Block>
                     </Block>
 
-                    <Divider center style={{ width: "100%" }} />
-
+                    <Divider/>
+                    
                     <Block style={styles.devicesContainer}>
                         {mocks.devices.map((item, index) => {
                             return (
@@ -47,7 +47,7 @@ export default class Clipboard extends Component {
                         })}
                     </Block>
 
-                    <Divider center style={{ width: "100%" }} />
+                    <Divider/>
 
                     <Block row style={styles.iconContainer}>
                         <Block flex={false} center middle>
