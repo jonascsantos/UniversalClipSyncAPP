@@ -34,7 +34,7 @@ export default class CardDevice extends Component {
     if (disabled) {
       return {
         colorText: theme.colors.disabledIconTextGray,
-        colorCard: theme.colors.warningCard,
+        colorCard: theme.colors.disabledCard,
         colorIconWrapper: theme.colors.disaledIconWrapper,
         colorIcon: theme.colors.disabledIconTextGray,
       }

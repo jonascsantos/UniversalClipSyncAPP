@@ -4,7 +4,7 @@ import { Keyboard, TextInput, ScrollView, StyleSheet } from 'react-native'
 import { Text, Block, Button, Input, Divider, Card, CardDevice } from '../components'
 import { theme, images } from '../constants'
 
-import Icon  from '../components/Icons'; 
+import Icon from '../components/Icons';
 
 export default class Clipboard extends Component {
     state = {
@@ -33,60 +33,21 @@ export default class Clipboard extends Component {
                     <Divider center style={{ width: "100%" }} />
 
                     <Block style={styles.devicesContainer}>
-                        <CardDevice iconSet="Entypo" iconName="windows-store"  warning>
-                            Windows
+                        <CardDevice iconSet="Entypo" iconName="windows-store" ready>
+                            Desktop Windows
                         </CardDevice>
-
-                        <Card row center style={styles.deviceItem} color="#E74C3C">
-                            <Block
-                                color="rgba(0,0,0,0.10)"
-                                middle
-                                center
-                                flex={false}
-                                style={styles.wrapIcon}
-                            >
-                                <Icon.Ionicons name="ios-phone-portrait" size={20} color="white" />
-                            </Block>
-                            <Text caption style={styles.textCard} color="white">My Android</Text>
-                        </Card>
-
-                        <Card row center style={styles.deviceItem} color="rgba(0,0,0,0.07)">
-                            <Block
-                                color="#F9F9F9"
-                                middle center
-                                flex={false}
-                                style={styles.wrapIcon}
-                            >
-                                <Icon.Ionicons name="ios-phone-portrait" size={20} color="rgba(0,0,0,0.4)" />
-                            </Block>
-                            <Text caption style={styles.textCard} color="rgba(0,0,0,0.4)">IPhone 11</Text>
-                        </Card>
-
-                        <Card row center style={styles.deviceItem} color={theme.colors.primary}>
-                            <Block
-                                color="rgba(0,0,0,0.10)"
-                                middle
-                                center
-                                flex={false}
-                                style={styles.wrapIcon}
-                            >
-                                <Icon.Ionicons name="ios-desktop" size={20} color={theme.colors.gray3} />
-                            </Block>
-                            <Text caption style={styles.textCard} color={theme.colors.gray3}>My Macbook</Text>
-                        </Card>
-
-                        <Card row center style={styles.deviceItem} color="rgba(0,0,0,0.07)">
-                            <Block
-                                color="#F9F9F9"
-                                middle
-                                center
-                                flex={false}
-                                style={styles.wrapIcon}
-                            >
-                                <Icon.FontAwesome name="linux" size={20} color="rgba(0,0,0,0.4)" />
-                            </Block>
-                            <Text caption style={styles.textCard} color="rgba(0,0,0,0.4)">Linux Device</Text>
-                        </Card>
+                        <CardDevice iconSet="Ionicons" iconName="ios-phone-portrait" warning>
+                            My Android
+                        </CardDevice>
+                        <CardDevice iconSet="Ionicons" iconName="ios-phone-portrait" disabled>
+                            IPhone 11
+                        </CardDevice>
+                        <CardDevice iconSet="Ionicons" iconName="ios-desktop" ready>
+                            My Macbook
+                        </CardDevice>
+                        <CardDevice iconSet="FontAwesome" iconName="linux" disabled>
+                            Linux Device
+                        </CardDevice>
                     </Block>
 
                     <Divider center style={{ width: "100%" }} />
