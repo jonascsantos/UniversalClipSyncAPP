@@ -13,7 +13,7 @@ const colors = {
   gray4: "#34495e",
   warningCard: "#E74C3C",
   grayIconWrapper: "rgba(0,0,0,0.10)",
-  disaledIconWrapper: "#F9F9F9",
+  disabledIconWrapper: "#F9F9F9",
   disabledCard: "rgba(0,0,0,0.07)",
   disabledIconTextGray: "rgba(0,0,0,0.4)",
 

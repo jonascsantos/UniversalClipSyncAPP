@@ -18,7 +18,7 @@ function LogoTitle() {
   return (
     <Block bottom row left>
       <Text color={theme.colors.gray3} h1 bold style={{ marginRight: 2 }}>Universal</Text>
-      <Text color={theme.colors.gray3} h2 medium bottom style={{ paddingBottom: 1.5 }}>Clip</Text>
+      <Text color={theme.colors.gray3} h2 medium bottom style={{ paddingLeft: 2 ,paddingBottom: 1.5 }}>Clip</Text>
       <Text color={theme.colors.gray3} bottom medium italic h2 style={{ paddingBottom: 1.5 }} >Sync</Text>
     </Block>
   );
@@ -40,9 +40,10 @@ function MyTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Clipboard"
-      activeColor="#f0edf6"
-      inactiveColor="#026356"
-      barStyle={{ backgroundColor: theme.colors.primary }}
+      activeColor={theme.colors.gray3}
+      inactiveColor="rgba(44,62,80, 0.7)"
+      backBehavior="initialRoute"
+      barStyle={{ backgroundColor: theme.colors.primary, paddingBottom: 5  }}
     >
       <Tab.Screen
         name="Clipboard"

@@ -32,14 +32,14 @@ export default class CardDevice extends Component {
         return {
           colorText: theme.colors.disabledIconTextGray,
           colorCard: theme.colors.disabledCard,
-          colorIconWrapper: theme.colors.disaledIconWrapper,
+          colorIconWrapper: theme.colors.disabledIconWrapper,
           colorIcon: theme.colors.disabledIconTextGray,
         }
       default:
         return {
           colorText: theme.colors.disabledIconTextGray,
           colorCard: theme.colors.disabledCard,
-          colorIconWrapper: theme.colors.disaledIconWrapper,
+          colorIconWrapper: theme.colors.disabledIconWrapper,
           colorIcon: theme.colors.disabledIconTextGray,
         };
     }
