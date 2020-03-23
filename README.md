@@ -41,8 +41,6 @@ The story begins with the app listening to your Clipboard. Just after you copy a
 
 ## UI Demo
 
-test:
-
 Onboarding 1             |  Onboarding 2
 :-------------------------:|:-------------------------:
 <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/Onboarding1.jpg" alt="Onboarding 1" width="300"/> |  <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/Onboarding2.jpg" alt="Onboarding 2" width="300"/>    
