@@ -22,8 +22,8 @@ The story begins with the app listening to your Clipboard. Just after you copy a
 - [x] UI - Adobe XD
 - [x] React Native Front End
 - [ ] React Native Auth and Backend
-- [ ] React Native Android Eject
-- [ ] React Native IOS Eject
+- [ ] React Native Android Eject + PlayStore Release
+- [ ] React Native IOS Eject + AppStore Release
 - [ ] Windows Application
 - [ ] Mac OS X Application
 - [ ] Linux Distros Application
