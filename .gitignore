@@ -10,6 +10,11 @@ GPUCache/**/*
 Cookies*
 .expo/*
 npm-debug.*
+Network*
+machineid*
+rapid_render.json
+storage.json
+languagepacks.json
 *.jks
 *.p8
 *.p12
