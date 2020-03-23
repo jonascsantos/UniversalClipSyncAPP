@@ -15,7 +15,7 @@ _What if we could do it by **tapping a single button** ?_ :iphone: :computer:
 
 ## What it does
 
-The story begins with the app listening to your Clipboard. Just after you copy a text, you can notice a pleasant popup icon. Once pressed, it will open a page where you can select to target devices. 
+The story begins with the app listening to your Clipboard. Just after you copy a text, you can notice a pleasant popup icon. Once pressed, it will open a page where you can select your target devices. 
 
 ## Progress
 
