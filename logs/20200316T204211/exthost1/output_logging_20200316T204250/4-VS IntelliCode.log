@@ -1,6 +1,0 @@
-The configuration 'editor.suggestSelection' will be set to 'first' since the default value 'recentlyUsed' may cause you to not see IntelliCode completions.
-You can configure this behavior with the setting 'vsintellicode.modify.editor.suggestSelection'.
-Acquiring model 'intellisense-members' for javascript
-Querying IntelliCode service for available models.
-The configuration 'editor.suggestSelection' has been set to 'first'.
-Cached model is up to date.
