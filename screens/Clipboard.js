@@ -120,15 +120,17 @@ export default class Clipboard extends Component {
                     </Block>
                 </Block>
 
-                <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
-                    <Block style={styles.recentsContainer} >
-                        <Card style={styles.recent} >
-                            <Text color={theme.colors.gray3} style={{flex: 1}} numberOfLines={1}>Tas asd est asdasdasdas d asd asd asd asd asd asd asd asd asd </Text>
+                <Block style={styles.recentsContainer} >
+                    <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
+                        <Card style={styles.recent} shadow >
+                            <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
                             <Block
                                 middle
                                 center
                                 flex={false}
-                                marginLeft={15}
+                                marginLeft={20}
+                                marginRight={7}
+
                             >
                                 <Icon.AntDesign
                                     name={heart1 ? "heart" : "hearto"}
@@ -136,12 +138,30 @@ export default class Clipboard extends Component {
                                     color={theme.colors.primary}
                                 />
                             </Block>
-                            
+
                         </Card>
-                        
-                        
-                    </Block>
-                </TouchableWithoutFeedback>
+                    </TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
+                        <Card style={styles.recent} shadow >
+                            <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
+                            <Block
+                                middle
+                                center
+                                flex={false}
+                                marginLeft={20}
+                                marginRight={7}
+
+                            >
+                                <Icon.AntDesign
+                                    name={heart1 ? "heart" : "hearto"}
+                                    size={25}
+                                    color={theme.colors.primary}
+                                />
+                            </Block>
+
+                        </Card>
+                    </TouchableWithoutFeedback>
+                </Block>
 
             </ScrollView>
         )
@@ -182,6 +202,7 @@ const styles = StyleSheet.create({
     },
 
     recent: {
+        paddingHorizontal: theme.sizes.base,
         borderRadius: 1,
         marginBottom: 2,
         flexDirection: "row",
