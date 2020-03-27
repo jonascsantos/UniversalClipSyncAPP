@@ -15,15 +15,15 @@ _What if we could do it by **tapping a single button** ?_ :iphone: :computer:
 
 ## What it does
 
-The story begins with the app listening to your Clipboard. Just after you copy a text, you can notice a pleasant popup icon. Once pressed, it will open a page where you can select to target devices. 
+The story begins with the app listening to your Clipboard. Just after you copy a text, you can notice a pleasant popup icon. Once pressed, it will open a page where you can select your target devices. 
 
 ## Progress
 
 - [x] UI - Adobe XD
 - [x] React Native Front End
 - [ ] React Native Auth and Backend
-- [ ] React Native Android Eject
-- [ ] React Native IOS Eject
+- [ ] React Native Android Eject + Google Play Release
+- [ ] React Native IOS Eject + AppStore Release
 - [ ] Windows Application
 - [ ] Mac OS X Application
 - [ ] Linux Distros Application
@@ -55,8 +55,14 @@ Home Navigator Screen           |
 <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/HomeScreen.jpg" alt="Home" width="300"/> |     
 
 
+## Contributing
+_*Universal ClipSync: Shared Clipboard*_ is a new project and we would love feedback from the community on how it should evolve. Please report any 🐞s and let us know how you're using our App!
+
+If you would like to contribute, fell free :heavy_check_mark:
+
+This project adheres to the Contributor Covenant [code of conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct/).
+By participating, you are expected to uphold this code. Please report unacceptable behavior to jonas.cassiano@hotmail.com.
 
 
-
-_Go up and Never Stop!_ :checkered_flag: :heavy_check_mark:
+_Go up and Never Stop!_ :checkered_flag: 
 
