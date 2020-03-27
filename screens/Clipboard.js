@@ -122,21 +122,24 @@ export default class Clipboard extends Component {
 
                 <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
                     <Block style={styles.recentsContainer} >
-                        <Card style={styles.recent} shadow >
+                        <Card style={styles.recent} >
+                            <Text color={theme.colors.gray3} style={{flex: 1}} numberOfLines={1}>Tas asd est asdasdasdas d asd asd asd asd asd asd asd asd asd </Text>
                             <Block
                                 middle
                                 center
+                                flex={false}
+                                marginLeft={15}
                             >
                                 <Icon.AntDesign
                                     name={heart1 ? "heart" : "hearto"}
-                                    size={30}
+                                    size={25}
                                     color={theme.colors.primary}
                                 />
                             </Block>
+                            
                         </Card>
-                        <Card style={styles.recent} shadow>
-                            <Text color={theme.colors.gray3}>Test</Text>
-                        </Card>
+                        
+                        
                     </Block>
                 </TouchableWithoutFeedback>
 
@@ -182,6 +185,8 @@ const styles = StyleSheet.create({
         borderRadius: 1,
         marginBottom: 2,
         flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
     }
 
 })
