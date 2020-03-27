@@ -5,13 +5,25 @@ import { Text, Block, Button, Input, Divider, Card, CardDevice } from '../compon
 import { theme, mocks } from '../constants'
 
 import Icon from '../components/Icons';
-import {  TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+
+
+function elevationShadowStyle(elevation) {
+    return {
+        elevation,
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 0.5 * elevation },
+        shadowOpacity: 0.3,
+        shadowRadius: 0.8 * elevation
+    };
+}
 
 export default class Clipboard extends Component {
     state = {
         text: "",
         anonymous: false,
         sendEmail: false,
+        heart1: false,
     }
 
     handleAnonymous() {
@@ -24,12 +36,17 @@ export default class Clipboard extends Component {
         this.setState({ sendEmail: !sendEmail })
     }
 
+    handleHeart() {
+        const { heart1 } = this.state;
+        this.setState({ heart1: !heart1 })
+    }
+
     render() {
-        const { anonymous, sendEmail } = this.state;
+        const { anonymous, sendEmail, heart1 } = this.state;
 
         return (
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Block color={theme.colors.white}>
+                <Block color={theme.colors.white} style={styles.mainContainer}>
                     <Block style={styles.input} padding={[theme.sizes.base, 18]}>
                         <Block row space="between">
                             <TextInput
@@ -65,7 +82,7 @@ export default class Clipboard extends Component {
                     <Divider />
 
                     <Block row style={styles.iconContainer}>
-                        <TouchableWithoutFeedback onPress={() => {this.handleAnonymous()}}>
+                        <TouchableWithoutFeedback onPress={() => { this.handleAnonymous() }}>
                             <Block flex={false} center middle>
                                 <Block
                                     middle
@@ -83,7 +100,7 @@ export default class Clipboard extends Component {
                             </Block>
                         </TouchableWithoutFeedback>
 
-                        <TouchableWithoutFeedback onPress={() => {this.handleSendEmail()}}>
+                        <TouchableWithoutFeedback onPress={() => { this.handleSendEmail() }}>
                             <Block flex={false} center middle>
                                 <Block
                                     middle
@@ -100,9 +117,29 @@ export default class Clipboard extends Component {
                                 <Text caption color={sendEmail ? theme.colors.gray3 : theme.colors.disabledIconTextGray}>Send to Email</Text>
                             </Block>
                         </TouchableWithoutFeedback>
-
                     </Block>
                 </Block>
+
+                <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
+                    <Block style={styles.recentsContainer} >
+                        <Card style={styles.recent} shadow >
+                            <Block
+                                middle
+                                center
+                            >
+                                <Icon.AntDesign
+                                    name={heart1 ? "heart" : "hearto"}
+                                    size={30}
+                                    color={theme.colors.primary}
+                                />
+                            </Block>
+                        </Card>
+                        <Card style={styles.recent} shadow>
+                            <Text color={theme.colors.gray3}>Test</Text>
+                        </Card>
+                    </Block>
+                </TouchableWithoutFeedback>
+
             </ScrollView>
         )
     }
@@ -112,21 +149,40 @@ const styles = StyleSheet.create({
     input: {
 
     },
+
     devicesContainer: {
         flexDirection: "row",
         flexWrap: "wrap",
         alignItems: "center",
         justifyContent: "center",
     },
+
     iconContainer: {
         justifyContent: "space-evenly",
         marginBottom: 15,
     },
+
     iconWrapper: {
         height: 50,
         width: 50,
         borderRadius: 100,
     },
+
+    mainContainer: {
+        ...elevationShadowStyle(4),
+        backgroundColor: 'white' // It'll look weird without a background color!
+    },
+
+    recentsContainer: {
+        marginVertical: 20,
+        marginHorizontal: 5,
+    },
+
+    recent: {
+        borderRadius: 1,
+        marginBottom: 2,
+        flexDirection: "row",
+    }
 
 })
 
