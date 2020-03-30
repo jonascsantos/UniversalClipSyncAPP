@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Keyboard, TextInput, ScrollView, StyleSheet } from 'react-native'
 
-import { Text, Block, Button, Input, Divider, Card, CardDevice } from '../components'
+import { Text, Block, Button, Input, Divider, Card, CardDevice, SwipeableCard, SwipeableList } from '../components'
 import { theme, mocks } from '../constants'
 
 import Icon from '../components/Icons';
@@ -120,8 +120,14 @@ export default class Clipboard extends Component {
                     </Block>
                 </Block>
 
+                <SwipeableList>
+                    <SwipeableCard>Loras Das as em eips ipsum</SwipeableCard>
+                </SwipeableList>
+
                 <Block style={styles.recentsContainer} >
                     <ScrollView>
+
+
                         <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
                             <Card style={styles.recent} shadow >
                                 <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
