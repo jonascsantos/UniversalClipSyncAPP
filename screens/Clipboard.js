@@ -121,26 +121,28 @@ export default class Clipboard extends Component {
                 </Block>
 
                 <Block style={styles.recentsContainer} >
-                    <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
-                        <Card style={styles.recent} shadow >
-                            <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
-                            <Block
-                                middle
-                                center
-                                flex={false}
-                                marginLeft={20}
-                                marginRight={7}
+                    <ScrollView>
+                        <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
+                            <Card style={styles.recent} shadow >
+                                <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
+                                <Block
+                                    middle
+                                    center
+                                    flex={false}
+                                    marginLeft={20}
+                                    marginRight={7}
 
-                            >
-                                <Icon.AntDesign
-                                    name={heart1 ? "heart" : "hearto"}
-                                    size={25}
-                                    color={theme.colors.primary}
-                                />
-                            </Block>
+                                >
+                                    <Icon.AntDesign
+                                        name={heart1 ? "heart" : "hearto"}
+                                        size={25}
+                                        color={theme.colors.primary}
+                                    />
+                                </Block>
+                            </Card>
+                        </TouchableWithoutFeedback>
+                    </ScrollView>
 
-                        </Card>
-                    </TouchableWithoutFeedback>
                     <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
                         <Card style={styles.recent} shadow >
                             <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
