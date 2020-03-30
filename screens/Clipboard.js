@@ -95,7 +95,7 @@ export default class Clipboard extends Component {
                                         size={30}
                                         color={anonymous ? theme.colors.gray3 : theme.colors.disabledIconTextGray} 
                                     />
-                                </Block>
+                                </Block> 
                                 <Text caption color={anonymous ? theme.colors.gray3 : theme.colors.disabledIconTextGray}>Anonymous Mode</Text>
                             </Block>
                         </TouchableWithoutFeedback>
