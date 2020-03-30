@@ -93,7 +93,7 @@ export default class Clipboard extends Component {
                                     <Icon.Entypo
                                         name="mask"
                                         size={30}
-                                        color={anonymous ? theme.colors.gray3 : theme.colors.disabledIconTextGray}
+                                        color={anonymous ? theme.colors.gray3 : theme.colors.disabledIconTextGray} 
                                     />
                                 </Block>
                                 <Text caption color={anonymous ? theme.colors.gray3 : theme.colors.disabledIconTextGray}>Anonymous Mode</Text>
