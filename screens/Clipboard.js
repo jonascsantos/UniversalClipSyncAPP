@@ -89,7 +89,7 @@ export default class Clipboard extends Component {
                                     center
                                     color={anonymous ? theme.colors.primary : theme.colors.disabledCard}
                                     style={styles.iconWrapper}
-                                >
+                                > 
                                     <Icon.Entypo
                                         name="mask"
                                         size={30}
