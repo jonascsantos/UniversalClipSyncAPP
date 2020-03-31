@@ -8,8 +8,6 @@ import Card from "./Card";
 import Text from "./Text";
 import Icon from '../components/Icons';
 
-
-
 class SwipeableCard extends Component {
     render() {
         const {
@@ -40,7 +38,7 @@ class SwipeableCard extends Component {
             })
             return (
                 <TouchableOpacity onPress={onPress}>
-                    <Block style={styles.rightAction}>
+                    <Block style={styles.leftAction}>
                         <Animated.Text style={[styles.actionText, { transform: [{ scale }] }]}>Delete2</Animated.Text>
                     </Block>
                 </TouchableOpacity>
@@ -51,8 +49,10 @@ class SwipeableCard extends Component {
         return (
             <Swipeable
                 renderLeftActions={LeftActions}
+                renderRightActions={LeftActions}
                 onSwipeableLeftOpen={onSwipeFromLeft}
-                renderRightActions={(progress, dragX) => <RightActions progress={progress} dragX={dragX} onPress={onRightPress} />}
+                onSwipeableRightOpen={onSwipeFromLeft}
+                // renderRightActions={(progress, dragX) => <RightActions progress={progress} dragX={dragX} onPress={onRightPress} />}
             >
                 <Card style={styles.Wrapper} shadow >
                     <Text style={styles.textStyle} numberOfLines={1}>
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     leftAction: {
-        backgroundColor: '#388e3c',
+        backgroundColor: '#dd2c00',
         justifyContent: 'center',
         flex: 1,
         height: "97%"
