@@ -121,13 +121,14 @@ export default class Clipboard extends Component {
                 </Block>
 
                 <SwipeableList>
-                    <SwipeableCard>Loras Das as em eips ipsum</SwipeableCard>
+                    <SwipeableCard 
+                        onSwipeFromLeft={() => {alert("Swiped from left!")}}
+                        onRightPress={() => {alert("Swiped from left!")}}
+                    >
+                        Loras Das as em eips ipsum
+                    </SwipeableCard>
                 </SwipeableList>
-
                 <Block style={styles.recentsContainer} >
-                    <ScrollView>
-
-
                         <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
                             <Card style={styles.recent} shadow >
                                 <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
@@ -147,7 +148,6 @@ export default class Clipboard extends Component {
                                 </Block>
                             </Card>
                         </TouchableWithoutFeedback>
-                    </ScrollView>
 
                     <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
                         <Card style={styles.recent} shadow >

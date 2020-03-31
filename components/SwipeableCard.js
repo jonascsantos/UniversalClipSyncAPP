@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
+import Swipeable from 'react-native-gesture-handler/Swipeable'
 
 import { theme } from "../constants";
 import Block from "./Block";
@@ -7,40 +8,34 @@ import Card from "./Card";
 import Text from "./Text";
 import Icon from '../components/Icons';
 
-class SwipeableCard extends Component {
-    listElement
-    wrapper
-    background
 
+
+class SwipeableCard extends Component {
     render() {
         const {
             children,
+            
             ...props
         } = this.props;
 
         return (
-            <Card style={styles.Wrapper} ref={div => (this.wrapper = div)} shadow >
-                <Block style={styles.Background} ref={div => (this.background = div)}>
-                    <Text> Delete </Text>
-                </Block>
-                <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>
+            <Card style={styles.Wrapper} shadow >
+                <Text style={styles.textStyle} numberOfLines={1}>
                     {children}
                 </Text>
-                <Block style={styles.ListItem} ref={div => (this.listElement = div)}>
+                <Block
+                    middle
+                    center
+                    flex={false}
+                    marginLeft={20}
+                    marginRight={7}
 
-                    <Block
-                        middle
-                        center
-                        flex={false}
-                        marginLeft={20}
-                        marginRight={7}
-                    >
-                        <Icon.AntDesign
-                            name="heart"  //{heart1 ? "heart" : "hearto"}
-                            size={25}
-                            color={theme.colors.primary}
-                        />
-                    </Block>
+                >
+                    <Icon.AntDesign
+                        name="heart"  //{heart1 ? "heart" : "hearto"}
+                        size={25}
+                        color={theme.colors.primary}
+                    />
                 </Block>
             </Card>
         )
@@ -58,22 +53,13 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
     },
-    Background: {
 
+    textStyle: {
+        color: "#565656",
+        flex: 1,
+        fontSize: 16,
     },
 
-    ListItem: {
-
-    },
-
-    recentsContainer: {
-        marginVertical: 20,
-        marginHorizontal: 5,
-    },
-
-    recent: {
-
-    },
 
 
 

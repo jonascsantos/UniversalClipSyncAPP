@@ -13,9 +13,6 @@ export default SwipeableList;
 
 const styles = StyleSheet.create({
   list: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
     marginVertical: 20,
     marginHorizontal: 5,
   },
