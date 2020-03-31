@@ -126,14 +126,13 @@ export default class Clipboard extends Component {
                             <SwipeableCard
                                 key={`step-${index}`}
                                 onSwipeFromLeft={() => { alert("Swiped from left!") }}
-                                onRightPress={() => { alert("Swiped from left!") }}
+                                onRightPress={() => { alert("Pressed Right!") }}
                             >
                                 {item.content}
                             </SwipeableCard>
                         );
                     })}
                 </SwipeableList>
-                
                 <Block style={styles.recentsContainer} >
                     <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
                         <Card style={styles.recent} shadow >
