@@ -89,13 +89,13 @@ export default class Clipboard extends Component {
                                     center
                                     color={anonymous ? theme.colors.primary : theme.colors.disabledCard}
                                     style={styles.iconWrapper}
-                                > 
+                                >
                                     <Icon.Entypo
                                         name="mask"
                                         size={30}
-                                        color={anonymous ? theme.colors.gray3 : theme.colors.disabledIconTextGray} 
+                                        color={anonymous ? theme.colors.gray3 : theme.colors.disabledIconTextGray}
                                     />
-                                </Block> 
+                                </Block>
                                 <Text caption color={anonymous ? theme.colors.gray3 : theme.colors.disabledIconTextGray}>Anonymous Mode</Text>
                             </Block>
                         </TouchableWithoutFeedback>
@@ -121,33 +121,39 @@ export default class Clipboard extends Component {
                 </Block>
 
                 <SwipeableList>
-                    <SwipeableCard 
-                        onSwipeFromLeft={() => {alert("Swiped from left!")}}
-                        onRightPress={() => {alert("Swiped from left!")}}
-                    >
-                        Loras Das as em eips ipsum
-                    </SwipeableCard>
+                    {mocks.recents.map((item, index) => {
+                        return (
+                            <SwipeableCard
+                                key={`step-${index}`}
+                                onSwipeFromLeft={() => { alert("Swiped from left!") }}
+                                onRightPress={() => { alert("Swiped from left!") }}
+                            >
+                                {item.content}
+                            </SwipeableCard>
+                        );
+                    })}
                 </SwipeableList>
+                
                 <Block style={styles.recentsContainer} >
-                        <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
-                            <Card style={styles.recent} shadow >
-                                <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
-                                <Block
-                                    middle
-                                    center
-                                    flex={false}
-                                    marginLeft={20}
-                                    marginRight={7}
+                    <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
+                        <Card style={styles.recent} shadow >
+                            <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
+                            <Block
+                                middle
+                                center
+                                flex={false}
+                                marginLeft={20}
+                                marginRight={7}
 
-                                >
-                                    <Icon.AntDesign
-                                        name={heart1 ? "heart" : "hearto"}
-                                        size={25}
-                                        color={theme.colors.primary}
-                                    />
-                                </Block>
-                            </Card>
-                        </TouchableWithoutFeedback>
+                            >
+                                <Icon.AntDesign
+                                    name={heart1 ? "heart" : "hearto"}
+                                    size={25}
+                                    color={theme.colors.primary}
+                                />
+                            </Block>
+                        </Card>
+                    </TouchableWithoutFeedback>
 
                     <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
                         <Card style={styles.recent} shadow >
