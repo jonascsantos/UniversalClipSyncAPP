@@ -16,8 +16,13 @@ export default class Devices extends Component {
                             return (
                                 <DeviceItem
                                     key={`step-${index}`}
+                                    name={item.name}
+                                    model={item.device}
+                                    iconSet={item.icon[0]}
+                                    iconName={item.icon[1]}
+                                    status={item.status}
                                 >
-                                    {item.name}
+                                    
                                 </DeviceItem>
                             );
                         })}
