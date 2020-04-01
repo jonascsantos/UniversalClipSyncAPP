@@ -49,6 +49,18 @@ const favourites = [
         id: 3,
         content: 'Lorem Ipsum Dolor.'
     },
+    {
+        id: 4,
+        content: 'This is a sent text.',
+    },
+    {
+        id: 5,
+        content: 'This is a another sent text.'
+    },
+    {
+        id: 7,
+        content: 'Lorem Ipsum Dolor.'
+    },
 ];
 
 const devices = [
