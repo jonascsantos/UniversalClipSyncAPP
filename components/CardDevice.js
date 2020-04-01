@@ -77,7 +77,7 @@ export default class CardDevice extends Component {
     }
 
     var IconSet = IconSets[this.props.iconSet];
-    console.log(IconSet)
+
     return (
       <Block color={this.handleColors().colorCard} row center style={cardDeviceStyles} {...props}>
         <Block
