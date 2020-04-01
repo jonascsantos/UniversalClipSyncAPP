@@ -43,7 +43,7 @@ const favourites = [
     },
     {
         id: 2,
-        content: 'This is a another sent text.'
+        content: 'This is a another sent text. This is a another sent text. This is a another sent text.'
     },
     {
         id: 3,
