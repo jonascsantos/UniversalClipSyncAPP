@@ -14,6 +14,7 @@ class SwipeableCard extends Component {
             children,
             onSwipeFromLeft,
             onRightPress,
+            heart,
             ...props
         } = this.props;
 
@@ -30,15 +31,16 @@ class SwipeableCard extends Component {
             );
         };
 
+
         const RightActions = ({progress, dragX, onPress}) => {
             const scale = dragX.interpolate({
                 inputRange: [-100, 0],
                 outputRange: [1, 0],
                 extrapolate: 'clamp',
-            })
+            });
             return (
                 <TouchableOpacity onPress={onPress}>
-                    <Block style={styles.leftAction}>
+                    <Block style={styles.leftAction} >
                         <Animated.Text style={[styles.actionText, { transform: [{ scale }] }]}>Delete2</Animated.Text>
                     </Block>
                 </TouchableOpacity>
@@ -54,7 +56,7 @@ class SwipeableCard extends Component {
                 onSwipeableRightOpen={onSwipeFromLeft}
                 // renderRightActions={(progress, dragX) => <RightActions progress={progress} dragX={dragX} onPress={onRightPress} />}
             >
-                <Card style={styles.Wrapper} shadow >
+                <Card style={[styles.Wrapper]} shadow>
                     <Text style={styles.textStyle} numberOfLines={1}>
                         {children}
                     </Text>
@@ -67,7 +69,7 @@ class SwipeableCard extends Component {
 
                     >
                         <Icon.AntDesign
-                            name="heart"  //{heart1 ? "heart" : "hearto"}
+                            name={heart}
                             size={25}
                             color={theme.colors.primary}
                         />
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#dd2c00',
         justifyContent: 'center',
         flex: 1,
-        height: "97%"
+        height: "97%",
     },
     rightAction: {
         backgroundColor: '#dd2c00',

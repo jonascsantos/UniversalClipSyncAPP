@@ -20,6 +20,18 @@ const recents = [
         id: 4,
         content: 'Copied and sent'
     },
+    {
+        id: 5,
+        content: 'This is a another sent text.'
+    },
+    {
+        id: 6,
+        content: 'Lorem Ipsum Dolor.'
+    },
+    {
+        id: 7,
+        content: 'Copied and sent'
+    },
 
 ];
 

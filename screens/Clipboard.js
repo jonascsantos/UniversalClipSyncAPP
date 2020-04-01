@@ -121,61 +121,21 @@ export default class Clipboard extends Component {
                 </Block>
 
                 <SwipeableList>
-                    {mocks.recents.map((item, index) => {
-                        return (
-                            <SwipeableCard
-                                key={`step-${index}`}
-                                onSwipeFromLeft={() => { alert("Swiped from left!") }}
-                                onRightPress={() => { alert("Pressed Right!") }}
-                            >
-                                {item.content}
-                            </SwipeableCard>
-                        );
-                    })}
+                    <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
+                        {mocks.recents.map((item, index) => {
+                            return (
+                                <SwipeableCard
+                                    key={`step-${index}`}
+                                    onSwipeFromLeft={() => { alert("Swiped from left!") }}
+                                    onRightPress={() => { alert("Pressed Right!") }}
+                                    heart={heart1 ? "heart" : "hearto"}
+                                >
+                                    {item.content}
+                                </SwipeableCard>
+                            );
+                        })}
+                    </TouchableWithoutFeedback>
                 </SwipeableList>
-                <Block style={styles.recentsContainer} >
-                    <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
-                        <Card style={styles.recent} shadow >
-                            <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
-                            <Block
-                                middle
-                                center
-                                flex={false}
-                                marginLeft={20}
-                                marginRight={7}
-
-                            >
-                                <Icon.AntDesign
-                                    name={heart1 ? "heart" : "hearto"}
-                                    size={25}
-                                    color={theme.colors.primary}
-                                />
-                            </Block>
-                        </Card>
-                    </TouchableWithoutFeedback>
-
-                    <TouchableWithoutFeedback onPress={() => { this.handleHeart() }}>
-                        <Card style={styles.recent} shadow >
-                            <Text color="#565656" style={{ flex: 1, fontSize: 16 }} numberOfLines={1}>Loras dasd asd em ipsum copied text history example </Text>
-                            <Block
-                                middle
-                                center
-                                flex={false}
-                                marginLeft={20}
-                                marginRight={7}
-
-                            >
-                                <Icon.AntDesign
-                                    name={heart1 ? "heart" : "hearto"}
-                                    size={25}
-                                    color={theme.colors.primary}
-                                />
-                            </Block>
-
-                        </Card>
-                    </TouchableWithoutFeedback>
-                </Block>
-
             </ScrollView>
         )
     }
@@ -206,7 +166,8 @@ const styles = StyleSheet.create({
 
     mainContainer: {
         ...elevationShadowStyle(4),
-        backgroundColor: 'white' // It'll look weird without a background color!
+        backgroundColor: 'white',
+        marginBottom: 10,
     },
 
     recentsContainer: {
