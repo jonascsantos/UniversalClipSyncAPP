@@ -6,9 +6,6 @@ import { theme, mocks } from '../constants'
 
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-
-
-
 export default class Favourites extends Component {
     state = {
         heart1: true,
