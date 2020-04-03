@@ -6,6 +6,7 @@ import Block from "./Block";
 import Card from "./Card";
 import Text from "./Text";
 import Icon from '../components/Icons';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 class DeviceItem extends Component {
 
@@ -52,7 +53,6 @@ class DeviceItem extends Component {
         const {
             color,
             style,
-            children,
             status,
             model,
             name,
@@ -79,37 +79,36 @@ class DeviceItem extends Component {
         var IconSet = IconSets[this.props.iconSet];
 
         return (
-            <Card style={[styles.Wrapper, styles.padmarg]} padding={0} color={this.handleColors().colorCard} shadow>
-                <Block
-                    color={this.handleColors().colorIconWrapper}
-                    middle
-                    center
-                    flex={false}
-                    style={styles.wrapIcon}
-                >
-                    <IconSet name={this.props.iconName} size={27} color={this.handleColors().colorIcon} />
-                </Block>
-
-                <Block colunm>
-                    <Text color={this.handleColors().colorText} numberOfLines={1}>
-                        {name}
-                    </Text>
-                    <Text caption color={this.handleColors().colorTextCaption} numberOfLines={1}>
-                        {model}
-                    </Text>
-                </Block>
-                <Block
-                    middle
-                    center
-                    flex={false}
-                >
-                    <Icon.Entypo
-                        name="chevron-right"
-                        size={25}
-                        color={this.handleColors().colorTextCaption}
-                    />
-                </Block>
-            </Card>
+                <Card style={[styles.Wrapper, styles.padmarg]} padding={0} color={this.handleColors().colorCard} shadow>
+                    <Block
+                        color={this.handleColors().colorIconWrapper}
+                        middle
+                        center
+                        flex={false}
+                        style={styles.wrapIcon}
+                    >
+                        <IconSet name={this.props.iconName} size={27} color={this.handleColors().colorIcon} />
+                    </Block>
+                    <Block colunm>
+                        <Text color={this.handleColors().colorText} numberOfLines={1}>
+                            {name}
+                        </Text>
+                        <Text caption color={this.handleColors().colorTextCaption} numberOfLines={1}>
+                            {model}
+                        </Text>
+                    </Block>
+                    <Block
+                        middle
+                        center
+                        flex={false}
+                    >
+                        <Icon.Entypo
+                            name="chevron-right"
+                            size={25}
+                            color={this.handleColors().colorTextCaption}
+                        />
+                    </Block>
+                </Card>
         )
     }
 }

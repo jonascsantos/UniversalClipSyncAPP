@@ -3,9 +3,13 @@ import { StyleSheet, StatusBar } from 'react-native'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack'
+
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Icon2 from 'react-native-vector-icons/Entypo'
+
+
 
 import { Block, Text, Button } from '../components'
 import { theme } from '../constants'
@@ -13,12 +17,13 @@ import Clipboard from '../screens/Clipboard'
 import Recents from '../screens/Recents'
 import Favourites from '../screens/Favourites'
 import Devices from '../screens/Devices'
+import DeviceItemScreen from '../screens/DeviceItemScreen';
 
 function LogoTitle() {
   return (
     <Block bottom row left>
       <Text color={theme.colors.gray3} h1 bold style={{ marginRight: 2 }}>Universal</Text>
-      <Text color={theme.colors.gray3} h2 medium bottom style={{ paddingLeft: 2 ,paddingBottom: 1.5 }}>Clip</Text>
+      <Text color={theme.colors.gray3} h2 medium bottom style={{ paddingLeft: 2, paddingBottom: 1.5 }}>Clip</Text>
       <Text color={theme.colors.gray3} bottom medium italic h2 style={{ paddingBottom: 1.5 }} >Sync</Text>
     </Block>
   );
@@ -36,6 +41,28 @@ function MenuButton() {
 
 const Tab = createMaterialBottomTabNavigator();
 
+const Stack = createStackNavigator();
+
+function Home2({ navigation }) {
+  return (
+    <Block style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home screen</Text>
+    </Block>
+  );
+}
+
+const DeviceStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="DeviceItemScreen"
+        component={DeviceItemScreen}
+      />
+    </Stack.Navigator>
+  );
+}
+
+
 function MyTabs() {
   return (
     <Tab.Navigator
@@ -43,7 +70,7 @@ function MyTabs() {
       activeColor={theme.colors.gray3}
       inactiveColor="rgba(44,62,80, 0.7)"
       backBehavior="initialRoute"
-      barStyle={{ backgroundColor: theme.colors.primary, paddingBottom: 5  }}
+      barStyle={{ backgroundColor: theme.colors.primary, paddingBottom: 5 }}
     >
       <Tab.Screen
         name="Clipboard"
@@ -77,7 +104,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Devices"
-        component={Devices}
+        component={Home2}
         options={{
           tabBarLabel: 'Devices',
           tabBarIcon: ({ color }) => (
@@ -101,7 +128,7 @@ export default class Home extends Component {
   };
 
   render() {
-    StatusBar.setBackgroundColor("rgba(0,0,0,0.1)",true)
+    StatusBar.setBackgroundColor("rgba(0,0,0,0.1)", true)
 
     return (
       <NavigationContainer>

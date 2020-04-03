@@ -7,8 +7,6 @@ import { theme, images } from '../constants';
 const { width, height } = Dimensions.get('window');
 
 class Welcome extends React.Component {
-    static navigationOptions = { headerShown: false };
-
     scrollX = new Animated.Value(0);
 
     state = {
