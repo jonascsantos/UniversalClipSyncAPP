@@ -73,6 +73,9 @@ function Screens() {
             <Stack.Screen 
                 name="Home"
                 component={Home}
+                options={{
+                    headerShown: false 
+                }}
             />
 
         </Stack.Navigator>

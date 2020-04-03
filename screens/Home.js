@@ -40,8 +40,48 @@ function MenuButton() {
 }
 
 const Tab = createMaterialBottomTabNavigator();
-
 const Stack = createStackNavigator();
+const DeviceStack = createStackNavigator();
+
+function HomeStackNavigator() {
+  return (
+    <Stack.Navigator
+      initialRouteName="MyTabs"
+      //headerMode="screen"
+      screenOptions={{
+        headerStyle: {
+          height: theme.sizes.base * 6,
+          backgroundColor: theme.colors.white,
+          borderBottomColor: "transparent",
+          elevation: 0,
+        },
+        headerBackImage: () => <Icon name="arrowleft" size={30} color={theme.colors.gray3} />,
+        headerBackTitle: null,
+        headerLeftContainerStyle: {
+          alignItems: 'center',
+          marginLeft: 5,
+          paddingRight: theme.sizes.base,
+        },
+        headerRightContainerStyle: {
+          alignItems: 'center',
+          paddingRight: theme.sizes.base,
+        },
+        headerTitle: props => <LogoTitle {...props} />,
+        headerStyle: {
+          backgroundColor: theme.colors.primary,
+        },
+        headerLeft: () => (
+          <MenuButton />
+        ),
+      }}
+    >
+      <Stack.Screen
+        name="MyTabs"
+        component={MyTabs}
+      />
+    </Stack.Navigator>
+  );
+}
 
 function Home2({ navigation }) {
   return (
@@ -51,14 +91,14 @@ function Home2({ navigation }) {
   );
 }
 
-const DeviceStack = () => {
+const DeviceStackNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
+    <StackDevice.Navigator>
+      <StackDevice.Screen
         name="DeviceItemScreen"
         component={DeviceItemScreen}
       />
-    </Stack.Navigator>
+    </StackDevice.Navigator>
   );
 }
 
@@ -117,22 +157,12 @@ function MyTabs() {
 }
 
 export default class Home extends Component {
-  static navigationOptions = {
-    headerTitle: props => <LogoTitle {...props} />,
-    headerStyle: {
-      backgroundColor: theme.colors.primary,
-    },
-    headerLeft: () => (
-      <MenuButton />
-    ),
-  };
-
   render() {
     StatusBar.setBackgroundColor("rgba(0,0,0,0.1)", true)
 
     return (
-      <NavigationContainer>
-        <MyTabs />
+      <NavigationContainer independent={true}>
+        <HomeStackNavigator />
       </NavigationContainer>
     )
   }
