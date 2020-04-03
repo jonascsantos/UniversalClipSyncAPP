@@ -9,8 +9,6 @@ import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Icon2 from 'react-native-vector-icons/Entypo'
 
-
-
 import { Block, Text, Button } from '../components'
 import { theme } from '../constants'
 import Clipboard from '../screens/Clipboard'
@@ -41,7 +39,7 @@ function MenuButton() {
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
-const DeviceStack = createStackNavigator();
+const StackDevice = createStackNavigator();
 
 function HomeStackNavigator() {
   return (
@@ -83,20 +81,22 @@ function HomeStackNavigator() {
   );
 }
 
-function Home2({ navigation }) {
-  return (
-    <Block style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home screen</Text>
-    </Block>
-  );
-}
-
 const DeviceStackNavigator = () => {
   return (
     <StackDevice.Navigator>
       <StackDevice.Screen
+        name="Devices"
+        component={Devices}
+        options={{
+          headerShown: false,
+      }}
+      />
+      <StackDevice.Screen
         name="DeviceItemScreen"
         component={DeviceItemScreen}
+        options={{
+          headerShown: false,
+      }}
       />
     </StackDevice.Navigator>
   );
@@ -144,7 +144,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Devices"
-        component={Home2}
+        component={DeviceStackNavigator}
         options={{
           tabBarLabel: 'Devices',
           tabBarIcon: ({ color }) => (

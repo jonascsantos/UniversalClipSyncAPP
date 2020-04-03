@@ -14,7 +14,7 @@ export default class Devices extends Component {
         <SwipeableList>
           {mocks.devices.map((item, index) => {
             return (
-              <TouchableOpacity key={`step-${index}`} onPress={() => { navigation.navigate('DeviceItem') }}>
+              <TouchableOpacity key={`step-${index}`} onPress={() => { navigation.navigate('DeviceItemScreen') }}>
                 <DeviceItem
                   key={`step-${index}`}
                   name={item.name}

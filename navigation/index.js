@@ -46,14 +46,16 @@ function Screens() {
                 name="Welcome"
                 component={Welcome}
                 options={{
-                    headerShown: false 
+                    headerShown: false,
+                    gestureEnabled: false,
                 }}
             />
             <Stack.Screen 
                 name="Login"
                 component={Login}
                 options={{
-                    headerShown: false 
+                    headerShown: false,
+                    gestureEnabled: false,
                 }}
             />
             <Stack.Screen 
@@ -74,8 +76,10 @@ function Screens() {
                 name="Home"
                 component={Home}
                 options={{
-                    headerShown: false 
+                    headerShown: false,
+                    gestureEnabled: false,
                 }}
+                
             />
 
         </Stack.Navigator>
