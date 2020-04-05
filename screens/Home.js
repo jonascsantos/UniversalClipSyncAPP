@@ -89,6 +89,7 @@ const DeviceStackNavigator = () => {
         component={Devices}
         options={{
           headerShown: false,
+          
       }}
       />
       <StackDevice.Screen

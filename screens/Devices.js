@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { ScrollView, Dimensions, StyleSheet, Modal } from 'react-native'
 
-import { DeviceItem, SwipeableList } from '../components'
+import { DeviceItem, SwipeableList, Block, Text, Button } from '../components'
 import { theme, mocks } from '../constants'
 
 import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler';
+
 
 export default class Devices extends Component {
   render() {
@@ -14,7 +15,7 @@ export default class Devices extends Component {
         <SwipeableList>
           {mocks.devices.map((item, index) => {
             return (
-              <TouchableOpacity key={`step-${index}`} onPress={() => { navigation.navigate('DeviceItemScreen') }}>
+              <TouchableOpacity key={`step-${index}`} onPress={() => navigation.navigate("DeviceItemScreen", item)}>
                 <DeviceItem
                   key={`step-${index}`}
                   name={item.name}

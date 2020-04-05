@@ -5,8 +5,6 @@ import { Text, Block, Button, Input } from '../components';
 import { theme } from '../constants'
 
 export default class SignUp extends Component {
-    static navigationOptions = { title: '' };
-
     state = {
         email: null,
         username: null,

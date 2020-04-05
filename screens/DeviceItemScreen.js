@@ -1,14 +1,210 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { StyleSheet, TextInput } from 'react-native'
 
-export default class DeviceItemScreen extends Component {
+import { Block, Text, Button, Divider, Switch } from '../components'
+import Icon from '../components/Icons';
+import { theme, mocks } from '../constants'
+
+class DeviceItemScreen extends Component {
+    state = {
+        editing: null,
+        device: {}
+    };
+
+    componentDidMount() {
+        this.setState({ device: this.props.device });
+    }
+
+    handleColors() {
+        const { status } = this.props;
+
+        switch (status) {
+            case 'warning':
+                return {
+                    colorText: "white",
+                    colorCard: theme.colors.warningCard,
+                    colorIconWrapper: theme.colors.grayIconWrapper,
+                    colorIcon: "white",
+                    colorTextCaption: "rgba(255,255,255,0.7)",
+                }
+            case 'ready':
+                return {
+                    colorText: theme.colors.gray3,
+                    colorCard: theme.colors.white,
+                    colorIconWrapper: theme.colors.grayIconWrapper2,
+                    colorIcon: theme.colors.gray3,
+                    colorTextCaption: theme.colors.disabledIconTextGray,
+                }
+            case 'disabled':
+                return {
+                    colorText: theme.colors.gray3,
+                    colorCard: theme.colors.white,
+                    colorIconWrapper: theme.colors.grayIconWrapper2,
+                    colorIcon: theme.colors.gray3,
+                    colorTextCaption: theme.colors.disabledIconTextGray,
+                }
+            default:
+                return {
+                    colorText: theme.colors.gray3,
+                    colorCard: theme.colors.white,
+                    colorIconWrapper: theme.colors.grayIconWrapper2,
+                    colorIcon: theme.colors.gray3,
+                    colorTextCaption: theme.colors.disabledIconTextGray,
+                };
+        }
+    }
+
+    renderEdit(name) {
+        const { device, editing } = this.state;
+
+        if (editing === name) {
+            return (
+                <TextInput
+                    defaultValue={device[name]}
+                    onChangeText={text => this.handleEdit([name], text)}
+                />
+            );
+        }
+
+        return <Text bold>{device[name]}</Text>;
+    }
+
+    handleEdit(name, text) {
+        const { device } = this.state;
+        device[name] = text;
+
+        this.setState({ device });
+    }
+
+    toggleEdit(name) {
+        const { editing } = this.state;
+        this.setState({ editing: !editing ? name : null });
+    }
+
     render() {
+        const { device, editing } = this.state;
+
         return (
-            <View>
-                <Text> Device </Text>
-            </View>
+            <Block color="white">
+                <Block flex={false} center middle>
+                    <Block
+                        color={this.handleColors().colorIconWrapper}
+                        middle
+                        center
+                        flex={false}
+                        style={styles.wrapIcon}
+                    >
+                        <Icon.Ionicons name={"ios-phone-portrait"} size={60} color={this.handleColors().colorIcon} />
+                    </Block>
+                </Block>
+
+                <Block style={styles.inputs}>
+                    <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
+                        <Block>
+                            <Text gray2 style={{ marginBottom: 10 }}>
+                                Name
+                                </Text>
+                            {this.renderEdit("name")}
+                        </Block>
+                        <Text
+                            medium
+                            secondary
+                            onPress={() => this.toggleEdit("name")}
+                        >
+                            {editing === "name" ? "Save" : "Edit"}
+                        </Text>
+                    </Block>
+                    <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
+                        <Block>
+                            <Text gray2 style={{ marginBottom: 10 }}>
+                                Model
+                                </Text>
+                            {this.renderEdit("device")}
+                        </Block>
+                        <Text
+                            medium
+                            secondary
+                            onPress={() => this.toggleEdit("device")}
+                        >
+                            {editing === "device" ? "Save" : "Edit"}
+                        </Text>
+                    </Block>
+                    <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
+                        <Block>
+                            <Text gray2 style={{ marginBottom: 10 }}>
+                                Status
+                                </Text>
+                            <Text bold>{device.status}</Text>
+                        </Block>
+                    </Block>
+                </Block>
+                
+                <Block flex={false}>
+                    <Divider />
+                </Block>
+
+                <Block style={styles.toggles}>
+                    <Block
+                        row
+                        center
+                        space="between"
+                        style={{ marginBottom: theme.sizes.base * 2 }}
+                    >
+                        <Text gray2>Notifications</Text>
+                        <Switch
+                            value={this.state.notifications}
+                            onValueChange={value => this.setState({ notifications: value })}
+                        />
+                    </Block>
+
+                    <Button gradient></Button>
+                </Block>
+
+            </Block>
+
         )
     }
 }
 
-const styles = StyleSheet.create({})
+DeviceItemScreen.defaultProps = {
+    device: mocks.devices[0]
+};
+
+export default DeviceItemScreen;
+
+const styles = StyleSheet.create({
+    Wrapper: {
+        borderRadius: 1,
+        marginBottom: 3,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingRight: 10,
+    },
+    textStyle: {
+        flex: 1,
+        fontSize: 16,
+    },
+    wrapIcon: {
+        marginHorizontal: 12,
+        marginVertical: 10,
+        width: 80,
+        borderRadius: 80,
+        height: 80,
+    },
+    padmarg: {
+        padding: 0,
+        margin: 0,
+    },
+    modal: {
+        width: "90%",
+
+    },
+    inputs: {
+        marginTop: theme.sizes.base * 0.7,
+        paddingHorizontal: theme.sizes.base * 2
+    },
+    inputRow: {
+        alignItems: "flex-end"
+    },
+})
