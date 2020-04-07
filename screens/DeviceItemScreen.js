@@ -12,7 +12,7 @@ class DeviceItemScreen extends Component {
     };
 
     componentDidMount() {
-        this.setState({ device: this.props.device });
+        this.setState({ device: this.props.route.params });
     }
 
     handleColors() {
@@ -83,12 +83,14 @@ class DeviceItemScreen extends Component {
 
     render() {
         const { device, editing } = this.state;
+        
+        
 
         return (
 
             <Block color="white" flex={1} padding={[theme.sizes.base, theme.sizes.base * 2]}>
 
-                <Block flex={false} center middle>
+                <Block flex={0.3} center middle margin={[10, 0, 0, 0]}>
                     <Block
                         color={this.handleColors().colorIconWrapper}
                         middle
@@ -96,7 +98,7 @@ class DeviceItemScreen extends Component {
                         flex={false}
                         style={styles.wrapIcon}
                     >
-                        <Icon.Ionicons name={"ios-phone-portrait"} size={60} color={this.handleColors().colorIcon} />
+                        <Icon.Ionicons name={"ios-phone-portrait"} size={70} color={this.handleColors().colorIcon} />
                     </Block>
                 </Block>
 
@@ -158,9 +160,9 @@ class DeviceItemScreen extends Component {
                             onValueChange={value => this.setState({ notifications: value })}
                             ios_backgroundColor="rgba(168, 182, 200, 0.30)"
                             trackColor={{
-                              // false: GRAY_COLOR,
-                              true: theme.colors.secondary
-                            }} 
+                                // false: GRAY_COLOR,
+                                true: theme.colors.secondary
+                            }}
                         />
                     </Block>
 
@@ -176,13 +178,13 @@ class DeviceItemScreen extends Component {
                             onValueChange={value => this.setState({ autoAccept: value })}
                             ios_backgroundColor="rgba(168, 182, 200, 0.30)"
                             trackColor={{
-                              // false: GRAY_COLOR,
-                              true: theme.colors.secondary
-                            }} 
+                                // false: GRAY_COLOR,
+                                true: theme.colors.secondary
+                            }}
                         />
                     </Block>
 
-                    <Button gradient startColor="#FF416C" endColor="#FF4B2B">
+                    <Button gradient startColor="#485563" endColor="#29323c">
                         <Text color="white" center light h3>Remove Device</Text>
                     </Button>
                 </Block>
@@ -190,10 +192,6 @@ class DeviceItemScreen extends Component {
         )
     }
 }
-
-DeviceItemScreen.defaultProps = {
-    device: mocks.devices[0]
-};
 
 export default DeviceItemScreen;
 

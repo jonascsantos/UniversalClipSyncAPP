@@ -11,6 +11,7 @@ export default class Devices extends Component {
   render() {
     const { navigation } = this.props;
     return (
+      
       <ScrollView>
         <SwipeableList>
           {mocks.devices.map((item, index) => {

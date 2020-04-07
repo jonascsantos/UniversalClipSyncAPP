@@ -5,7 +5,7 @@ import { Text, Block, Button, Input, Divider, Card, CardDevice, SwipeableCard, S
 import { theme, mocks } from '../constants'
 
 import Icon from '../components/Icons';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler';
 
 
 function elevationShadowStyle(elevation) {
@@ -67,14 +67,19 @@ export default class Clipboard extends Component {
                     <Block style={styles.devicesContainer}>
                         {mocks.devices.map((item, index) => {
                             return (
-                                <CardDevice
-                                    key={`step-${index}`}
-                                    iconSet={item.icon[0]}
-                                    iconName={item.icon[1]}
-                                    status={item.status}
-                                >
-                                    {item.name}
-                                </CardDevice>
+                                <TouchableOpacity key={`step-${index}`} onPress={() => {
+                                    this.props.navigation.navigate('Devices', item)
+                                }
+                                }>
+                                    <CardDevice
+                                        key={`step-${index}`}
+                                        iconSet={item.icon[0]}
+                                        iconName={item.icon[1]}
+                                        status={item.status}
+                                    >
+                                        {item.name}
+                                    </CardDevice>
+                                </TouchableOpacity>
                             );
                         })}
                     </Block>
