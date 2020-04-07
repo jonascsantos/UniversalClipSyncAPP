@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { StyleSheet, TextInput } from 'react-native'
+import { StyleSheet, TextInput, Switch } from 'react-native'
 
-import { Block, Text, Button, Divider, Switch } from '../components'
+import { Block, Text, Button, Divider } from '../components'
 import Icon from '../components/Icons';
 import { theme, mocks } from '../constants'
 
@@ -85,7 +85,9 @@ class DeviceItemScreen extends Component {
         const { device, editing } = this.state;
 
         return (
-            <Block color="white">
+
+            <Block color="white" flex={1} padding={[theme.sizes.base, theme.sizes.base * 2]}>
+
                 <Block flex={false} center middle>
                     <Block
                         color={this.handleColors().colorIconWrapper}
@@ -98,8 +100,8 @@ class DeviceItemScreen extends Component {
                     </Block>
                 </Block>
 
-                <Block style={styles.inputs}>
-                    <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
+                <Block style={styles.inputs} >
+                    <Block row space="between" style={styles.inputRow}>
                         <Block>
                             <Text gray2 style={{ marginBottom: 10 }}>
                                 Name
@@ -114,7 +116,7 @@ class DeviceItemScreen extends Component {
                             {editing === "name" ? "Save" : "Edit"}
                         </Text>
                     </Block>
-                    <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
+                    <Block row space="between" style={styles.inputRow}>
                         <Block>
                             <Text gray2 style={{ marginBottom: 10 }}>
                                 Model
@@ -129,7 +131,7 @@ class DeviceItemScreen extends Component {
                             {editing === "device" ? "Save" : "Edit"}
                         </Text>
                     </Block>
-                    <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
+                    <Block row space="between" style={styles.inputRow}>
                         <Block>
                             <Text gray2 style={{ marginBottom: 10 }}>
                                 Status
@@ -138,7 +140,7 @@ class DeviceItemScreen extends Component {
                         </Block>
                     </Block>
                 </Block>
-                
+
                 <Block flex={false}>
                     <Divider />
                 </Block>
@@ -154,14 +156,17 @@ class DeviceItemScreen extends Component {
                         <Switch
                             value={this.state.notifications}
                             onValueChange={value => this.setState({ notifications: value })}
+                            ios_backgroundColor="rgba(168, 182, 200, 0.30)"
+                            trackColor={{
+                              // false: GRAY_COLOR,
+                              true: theme.colors.secondary
+                            }} 
                         />
                     </Block>
 
                     <Button gradient></Button>
                 </Block>
-
             </Block>
-
         )
     }
 }
@@ -198,11 +203,9 @@ const styles = StyleSheet.create({
     },
     modal: {
         width: "90%",
-
     },
     inputs: {
         marginTop: theme.sizes.base * 0.7,
-        paddingHorizontal: theme.sizes.base * 2
     },
     inputRow: {
         alignItems: "flex-end"
