@@ -67,10 +67,9 @@ export default class Clipboard extends Component {
                     <Block style={styles.devicesContainer}>
                         {mocks.devices.map((item, index) => {
                             return (
-                                <TouchableOpacity key={`step-${index}`} onPress={() => {
-                                    this.props.navigation.navigate('Devices', item)
-                                }
-                                }>
+                                <TouchableOpacity
+                                    key={`step-${index}`}
+                                    onPress={() => { this.props.navigation.navigate('DeviceItemScreen', item) }}>
                                     <CardDevice
                                         key={`step-${index}`}
                                         iconSet={item.icon[0]}

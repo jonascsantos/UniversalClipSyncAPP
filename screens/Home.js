@@ -4,6 +4,7 @@ import { StyleSheet, StatusBar } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack'
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import Icon from 'react-native-vector-icons/MaterialIcons'
@@ -16,6 +17,7 @@ import Recents from '../screens/Recents'
 import Favourites from '../screens/Favourites'
 import Devices from '../screens/Devices'
 import DeviceItemScreen from '../screens/DeviceItemScreen';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function LogoTitle() {
   return (
@@ -27,21 +29,32 @@ function LogoTitle() {
   );
 }
 
-function MenuButton() {
+function MenuButton({navigation}) {
   return (
-    <Button color={theme.colors.primary} style={{ width: 50, borderRadius: 50 }}>
-      <Block middle center row>
-        <Icon name="menu" size={30} color={theme.colors.gray3} />
-      </Block>
-    </Button>
+    <TouchableOpacity onPress={() => { navigation.dispatch(DrawerActions.openDrawer())}}>
+      <Button color={theme.colors.primary} style={{ width: 50, borderRadius: 50 }}>
+        <Block middle center row>
+          <Icon name="menu" size={30} color={theme.colors.gray3} />
+        </Block>
+      </Button>
+    </TouchableOpacity>
   );
 }
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 const StackDevice = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
-function HomeStackNavigator() {
+function Home2() {
+  return (
+    <Block>
+      <Text>test</Text>
+    </Block>
+  )
+}
+
+function HomeStackNavigator({ navigation }) {
   return (
     <Stack.Navigator
       initialRouteName="MyTabs"
@@ -68,8 +81,8 @@ function HomeStackNavigator() {
         headerStyle: {
           backgroundColor: theme.colors.primary,
         },
-        headerLeft: () => (
-          <MenuButton />
+        headerLeft: ({ navigation }) => (
+          <MenuButton navigation={navigation} />
         ),
       }}
     >
@@ -89,15 +102,15 @@ const DeviceStackNavigator = () => {
         component={Devices}
         options={{
           headerShown: false,
-          
-      }}
+
+        }}
       />
       <StackDevice.Screen
         name="DeviceItemScreen"
         component={DeviceItemScreen}
         options={{
           headerShown: false,
-      }}
+        }}
       />
     </StackDevice.Navigator>
   );
@@ -163,7 +176,11 @@ export default class Home extends Component {
 
     return (
       <NavigationContainer independent={true}>
-        <HomeStackNavigator />
+        <Drawer.Navigator initialRouteName="Home">
+          <Drawer.Screen name="Home" component={HomeStackNavigator} />
+          <Drawer.Screen name="Home2" component={Home2} />
+        </Drawer.Navigator>
+
       </NavigationContainer>
     )
   }

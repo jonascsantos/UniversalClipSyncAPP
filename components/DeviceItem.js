@@ -6,7 +6,6 @@ import Block from "./Block";
 import Card from "./Card";
 import Text from "./Text";
 import Icon from '../components/Icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 class DeviceItem extends Component {
 
