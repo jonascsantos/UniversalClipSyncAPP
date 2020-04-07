@@ -1,25 +1,23 @@
 import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack'
-import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import Icon from '../components/Icons';
 
 import Welcome from '../screens/Welcome';
 import Login from '../screens/Login';
 import Forgot from '../screens/Forgot';
 import SignUp from '../screens/SignUp';
-import Home from '../screens/Home';
+import Home from './Home';
 
 import { theme } from '../constants'
 
 const AuthStack = createStackNavigator();
 
-function Screens() {
-    return(
+function AuthScreens() {
+
+    return (
         <AuthStack.Navigator
             initialRouteName="Welcome"
             //headerMode="screen"
@@ -30,7 +28,7 @@ function Screens() {
                     borderBottomColor: "transparent",
                     elevation: 0,
                 },
-                headerBackImage:() => <Icon.AntDesign name="arrowleft" size={30} color={theme.colors.gray3} />,
+                headerBackImage: () => <Icon.AntDesign name="arrowleft" size={30} color={theme.colors.gray3} />,
                 headerBackTitle: null,
                 headerLeftContainerStyle: {
                     alignItems: 'center',
@@ -43,7 +41,7 @@ function Screens() {
                 },
             }}
         >
-            <AuthStack.Screen 
+            <AuthStack.Screen
                 name="Welcome"
                 component={Welcome}
                 options={{
@@ -51,7 +49,7 @@ function Screens() {
                     gestureEnabled: false,
                 }}
             />
-            <AuthStack.Screen 
+            <AuthStack.Screen
                 name="Login"
                 component={Login}
                 options={{
@@ -59,40 +57,50 @@ function Screens() {
                     gestureEnabled: false,
                 }}
             />
-            <AuthStack.Screen 
+            <AuthStack.Screen
                 name="Forgot"
                 component={Forgot}
                 options={{
-                    title: '' 
+                    title: ''
                 }}
             />
-            <AuthStack.Screen 
+            <AuthStack.Screen
                 name="SignUp"
                 component={SignUp}
                 options={{
-                    title: '' 
+                    title: ''
                 }}
             />
-            <AuthStack.Screen 
-                name="Home"
-                component={Home}
-                options={{
-                    headerShown: false,
-                    gestureEnabled: false,
-                }}
-            />
-
         </AuthStack.Navigator>
     );
 }
 
+<AuthStack.Screen
+    name="Home"
+    component={Home}
+    options={{
+        headerShown: false,
+        gestureEnabled: false,
+    }}
+/>
+
 function App() {
+    const [userToken, setUserToken] = React.useState(null);
+    
+    const authContext = React.useMemo(() => {
+        
+    }, [])
+
     return (
-      <NavigationContainer>
-          <Screens />
-      </NavigationContainer>
+        <NavigationContainer>
+            {userToken ? (
+                <Home />
+            ) : (
+                <AuthScreens />
+            )}
+        </NavigationContainer>
     );
-  }
+}
 
 
 export default App;
