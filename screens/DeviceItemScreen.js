@@ -182,7 +182,9 @@ class DeviceItemScreen extends Component {
                         />
                     </Block>
 
-                    <Button gradient></Button>
+                    <Button gradient startColor="#FF416C" endColor="#FF4B2B">
+                        <Text color="white" center light h3>Remove Device</Text>
+                    </Button>
                 </Block>
             </Block>
         )
