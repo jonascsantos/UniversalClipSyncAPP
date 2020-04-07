@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import { StyleSheet, StatusBar } from 'react-native'
 
-import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import { MaterialCommunityIcons } from 'react-native-vector-icons';
-import Icon from 'react-native-vector-icons/MaterialIcons'
-import Icon2 from 'react-native-vector-icons/Entypo'
+import Icon from '../components/Icons';
 
 import { Block, Text, Button } from '../components'
 import { theme } from '../constants'
@@ -29,12 +26,12 @@ function LogoTitle() {
   );
 }
 
-function MenuButton({navigation}) {
+function MenuButton({ navigation }) {
   return (
-    <TouchableOpacity onPress={() => { navigation.dispatch(DrawerActions.openDrawer())}}>
+    <TouchableOpacity onPress={() => { navigation.dispatch(DrawerActions.openDrawer()) }}>
       <Button color={theme.colors.primary} style={{ width: 50, borderRadius: 50 }}>
         <Block middle center row>
-          <Icon name="menu" size={30} color={theme.colors.gray3} />
+          <Icon.MaterialIcons name="menu" size={30} color={theme.colors.gray3} />
         </Block>
       </Button>
     </TouchableOpacity>
@@ -66,7 +63,7 @@ function HomeStackNavigator({ navigation }) {
           borderBottomColor: "transparent",
           elevation: 0,
         },
-        headerBackImage: () => <Icon name="arrowleft" size={30} color={theme.colors.gray3} />,
+        headerBackImage: () => <Icon.MaterialIcons name="arrowleft" size={30} color={theme.colors.gray3} />,
         headerBackTitle: null,
         headerLeftContainerStyle: {
           alignItems: 'center',
@@ -132,7 +129,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Clipboard',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="clipboard" color={color} size={25} />
+            <Icon.MaterialCommunityIcons name="clipboard" color={color} size={25} />
           ),
         }}
       />
@@ -142,7 +139,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Recents',
           tabBarIcon: ({ color }) => (
-            <Icon2 name="back-in-time" color={color} size={25} />
+            <Icon.Entypo name="back-in-time" color={color} size={25} />
           ),
         }}
       />
@@ -152,7 +149,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Favourites',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="heart" color={color} size={25} />
+            <Icon.MaterialCommunityIcons name="heart" color={color} size={25} />
           ),
         }}
       />
@@ -162,7 +159,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Devices',
           tabBarIcon: ({ color }) => (
-            <Icon name="devices" color={color} size={25} />
+            <Icon.MaterialIcons name="devices" color={color} size={25} />
           ),
         }}
       />
@@ -175,13 +172,10 @@ export default class Home extends Component {
     StatusBar.setBackgroundColor("rgba(0,0,0,0.1)", true)
 
     return (
-      <NavigationContainer independent={true}>
         <Drawer.Navigator initialRouteName="Home">
           <Drawer.Screen name="Home" component={HomeStackNavigator} />
           <Drawer.Screen name="Home2" component={Home2} />
         </Drawer.Navigator>
-
-      </NavigationContainer>
     )
   }
 }

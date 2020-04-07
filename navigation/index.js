@@ -1,25 +1,26 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/AntDesign'
 
 import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack'
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+import { MaterialCommunityIcons } from 'react-native-vector-icons';
+import Icon from '../components/Icons';
 
 import Welcome from '../screens/Welcome';
 import Login from '../screens/Login';
 import Forgot from '../screens/Forgot';
 import SignUp from '../screens/SignUp';
 import Home from '../screens/Home';
-// import Favourites from '../screens/Favourites';
-// import Devices from '../screens/Devices';
-// import Settings from '../screens/Settings';
 
 import { theme } from '../constants'
 
-const Stack = createStackNavigator();
+const AuthStack = createStackNavigator();
 
 function Screens() {
     return(
-        <Stack.Navigator
+        <AuthStack.Navigator
             initialRouteName="Welcome"
             //headerMode="screen"
             screenOptions={{
@@ -29,7 +30,7 @@ function Screens() {
                     borderBottomColor: "transparent",
                     elevation: 0,
                 },
-                headerBackImage:() => <Icon name="arrowleft" size={30} color={theme.colors.gray3} />,
+                headerBackImage:() => <Icon.AntDesign name="arrowleft" size={30} color={theme.colors.gray3} />,
                 headerBackTitle: null,
                 headerLeftContainerStyle: {
                     alignItems: 'center',
@@ -42,7 +43,7 @@ function Screens() {
                 },
             }}
         >
-            <Stack.Screen 
+            <AuthStack.Screen 
                 name="Welcome"
                 component={Welcome}
                 options={{
@@ -50,7 +51,7 @@ function Screens() {
                     gestureEnabled: false,
                 }}
             />
-            <Stack.Screen 
+            <AuthStack.Screen 
                 name="Login"
                 component={Login}
                 options={{
@@ -58,31 +59,30 @@ function Screens() {
                     gestureEnabled: false,
                 }}
             />
-            <Stack.Screen 
+            <AuthStack.Screen 
                 name="Forgot"
                 component={Forgot}
                 options={{
                     title: '' 
                 }}
             />
-            <Stack.Screen 
+            <AuthStack.Screen 
                 name="SignUp"
                 component={SignUp}
                 options={{
                     title: '' 
                 }}
             />
-            <Stack.Screen 
+            <AuthStack.Screen 
                 name="Home"
                 component={Home}
                 options={{
                     headerShown: false,
                     gestureEnabled: false,
                 }}
-                
             />
 
-        </Stack.Navigator>
+        </AuthStack.Navigator>
     );
 }
 

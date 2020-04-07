@@ -12,9 +12,7 @@ import ZocialI from 'react-native-vector-icons/Zocial'
 import AntDesignI from 'react-native-vector-icons/AntDesign'
 import React from 'react'
 
-export const MaterialCommunityIcons = props => (
-    <MaterialCommunityIconsI {...props} />
-)
+ const MaterialCommunityIcons = props => <MaterialCommunityIconsI {...props} />
  const SimpleLineIcons = props => <SimpleLineIconsI {...props} />
  const MaterialIcons = props => <MaterialIconsI {...props} />
  const FontAwesome = props => <FontAwesomeI {...props} />
@@ -29,7 +27,6 @@ export const MaterialCommunityIcons = props => (
 
 export default  {
     MaterialCommunityIcons,
-    SimpleLineIcons,
     SimpleLineIcons,
     MaterialIcons,
     FontAwesome,
