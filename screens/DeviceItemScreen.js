@@ -8,7 +8,7 @@ import { theme, mocks } from '../constants'
 class DeviceItemScreen extends Component {
     state = {
         editing: null,
-        device: {}
+        device: {},
     };
 
     componentDidMount() {
@@ -103,7 +103,7 @@ class DeviceItemScreen extends Component {
                 <Block style={styles.inputs} >
                     <Block row space="between" style={styles.inputRow}>
                         <Block>
-                            <Text gray2 style={{ marginBottom: 10 }}>
+                            <Text gray style={{ marginBottom: 10 }}>
                                 Name
                                 </Text>
                             {this.renderEdit("name")}
@@ -118,7 +118,7 @@ class DeviceItemScreen extends Component {
                     </Block>
                     <Block row space="between" style={styles.inputRow}>
                         <Block>
-                            <Text gray2 style={{ marginBottom: 10 }}>
+                            <Text gray style={{ marginBottom: 10 }}>
                                 Model
                                 </Text>
                             {this.renderEdit("device")}
@@ -133,7 +133,7 @@ class DeviceItemScreen extends Component {
                     </Block>
                     <Block row space="between" style={styles.inputRow}>
                         <Block>
-                            <Text gray2 style={{ marginBottom: 10 }}>
+                            <Text gray style={{ marginBottom: 10 }}>
                                 Status
                                 </Text>
                             <Text bold>{device.status}</Text>
@@ -152,10 +152,28 @@ class DeviceItemScreen extends Component {
                         space="between"
                         style={{ marginBottom: theme.sizes.base * 2 }}
                     >
-                        <Text gray2>Notifications</Text>
+                        <Text gray>Notifications</Text>
                         <Switch
                             value={this.state.notifications}
                             onValueChange={value => this.setState({ notifications: value })}
+                            ios_backgroundColor="rgba(168, 182, 200, 0.30)"
+                            trackColor={{
+                              // false: GRAY_COLOR,
+                              true: theme.colors.secondary
+                            }} 
+                        />
+                    </Block>
+
+                    <Block
+                        row
+                        center
+                        space="between"
+                        style={{ marginBottom: theme.sizes.base * 2 }}
+                    >
+                        <Text gray>Auto Accept</Text>
+                        <Switch
+                            value={this.state.autoAccept}
+                            onValueChange={value => this.setState({ autoAccept: value })}
                             ios_backgroundColor="rgba(168, 182, 200, 0.30)"
                             trackColor={{
                               // false: GRAY_COLOR,
@@ -186,6 +204,9 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingRight: 10,
     },
+    toggles: {
+        paddingRight: 0,
+    },
     textStyle: {
         flex: 1,
         fontSize: 16,
@@ -206,6 +227,7 @@ const styles = StyleSheet.create({
     },
     inputs: {
         marginTop: theme.sizes.base * 0.7,
+        paddingRight: 10,
     },
     inputRow: {
         alignItems: "flex-end"
