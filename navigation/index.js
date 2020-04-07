@@ -13,6 +13,8 @@ import Home from './Home';
 
 import { theme } from '../constants'
 
+import { AuthContext } from './context'
+
 const AuthStack = createStackNavigator();
 
 function AuthScreens() {
@@ -86,19 +88,31 @@ function AuthScreens() {
 
 function App() {
     const [userToken, setUserToken] = React.useState(null);
-    
+
     const authContext = React.useMemo(() => {
-        
+        return {
+            signIn: () => {
+                setUserToken('asdf');
+            },
+            signUp: () => {
+                setUserToken('asdf');
+            },
+            signOut: () => {
+                setUserToken(null);
+            },
+        }
     }, [])
 
     return (
-        <NavigationContainer>
-            {userToken ? (
-                <Home />
-            ) : (
-                <AuthScreens />
-            )}
-        </NavigationContainer>
+        <AuthContext.Provider value={authContext}>
+            <NavigationContainer>
+                {userToken ? (
+                    <Home />
+                ) : (
+                        <AuthScreens />
+                    )}
+            </NavigationContainer>
+        </AuthContext.Provider>
     );
 }
 
