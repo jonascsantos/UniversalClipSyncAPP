@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Keyboard, TextInput, ScrollView, StyleSheet } from 'react-native'
+import { Keyboard, TextInput, ScrollView, StyleSheet, StatusBar } from 'react-native'
 
 import { Text, Block, Button, Input, Divider, Card, CardDevice, SwipeableCard, SwipeableList } from '../components'
 import { theme, mocks } from '../constants'
@@ -46,6 +46,7 @@ export default class Clipboard extends Component {
 
         return (
             <ScrollView showsVerticalScrollIndicator={false}>
+                <StatusBar translucent barStyle="light-content" backgroundColor="rgba(0,0,0,0.1)" />
                 <Block color={theme.colors.white} style={styles.mainContainer}>
                     <Block style={styles.input} padding={[theme.sizes.base, 18]}>
                         <Block row space="between">

@@ -116,7 +116,6 @@ class Welcome extends React.Component {
         return (bgColor);
     }
 
-
     render() {
         const { navigation } = this.props;
         return (
