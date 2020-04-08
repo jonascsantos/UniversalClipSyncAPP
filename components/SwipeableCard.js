@@ -56,7 +56,7 @@ class SwipeableCard extends Component {
                 onSwipeableRightOpen={onSwipeFromLeft}
                 // renderRightActions={(progress, dragX) => <RightActions progress={progress} dragX={dragX} onPress={onRightPress} />}
             >
-                <Card style={[styles.Wrapper]} shadow>
+                <Card style={[styles.Wrapper]}>
                     <Text style={styles.textStyle} numberOfLines={1}>
                         {children}
                     </Text>

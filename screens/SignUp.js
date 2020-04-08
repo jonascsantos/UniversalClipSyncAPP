@@ -3,8 +3,12 @@ import { Alert, StyleSheet, KeyboardAvoidingView, ActivityIndicator, Keyboard } 
 
 import { Text, Block, Button, Input } from '../components';
 import { theme } from '../constants'
+import { AuthContext } from '../navigation/context'
+
 
 export default class SignUp extends Component {
+    static contextType = AuthContext;
+
     state = {
         email: null,
         username: null,
@@ -35,8 +39,7 @@ export default class SignUp extends Component {
                 [
                     {
                         text: 'Continue', onPress: () => {
-                            navigation.navigate("Clipboard")
-
+                            this.context.signUp();
                         }
 
                     }

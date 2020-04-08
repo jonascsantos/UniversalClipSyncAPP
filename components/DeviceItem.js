@@ -78,7 +78,7 @@ class DeviceItem extends Component {
         var IconSet = IconSets[this.props.iconSet];
 
         return (
-                <Card style={[styles.Wrapper, styles.padmarg]} padding={0} color={this.handleColors().colorCard} shadow>
+                <Card style={[styles.Wrapper, styles.padmarg]} padding={0} color={this.handleColors().colorCard}>
                     <Block
                         color={this.handleColors().colorIconWrapper}
                         middle

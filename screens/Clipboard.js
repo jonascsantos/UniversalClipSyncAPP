@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     },
 
     mainContainer: {
-        ...elevationShadowStyle(4),
+        // ...elevationShadowStyle(4),
         backgroundColor: 'white',
         marginBottom: 10,
     },

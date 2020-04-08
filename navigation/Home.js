@@ -93,12 +93,13 @@ function HomeStackNavigator({ navigation }) {
 
 const DeviceStackNavigator = () => {
   return (
-    <StackDevice.Navigator>
+    <StackDevice.Navigator initialRouteName="Devices">
       <StackDevice.Screen
         name="Devices"
         component={Devices}
         options={{
           headerShown: false,
+          animationEnabled: false,
 
         }}
       />
@@ -107,6 +108,7 @@ const DeviceStackNavigator = () => {
         component={DeviceItemScreen}
         options={{
           headerShown: false,
+          animationEnabled: false,
         }}
       />
     </StackDevice.Navigator>
