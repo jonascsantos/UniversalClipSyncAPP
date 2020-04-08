@@ -4,6 +4,8 @@ import { StatusBar, Dimensions, View, ActivityIndicator, Image, Keyboard, StyleS
 import { Text, Block, Button, Input } from '../components'
 import { theme, images } from '../constants'
 
+import { AuthContext } from '../navigation/context'
+
 const { width, height } = Dimensions.get('window');
 
 const VALID_EMAIL = 'contact@ehoq.com';
@@ -12,6 +14,8 @@ const VALID_PASSWORD = 'subscribe';
 
 
 export default class Login extends Component {
+    static contextType = AuthContext;
+
     state = {
         email: VALID_EMAIL,
         password: VALID_PASSWORD,
@@ -19,9 +23,7 @@ export default class Login extends Component {
         loading: false,
     }
 
-
     handleLogin() {
-        const { navigation } = this.props;
         const { email, password } = this.state;
         const errors = [];
 
@@ -39,10 +41,11 @@ export default class Login extends Component {
 
             this.setState({ errors, loading: false });
 
+
             if (!errors.length) {
-                navigation.navigate("Home");
+                this.context.signIn();
             }
-        }, 2000);
+        }, 1000);
 
     }
 
@@ -51,9 +54,11 @@ export default class Login extends Component {
         const { navigation } = this.props;
         const { loading, errors } = this.state;
         const hasErrors = key => errors.includes(key) ? styles.hasErrors : null;
+        let signContext = this.context;
+
 
         StatusBar.setBarStyle('dark-content', true);
-        StatusBar.setBackgroundColor("rgba(0,0,0,0)",true)
+        StatusBar.setBackgroundColor("rgba(0,0,0,0)", true)
 
         return (
             <KeyboardAvoidingView behavior="height" style={styles.login}>
@@ -66,7 +71,7 @@ export default class Login extends Component {
                                 style={{ width: width, height: height / 5, overflow: 'visible' }}
                             />
                             <Block bottom row center margin={[15, 0, 20, 0]}>
-                                <Text color={theme.colors.primary} h1 bold style={{paddingBottom: 5, marginRight: 2}}>Universal</Text>
+                                <Text color={theme.colors.primary} h1 bold style={{ paddingBottom: 5, marginRight: 2 }}>Universal</Text>
                                 <Text color={theme.colors.gray4} h2 medium >Clip</Text>
                                 <Text color={theme.colors.gray4} italic medium bottom h2 >Sync</Text>
                             </Block>
@@ -129,7 +134,7 @@ export default class Login extends Component {
                                 <Image
                                     source={images.logos.facebook}
                                     resizeMode="contain"
-                                    style={{ width: theme.sizes.base , marginHorizontal: 10, overflow: 'visible' }}
+                                    style={{ width: theme.sizes.base, marginHorizontal: 10, overflow: 'visible' }}
                                 />
                                 <Text caption center white>
                                     Continue with Facebook
@@ -142,7 +147,7 @@ export default class Login extends Component {
                                 <Image
                                     source={images.logos.apple}
                                     resizeMode="contain"
-                                    style={{ width: theme.sizes.base , marginHorizontal: 10, overflow: 'visible' }}
+                                    style={{ width: theme.sizes.base, marginHorizontal: 10, overflow: 'visible' }}
                                 />
                                 <Text caption white>
                                     Continue with Apple

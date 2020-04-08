@@ -93,6 +93,7 @@ function App() {
         return {
             signIn: () => {
                 setUserToken('asdf');
+                console.log("signed")
             },
             signUp: () => {
                 setUserToken('asdf');
