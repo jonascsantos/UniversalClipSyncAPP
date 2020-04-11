@@ -4,7 +4,7 @@ let Device = require('../models/device.model');
 router.route('/').get((req, res) => {
     Device.find()
         .then(devices => res.json(devices))
-        .catch(err => res, status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/add').post((req, res) => {

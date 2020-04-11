@@ -6,7 +6,8 @@ ObjectId = Schema.ObjectId;
 const dataSchema = new Schema ({
     username: { type: String, required: true },
     content: { type: String, required: true },
-    device_ref: { type: [ObjectId], required: true}
+    source_dev: { type: ObjectId, required: true},
+    target_dev: { type: [ObjectId], required: true}
 }, {
     timestamps: true,
 })

@@ -4,7 +4,7 @@ let Favourite = require('../models/favourites.model');
 router.route('/').get((req, res) => {
     Favourite.find()
         .then(favourites => res.json(favourites))
-        .catch(err => res, status(400).json('Error: ' + err));
+        .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/add').post((req, res) => {
