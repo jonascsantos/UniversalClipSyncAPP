@@ -4,7 +4,7 @@ const Schema = mongoose.Schema,
 ObjectId = Schema.ObjectId;
 
 const favouritesSchema = new Schema ({
-    username: { type: ObjectId, required: true },
+    username: { type: String, required: true },
     data_ref: { type: [ObjectId], required: true}
 }, {
     timestamps: true,
