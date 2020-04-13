@@ -9,7 +9,7 @@ An awesome app that easily syncs your clipboard with any connected device!
 
 ## Motivation
 
-The need to use Chatting Apps and e-mails to share media or text through your own devices. 
+The need to use *Web Whatsapp* or e-mail to share text or media between your **own** devices. 
 
 _What if we could do it by **tapping a single button** ?_ :iphone: :computer:
 
