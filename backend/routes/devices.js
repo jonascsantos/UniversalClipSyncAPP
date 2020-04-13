@@ -25,4 +25,31 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/:id').get((req, res) => {
+    Device.findById(req.params.id)
+        .then(device => res.json(device))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/:id').delete((req, res) => {
+    Device.findByIdAndDelete(req.params.id)
+        .then(() => res.json('Device deleted.'))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/update/:id').post((req, res) => {
+    Device.findById(req.params.id)
+        .then(device => {
+            device.username = req.body.username;
+            device.name = req.body.name;
+            device.model = req.body.model;
+            device.status = req.body.status;
+
+            newDevice.save()
+                .then(() => res.json('Device added!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;
