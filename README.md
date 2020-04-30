@@ -9,7 +9,7 @@ An awesome app that easily syncs your clipboard with any connected device!
 
 ## Motivation
 
-The need to use Chatting Apps and e-mails to share media or text through your own devices. 
+The need to use *Web Whatsapp* or e-mail to share text or media between your **own** devices. 
 
 _What if we could do it by **tapping a single button** ?_ :iphone: :computer:
 
@@ -35,8 +35,9 @@ The story begins with the app listening to your Clipboard. Just after you copy a
 
 ## Technologies  
 
-* ReactNative. _JavaScript, HTML & CSS_
-* MongoDB - (Expected)
+* React Native. _JavaScript, HTML & CSS_
+* MongoDB, Express.js, Node.js - (MERN Stack)
+* Google Cloud Platform
 * WinForms. _.NET & C#_ - (Expected)
 * Xcode. _Swift_ - (Expected)
 
@@ -46,14 +47,15 @@ Onboarding 1             |  Onboarding 2
 :-------------------------:|:-------------------------:
 <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/Onboarding1.jpg" alt="Onboarding 1" width="300"/> |  <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/Onboarding2.jpg" alt="Onboarding 2" width="300"/>    
 
-Onboarding 3             |  Login
+Onboarding 3              |  Login
 :-------------------------:|:-------------------------:
 <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/Onboarding3.jpg" alt="Onboarding 3" width="300"/> |  <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/LoginScreen.jpg" alt="Login" width="300"/>    
 
 
-Home Navigator Screen           | 
-:-------------------------:|
-<img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/HomeScreen.jpg" alt="Home" width="300"/> |     
+
+Home Navigator Screen      |  Devices Screen
+:-------------------------:|:-------------------------:
+<img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/HomeScreen.jpg" alt="Home" width="300"/> |  <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/DeviceScreen.jpg" alt="Device" width="300"/>   
 
 
 ## Contributing
