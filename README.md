@@ -43,6 +43,10 @@ The story begins with the app listening to your Clipboard. Just after you copy a
 
 ## UI Demo
 
+Home Navigator Screen      |  Devices Screen
+:-------------------------:|:-------------------------:
+<img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/HomeScreen.jpg" alt="Home" width="300"/> |  <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/DeviceScreen.jpg" alt="Device" width="300"/>   
+
 Onboarding 1             |  Onboarding 2
 :-------------------------:|:-------------------------:
 <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/Onboarding1.jpg" alt="Onboarding 1" width="300"/> |  <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/Onboarding2.jpg" alt="Onboarding 2" width="300"/>    
@@ -50,13 +54,6 @@ Onboarding 1             |  Onboarding 2
 Onboarding 3              |  Login
 :-------------------------:|:-------------------------:
 <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/Onboarding3.jpg" alt="Onboarding 3" width="300"/> |  <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/LoginScreen.jpg" alt="Login" width="300"/>    
-
-
-
-Home Navigator Screen      |  Devices Screen
-:-------------------------:|:-------------------------:
-<img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/HomeScreen.jpg" alt="Home" width="300"/> |  <img src="https://github.com/jonascassiano/UniversalClipSyncAPP/blob/master/UI/DeviceScreen.jpg" alt="Device" width="300"/>   
-
 
 ## Contributing
 _*Universal ClipSync: Shared Clipboard*_ is a new project and we would love feedback from the community on how it should evolve. Please report any 🐞s and let us know how you're using our App!
