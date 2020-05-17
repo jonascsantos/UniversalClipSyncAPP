@@ -19,7 +19,6 @@ router.route('/add').post((req, res) => {
         source_dev,
         target_dev
     });
-
     newData.save()
         .then(() => res.json('Data added!'))
         .catch(err => res.status(400).json('Error: ' + err));
@@ -45,8 +44,8 @@ router.route('/update/:id').post((req, res) => {
             data.source_dev = req.body.source_dev;
             data.target_dev = req.body.target_dev;
 
-            newData.save()
-                .then(() => res.json('Data added!'))
+            data.save()
+                .then(() => res.json('Data updated!'))
                 .catch(err => res.status(400).json('Error: ' + err));
         })
         .catch(err => res.status(400).json('Error: ' + err));

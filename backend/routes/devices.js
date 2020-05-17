@@ -45,8 +45,8 @@ router.route('/update/:id').post((req, res) => {
             device.model = req.body.model;
             device.status = req.body.status;
 
-            newDevice.save()
-                .then(() => res.json('Device added!'))
+            device.save()
+                .then(() => res.json('Device updated!'))
                 .catch(err => res.status(400).json('Error: ' + err));
         })
         .catch(err => res.status(400).json('Error: ' + err));

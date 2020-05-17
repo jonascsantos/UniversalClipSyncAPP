@@ -21,4 +21,30 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/:id').get((req, res) => {
+    Favourite.findById(req.params.id)
+        .then(favourites => res.json(favourites))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/:id').delete((req, res) => {
+    Favourite.findByIdAndDelete(req.params.id)
+        .then(() => res.json('Favourite deleted.'))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/update/:id').post((req, res) => {
+    Favourite.findById(req.params.id)
+        .then(favourites => {
+            favourites.username = req.body.username;
+            favourites.data_ref = req.body.data_ref;
+            
+            favourites.save()
+                .then(() => res.json('Favourites updated!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
 module.exports = router;

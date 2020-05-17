@@ -18,7 +18,6 @@ import { AuthContext } from './context'
 const AuthStack = createStackNavigator();
 
 function AuthScreens() {
-
     return (
         <AuthStack.Navigator
             initialRouteName="Welcome"
